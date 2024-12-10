@@ -1,11 +1,33 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Font untuk body */
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
     animation: fadeIn 1.5s ease-in-out; /* Efek animasi fade-in saat halaman pertama kali dimuat */
+}
+
+/* Font Style for Headers */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Font untuk heading */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Efek geser dari bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Smooth Scroll Effect */
@@ -13,6 +35,31 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Media Query untuk perangkat dengan lebar maksimal 768px (tablet dan mobile) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;  /* Ukuran font lebih kecil */
+    }
+    .hero p {
+        font-size: 1.2rem; /* Ukuran font lebih kecil */
+    }
+
+    .project-card {
+        width: 100%; /* Membuat kartu proyek memenuhi lebar layar */
+        margin: 20px 0; /* Menambah jarak antar kartu proyek */
+    }
+
+    header, section {
+        padding: 20px; /* Menyesuaikan padding */
+    }
+
+    .avatar {
+        width: 100px;   /* Ukuran gambar avatar lebih kecil */
+        height: 100px;  /* Ukuran gambar avatar lebih kecil */
+    }
+}
+
+/* Section Styling */
 header, section {
     padding: 50px 20px;
     text-align: center;
@@ -68,6 +115,7 @@ header, section {
     margin: 10px;
     width: 250px;
     transition: transform 0.3s, box-shadow 0.3s; /* Transition untuk hover */
+    animation: fadeInUp 1s ease-out; /* Menambahkan animasi saat scroll */
 }
 
 /* Hover Effect on Cards */
@@ -88,8 +136,7 @@ footer p {
     margin: 0;
 }
 
-/* Animation on Load */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+/* Efek paralaks untuk bagian hero saat scroll */
+.hero {
+    background-attachment: fixed; /* Efek paralaks pada background */
 }
