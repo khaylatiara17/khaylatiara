@@ -39,11 +39,11 @@
 
         <section id="projects" class="section">
             <h1>Proyek Saya</h1>
-            <div class="project-card" onclick="openModal('modal1')">
+            <div class="project-card">
                 <h3>Proyek 1: Web Development</h3>
                 <p>Membuat situs web responsif dengan desain modern dan fokus pada UX.</p>
             </div>
-            <div class="project-card" onclick="openModal('modal2')">
+            <div class="project-card">
                 <h3>Proyek 2: Aplikasi Mobile</h3>
                 <p>Mengembangkan aplikasi lintas platform untuk melacak tujuan kebugaran pengguna.</p>
             </div>
@@ -51,35 +51,10 @@
 
         <section id="contact" class="section">
             <h1>Kontak</h1>
-            <form id="contactForm" onsubmit="return validateForm()">
-                <input type="text" id="name" placeholder="Nama" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <textarea id="message" placeholder="Pesan" required></textarea>
-                <button type="submit">Kirim</button>
-            </form>
-            <p id="formMessage" style="color: green; display: none;">Pesan berhasil dikirim!</p>
+            <p>Hubungi saya di <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
+            <p>Ikuti saya di <a href="https://github.com/Mutiara" target="_blank">GitHub</a> dan <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
         </section>
-
-        <!-- Modal Proyek -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal1')">&times;</span>
-                <h3>Proyek 1: Web Development</h3>
-                <p>Detail proyek: Situs web ini dikembangkan menggunakan HTML, CSS, dan JavaScript. Fitur utama meliputi desain responsif, optimasi SEO, dan pengalaman pengguna yang intuitif.</p>
-            </div>
-        </div>
-
-        <div id="modal2" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal2')">&times;</span>
-                <h3>Proyek 2: Aplikasi Mobile</h3>
-                <p>Detail proyek: Aplikasi ini dibangun dengan framework Flutter, menyediakan pelacakan kebugaran harian, dan integrasi dengan perangkat wearable.</p>
-            </div>
-        </div>
     </main>
-
-    <!-- Scroll to Top -->
-    <button id="scrollToTop" onclick="scrollToTop()">⬆️</button>
 
     <!-- JavaScript -->
     <script>
@@ -88,34 +63,7 @@
             sections.forEach(section => {
                 section.classList.remove('active'); // Sembunyikan semua section
             });
-            const targetSection = document.getElementById(sectionId);
-            targetSection.classList.add('active'); // Tampilkan section yang dipilih
-            
-            // Tambahkan efek scroll
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "flex";
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-
-        window.onscroll = function () {
-            const scrollToTop = document.getElementById('scrollToTop');
-            scrollToTop.style.display = document.documentElement.scrollTop > 300 ? "block" : "none";
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function validateForm() {
-            const formMessage = document.getElementById('formMessage');
-            formMessage.style.display = "block";
-            return false; // Prevent form submission for demonstration
+            document.getElementById(sectionId).classList.add('active'); // Tampilkan section yang dipilih
         }
     </script>
 </body>
