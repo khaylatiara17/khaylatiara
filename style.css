@@ -221,12 +221,6 @@ body.loaded .loading-screen {
     }
 }
 
-@media (max-width: 480px) {
-    .gallery {
-        gap: 5px;
-    }
-}
-
 /* Scroll to Top */
 .scroll-top {
     position: fixed;
