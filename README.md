@@ -1,39 +1,67 @@
-# Portfolio Mutiara
+# Project Title
 
-Selamat datang di portfolio saya! Ini adalah situs web yang saya buat untuk menunjukkan beberapa proyek dan pengalaman saya di bidang Teknologi Informatika. Situs ini dirancang dengan fokus pada kesederhanaan, kemudahan akses, dan pengalaman pengguna yang menyenangkan.
+This is a dynamic website featuring a modern, clean design with smooth animations and interactive sections. The site includes a theme toggle feature, responsive navigation, and various animated background gradients. It is built using HTML, CSS, and JavaScript.
 
-## Fitur Utama
+## Features
 
-- **Navigasi Interaktif**: Menggunakan tombol yang memudahkan untuk berpindah antar bagian (Home, Tentang Saya, Proyek, dan Kontak).
-- **Dark Mode**: Tema gelap untuk kenyamanan mata, dapat diaktifkan melalui tombol 🌙 pada navbar.
-- **Scroll to Top**: Tombol untuk kembali ke bagian atas halaman dengan mulus setelah menggulir halaman.
-- **Loading Screen**: Tampilan animasi loading yang muncul saat memuat halaman.
+- **Dark Mode**: Toggle between light and dark themes for better user experience.
+- **Responsive Navigation**: Fixed navbar with logo, buttons, and a theme toggle button.
+- **Gradient Animations**: Sections have animated gradient backgrounds with smooth transitions.
+- **Loading Screen**: A spinner is displayed while the page is loading.
+- **Scroll-to-Top Button**: Appears when the user scrolls down and lets them return to the top.
+- **Project Cards**: Interactive cards with hover effects for showcasing content.
 
-## Struktur Website
+## Technologies Used
 
-1. **Home**: Menampilkan salam dan perkenalan diri saya, termasuk visi dan motivasi saya dalam mengejar karir di bidang teknologi.
-2. **Tentang Saya**: Informasi lebih lanjut tentang latar belakang pendidikan dan keahlian saya dalam teknologi, termasuk bahasa pemrograman dan teknologi yang saya kuasai.
-3. **Proyek Saya**: Berisi beberapa proyek yang telah saya kerjakan, termasuk web development, aplikasi mobile, dan sistem manajemen inventaris.
-4. **Kontak**: Menyediakan informasi kontak saya, alamat email, serta tautan ke profil GitHub dan LinkedIn saya.
+- **HTML5**: Structure of the webpage.
+- **CSS3**: Styling, including gradients, animations, and responsive design.
+- **JavaScript**: For interactivity (theme toggle and scroll-to-top button).
+- **Font Awesome** (optional): Icons for a better user interface.
+- **Google Fonts**: 'Roboto' for body text and 'Poppins' for headings.
 
-## Teknologi yang Digunakan
+## How to Use
 
-- **HTML5**: Untuk struktur halaman web.
-- **CSS3**: Untuk styling dan tata letak halaman.
-- **JavaScript**: Untuk interaksi dinamis pada halaman seperti navigasi antar bagian dan pengaturan tema.
-- **React** (untuk proyek yang relevan): Untuk pengembangan komponen berbasis UI.
-- **Firebase**: Untuk pengelolaan data backend (untuk proyek aplikasi mobile).
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/project-repo.git
+    ```
 
-## Fitur Tambahan
+2. Navigate to the project directory:
+    ```bash
+    cd project-repo
+    ```
 
-### Dark Mode
-Fitur dark mode yang diaktifkan melalui tombol di navbar untuk memberikan kenyamanan penglihatan pada malam hari.
+3. Open `index.html` in your preferred web browser.
 
-### Tombol Scroll to Top
-Tombol ini akan muncul setelah halaman digulir lebih dari 100px, memberikan kemudahan untuk kembali ke bagian atas halaman dengan satu klik.
+4. Toggle between light and dark mode by clicking the theme toggle button in the navbar.
 
-## Cara Menggunakan
+5. Scroll down and use the "Scroll to Top" button that will appear when you scroll past the first section.
 
-1. Clone repository ini ke mesin lokal Anda.
-   ```bash
-   git clone https://github.com/Mutiara/portfolio.git
+## File Structure
+
+
+## Sections Overview
+
+- **Home**: A welcoming section with a pastel gradient background, showcasing an introduction or key information.
+- **About**: A section for details about the project or individual with another soft pastel gradient.
+- **Projects**: A section to showcase your projects or content using cards with hover effects.
+- **Contact**: A section for contact information or call-to-action.
+
+Each section has a background gradient that smoothly transitions with a subtle animation, making the site visually appealing and engaging.
+
+## Customization
+
+- **Changing the theme**: Update the colors in `style.css` to modify the background gradients of each section.
+- **Fonts**: Adjust the fonts by modifying the `font-family` property in the CSS for headings and paragraphs.
+- **Project Cards**: Add more content or customize the hover effect in the `.project-card` class in `style.css`.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **Google Fonts** for providing the fonts used on the site.
+- **CSS3 Animations** for creating the smooth transitions and effects.
+- **Font Awesome** (optional) for icons.
+
