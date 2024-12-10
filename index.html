@@ -11,6 +11,12 @@
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+        <p>Memuat konten, harap tunggu...</p>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
@@ -21,6 +27,7 @@
             <button onclick="showSection('about')">Tentang Saya</button>
             <button onclick="showSection('projects')">Proyek</button>
             <button onclick="showSection('contact')">Kontak</button>
+            <button id="theme-toggle">🌙</button>
         </div>
     </nav>
 
@@ -94,15 +101,38 @@
         </section>
     </main>
 
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top">⬆</button>
+
     <!-- JavaScript -->
     <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Navbar Navigation
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active'); // Sembunyikan semua section
-            });
-            document.getElementById(sectionId).classList.add('active'); // Tampilkan section yang dipilih
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
         }
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('show', window.scrollY > 100);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 
