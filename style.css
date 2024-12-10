@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f4f4f4;
     color: #333;
 }
 
@@ -22,6 +23,7 @@ body {
 .navbar .logo a {
     color: #fff;
     font-size: 24px;
+    text-decoration: none;
 }
 
 .navbar-links {
@@ -52,39 +54,69 @@ body {
     min-height: 100vh;
 }
 
-/* Show active section */
 .section.active {
     display: block; /* Hanya section yang aktif yang tampil */
 }
 
-/* Background untuk masing-masing halaman */
+/* Home Section */
 #home {
-    background: linear-gradient(135deg, #ffafcc, #d4a5a5);
-    animation: moveBackground 5s ease-in-out infinite alternate;
+    background: linear-gradient(135deg, #FFB3BA, #FFDFBA); /* Gradasi pastel pink-orange */
 }
 
+#home h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+#home p {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    color: #555;
+}
+
+/* About Section */
 #about {
-    background: linear-gradient(135deg, #89f7fe, #66a6ff);
-    color: white;
+    background: linear-gradient(135deg, #D4E157, #FFEB3B); /* Gradasi pastel hijau-kuning */
 }
 
+#about h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    color: #555;
+}
+
+#about h2 {
+    font-size: 1.8rem;
+    margin-top: 25px;
+    color: #333;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#about ul li {
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
 #projects {
-    background: linear-gradient(135deg, #f9c8d1, #f3e5ab, #d1e2f1);  /* Kombinasi pastel */
-    color: white;
+    background: linear-gradient(135deg, #FFCCBC, #FFEBEE); /* Gradasi pastel peach-pink */
 }
 
-#contact {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
+#projects h1 {
+    font-size: 2.5rem;
+    color: #333;
 }
 
-/* Efek animasi untuk background home */
-@keyframes moveBackground {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 100%; }
-}
-
-/* Styling untuk project-card */
 .project-card {
     background-color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -95,23 +127,97 @@ body {
     text-align: left;
 }
 
+.project-card h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    color: #555;
+}
+
+.project-card ul {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.project-card ul li {
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, #E1BEE7, #F3E5F5); /* Gradasi pastel ungu-pink */
+}
+
+#contact h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    color: #555;
+}
+
+#contact a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+#contact h2 {
+    font-size: 1.8rem;
+    margin-top: 25px;
+    color: #333;
+}
+
+#contact p:last-child {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Additional Styling for Buttons */
+button {
+    border: none;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0088cc;
+}
+
 a {
     color: #00aaff;
     text-decoration: none;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-    .navbar-links {
-        flex-direction: column;
-        display: none;
-    }
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00aaff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+}
 
-    .navbar-links button {
-        margin-bottom: 10px;
-    }
-
-    .navbar.active .navbar-links {
-        display: flex;
-    }
+.scroll-to-top:hover {
+    background-color: #0088cc;
 }
