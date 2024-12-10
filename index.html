@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journey Through Code</title>
+    <title>Portfolio Mutiara</title>
 
     <!-- Menambahkan Font Awesome untuk ikon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -18,67 +18,74 @@
     <!-- Navbar Section -->
     <nav class="navbar">
         <div class="logo">
-            <a href="#">Mutiara's Portfolio</a>
+            <a href="#">Portfolio Mutiara</a>
         </div>
         <div class="navbar-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">Tentang Saya</a>
+            <a href="#projects">Proyek</a>
+            <a href="#contact">Kontak</a>
+        </div>
+        <div class="hamburger" onclick="toggleNavbar()">
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
 
-    <!-- Header Section (Hero) -->
+    <!-- Hero Section -->
     <header class="hero">
-        <h1>Hi, I'm Mutiara!</h1>
-        <p>Welcome to my portfolio website. I'm passionate about programming, learning new technologies, and solving real-world problems.</p>
+        <h1>Halo, Saya Mutiara!</h1>
+        <p>Selamat datang di portfolio saya. Saya bersemangat dalam belajar teknologi dan memecahkan masalah dunia nyata.</p>
     </header>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2>About Me</h2>
-        <img src="images/photo.jpg" alt="Mutiara Avatar" class="avatar">
-        <p>I'm an Informatics Engineering student at Universitas Dian Nusantara. I am passionate about technology and its potential to solve problems. As a student, I am always eager to learn and improve my skills. This portfolio is a collection of my personal projects, ideas, and experiences as I embark on my journey in the tech industry.</p>
-        <p>When I'm not coding, I enjoy hiking, mountain climbing, and reading books that help expand my knowledge in various fields.</p>
+        <h2>Tentang Saya</h2>
+        <img src="images/photo.jpg" alt="Foto Mutiara" class="avatar">
+        <p>Saya adalah mahasiswa Teknik Informatika di Universitas Dian Nusantara. Saya terus belajar dan mengembangkan keterampilan untuk menjadi profesional di bidang teknologi.</p>
+        <p>Selain belajar, saya juga suka mendaki gunung, membaca buku, dan mengeksplorasi pengetahuan baru.</p>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2>My Projects <i class="fas fa-laptop-code"></i></h2>
+        <h2>Proyek Saya <i class="fas fa-laptop-code"></i></h2>
         <div class="project-card">
-            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-            <h3>Project 1: Web Development</h3>
-            <p>This project involved creating a responsive website for a local business, with a focus on modern design principles and user experience (UX).</p>
+            <i class="fas fa-project-diagram"></i>
+            <h3>Proyek 1: Web Development</h3>
+            <p>Membangun situs web responsif dengan desain modern dan fokus pada pengalaman pengguna.</p>
         </div>
         <div class="project-card">
-            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-            <h3>Project 2: Mobile App Development</h3>
-            <p>Developed a cross-platform mobile app to help users track their fitness goals, with features such as activity logging and progress tracking.</p>
+            <i class="fas fa-project-diagram"></i>
+            <h3>Proyek 2: Mobile App Development</h3>
+            <p>Mengembangkan aplikasi mobile lintas platform untuk membantu pengguna melacak tujuan kebugaran mereka.</p>
         </div>
         <div class="project-card">
-            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-            <h3>Project 3: Data Science Analysis</h3>
-            <p>Worked on a data analysis project using Python to analyze customer data for a business, providing insights into user behavior and trends.</p>
+            <i class="fas fa-project-diagram"></i>
+            <h3>Proyek 3: Data Science Analysis</h3>
+            <p>Menganalisis data pelanggan menggunakan Python untuk memberikan wawasan tentang perilaku pengguna.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch with me or have any questions, feel free to reach out via email or through my social media links below.</p>
+        <h2>Hubungi Saya</h2>
+        <p>Jika Anda memiliki pertanyaan atau ingin berdiskusi, hubungi saya melalui email atau media sosial.</p>
         <p>Email: <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a></p>
-        <p>Follow me on <a href="https://github.com/Mutiara" target="_blank">GitHub</a> and <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
+        <p>Ikuti saya di <a href="https://github.com/Mutiara" target="_blank">GitHub</a> dan <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; December 2024. Supported by: <a href="https://github.com/Mutiara" target="_blank">Github</a> & ChatGPT.</p>
+        <p>&copy; Desember 2024. Dibangun dengan <a href="https://github.com/Mutiara" target="_blank">GitHub</a> & ChatGPT.</p>
     </footer>
 
     <!-- JavaScript untuk Scroll Effect -->
     <script>
-        // Menambahkan kelas 'scrolled' saat scroll
+        function toggleNavbar() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+
         window.onscroll = function () {
-            var nav = document.querySelector('nav');
+            const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
             } else {
@@ -86,21 +93,13 @@
             }
         };
 
-        // Menambahkan kelas 'visible' pada section yang sudah muncul saat scroll
         window.addEventListener('scroll', function () {
-            var about = document.querySelector('.about');
-            var projects = document.querySelector('.projects');
-            var contact = document.querySelector('.contact');
-
-            if (window.scrollY + window.innerHeight > about.offsetTop) {
-                about.classList.add('visible');
-            }
-            if (window.scrollY + window.innerHeight > projects.offsetTop) {
-                projects.classList.add('visible');
-            }
-            if (window.scrollY + window.innerHeight > contact.offsetTop) {
-                contact.classList.add('visible');
-            }
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (window.scrollY + window.innerHeight > section.offsetTop) {
+                    section.classList.add('visible');
+                }
+            });
         });
     </script>
 </body>
