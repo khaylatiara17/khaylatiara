@@ -1,18 +1,37 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f0f8ff;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-h1 {
+.container {
     text-align: center;
-    color: #4caf50;
-    margin-top: 20px;
 }
 
-p {
-    text-align: center;
-    font-size: 18px;
+.neon-text {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { text-shadow: 0 0 5px #00ffff; }
+    50% { text-shadow: 0 0 30px #00ffff; }
+    100% { text-shadow: 0 0 15px #00ffff; }
+}
+
+.subtext {
+    font-size: 1.5rem;
+    color: #ccc;
 }
