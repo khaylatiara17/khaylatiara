@@ -1,37 +1,112 @@
+/* General Styles */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: #121212;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-.container {
+header, section {
+    padding: 50px 20px;
     text-align: center;
 }
 
-.neon-text {
-    font-size: 4rem;
+/* Hero Section (Header) */
+.hero {
+    background: linear-gradient(135deg, #ffafcc, #d4a5a5, #9bced6);
+    padding: 100px 20px;
     color: #fff;
-    text-shadow: 
-        0 0 5px #00ffff,
-        0 0 10px #00ffff,
-        0 0 20px #00ffff,
-        0 0 30px #00ffff;
-    animation: flicker 1.5s infinite alternate;
+    border-bottom: 2px solid #fff;
 }
 
-@keyframes flicker {
-    0% { text-shadow: 0 0 5px #00ffff; }
-    50% { text-shadow: 0 0 30px #00ffff; }
-    100% { text-shadow: 0 0 15px #00ffff; }
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.subtext {
+.hero p {
     font-size: 1.5rem;
-    color: #ccc;
+    color: #fafafa;
+}
+
+/* About Section */
+.about {
+    background-color: #ffebf2;
+    margin: 40px 0;
+    border-radius: 10px;
+}
+
+.about h2 {
+    color: #f8a5c2;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Projects Section */
+.projects {
+    background-color: #e6f7f9;
+}
+
+.projects h2 {
+    color: #6c5b7b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-card {
+    display: inline-block;
+    background-color: #f6e3b4;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card h3 {
+    color: #4a4a4a;
+}
+
+.project-card p {
+    color: #333;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #c8e2d9;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact h2 {
+    color: #f8a5c2;
+    font-size: 2rem;
+}
+
+.contact p {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #9bced6;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
 }
