@@ -1,109 +1,83 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Mutiara</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
+    <!-- Navigation Bar -->
+    <div class="navbar">
         <div class="logo">
-            <a href="#">Portfolio Mutiara</a>
+            <a href="#">MyPortfolio</a>
         </div>
         <div class="navbar-links">
             <button onclick="showSection('home')">Home</button>
-            <button onclick="showSection('about')">Tentang Saya</button>
-            <button onclick="showSection('projects')">Proyek</button>
-            <button onclick="showSection('contact')">Kontak</button>
+            <button onclick="showSection('projects')">Projects</button>
+            <button onclick="showSection('about')">About</button>
+            <button onclick="showSection('contact')">Contact</button>
         </div>
-    </nav>
+    </div>
 
-    <!-- Sections -->
-    <main>
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <h1>Halo, Saya Mutiara!</h1>
-            <p>Selamat datang di portfolio saya. Saya bersemangat dalam belajar teknologi dan memecahkan masalah dunia nyata.</p>
-            <h2>Visi Saya</h2>
-            <p>Visi saya adalah untuk terus berkembang dalam dunia teknologi dan memberikan kontribusi yang berarti bagi masyarakat melalui solusi berbasis teknologi.</p>
-            <h2>Motivasi</h2>
-            <p>Saya percaya bahwa teknologi adalah kunci untuk mengatasi tantangan yang dihadapi oleh dunia saat ini, dan saya berkomitmen untuk terus belajar serta berinovasi dalam bidang ini.</p>
-        </section>
+    <!-- Section: Home -->
+    <div id="home" class="section active">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="assets/Video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Discover my projects, ideas, and passions through this platform.</p>
+    </div>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h1>Tentang Saya</h1>
-            <p>Saya adalah mahasiswa Teknik Informatika di Universitas Dian Nusantara. Saya memiliki minat besar pada teknologi dan terus berusaha untuk belajar serta berkembang.</p>
-            <p>Ketika tidak sedang coding, saya suka mendaki gunung, membaca buku, dan mengeksplorasi pengetahuan baru.</p>
-            <h2>Pengalaman Pendidikan</h2>
-            <ul>
-                <li>Universitas Dian Nusantara, Teknik Informatika (2024-sekarang)</li>
-                <li>SMK Negeri 2 Jakarta, Teknik Komputer dan Jaringan (2018-2022)</li>
-            </ul>
-            <h2>Keahlian</h2>
-            <ul>
-                <li>Bahasa Pemrograman: Python, JavaScript, HTML, CSS</li>
-                <li>Web Development: React, Node.js</li>
-                <li>Database: MySQL, MongoDB</li>
-                <li>Pengembangan Aplikasi Mobile</li>
-            </ul>
-        </section>
+    <!-- Section: Projects -->
+    <div id="projects" class="section">
+        <h1>Our Projects</h1>
+        <div class="project-card">
+            <h2>Project 1: E-Commerce Website</h2>
+            <p>A fully functional e-commerce platform with payment integration.</p>
+            <div class="progress-bar" data-progress="80%"></div>
+        </div>
+        <div class="project-card">
+            <h2>Project 2: Mobile App Development</h2>
+            <p>A cross-platform app focused on user productivity.</p>
+            <div class="progress-bar" data-progress="60%"></div>
+        </div>
+        <div class="project-card">
+            <h2>Project 3: AI Chatbot</h2>
+            <p>An intelligent chatbot designed for customer support.</p>
+            <div class="progress-bar" data-progress="70%"></div>
+        </div>
+    </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h1>Proyek Saya</h1>
-            <div class="project-card">
-                <h3>Proyek 1: Web Development</h3>
-                <p>Membuat situs web responsif dengan desain modern dan fokus pada UX. Situs web ini berfungsi untuk memberikan informasi kepada pengunjung mengenai berbagai produk dan layanan.</p>
-                <ul>
-                    <li>Teknologi yang Digunakan: HTML, CSS, JavaScript, React</li>
-                    <li>Fitur Utama: Responsif, Animasi, Antarmuka Pengguna Interaktif</li>
-                </ul>
-            </div>
-            <div class="project-card">
-                <h3>Proyek 2: Aplikasi Mobile</h3>
-                <p>Mengembangkan aplikasi lintas platform untuk melacak tujuan kebugaran pengguna. Aplikasi ini memberikan laporan kemajuan dan saran kebugaran yang dapat disesuaikan.</p>
-                <ul>
-                    <li>Teknologi yang Digunakan: React Native, Firebase</li>
-                    <li>Fitur Utama: Pemantauan Kebugaran, Notifikasi, Statistik Pengguna</li>
-                </ul>
-            </div>
-            <div class="project-card">
-                <h3>Proyek 3: Sistem Manajemen Inventaris</h3>
-                <p>Membangun sistem manajemen inventaris berbasis web untuk usaha kecil. Sistem ini memungkinkan pengguna untuk melacak barang, mengelola stok, dan melakukan pemesanan ulang secara otomatis.</p>
-                <ul>
-                    <li>Teknologi yang Digunakan: PHP, MySQL, jQuery</li>
-                    <li>Fitur Utama: Manajemen Barang, Pelaporan Stok, Pembaruan Otomatis</li>
-                </ul>
-            </div>
-        </section>
+    <!-- Section: About -->
+    <div id="about" class="section">
+        <h1>About Me</h1>
+        <p>I'm a web developer passionate about creating innovative and functional designs.</p>
+        <p>I have experience in front-end and back-end development, specializing in user-centric applications.</p>
+    </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h1>Kontak</h1>
-            <p>Hubungi saya di <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
-            <p>Ikuti saya di <a href="https://github.com/Mutiara" target="_blank">GitHub</a> dan <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
-            <h2>Alamat</h2>
-            <p>Jl. Raya No. 1, Jakarta, Indonesia</p>
-        </section>
-    </main>
+    <!-- Section: Contact -->
+    <div id="contact" class="section">
+        <h1>Contact Me</h1>
+        <p>Feel free to reach out for collaboration or inquiries.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 
-    <!-- JavaScript -->
     <script>
         function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active'); // Sembunyikan semua section
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
             });
-            document.getElementById(sectionId).classList.add('active'); // Tampilkan section yang dipilih
+            document.getElementById(sectionId).classList.add('active');
         }
     </script>
 </body>
-
 </html>
