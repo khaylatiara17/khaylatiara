@@ -104,7 +104,7 @@
                 <li>Databases: MySQL, Oracle, PHP MyAdmin</li>
                 <li>Data Science: Data analysis, machine learning basics, data visualization</li>
                 <li>Operating Systems: Windows</li>
-                <li>Version Control: Git, GitHub</li>
+                <li>Version Control: GitHub</li>
                 <li>Algorithms and Data Structures: Sorting algorithms, searching algorithms, linked lists, trees, graphs</li>
                 <li>Computer Architecture: CPU, memory hierarchy, I/O devices, system performance</li>
                 <li>Mobile Development: Flutter</li>
@@ -167,36 +167,38 @@
     <!-- Scroll to Top Button -->
     <button id="scroll-top" class="scroll-top">⬆</button>
 
-    <!-- JavaScript -->
-    <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are a creative tech agency passionate about building innovative digital experiences. Our team loves exploring new trends and pushing boundaries to deliver exceptional solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Feel free to reach out to us for collaborations or inquiries.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; December 2024. Supported by: Github & ChatGPT.</p>
+    </footer>
 
-        // Navbar Navigation
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-        }
-
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        });
-
-        // Scroll to Top
-        const scrollTopBtn = document.getElementById('scroll-top');
-        window.addEventListener('scroll', () => {
-            scrollTopBtn.classList.toggle('show', window.scrollY > 100);
-        });
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
 </body>
 
 </html>
