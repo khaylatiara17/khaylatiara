@@ -59,13 +59,14 @@ body {
 
 /* Background Styles */
 #home {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%, #fbc2eb 100%);
-    background-attachment: fixed;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
 }
 
 #about {
     background: url('https://www.transparenttextures.com/patterns/noisy-net.png') repeat;
-    background-color: #fff;
+    background-color: #f0f0f0;
     background-blend-mode: overlay;
 }
 
@@ -93,6 +94,19 @@ body {
 a {
     color: #00aaff;
     text-decoration: none;
+}
+
+/* Animation for gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Media Queries */
