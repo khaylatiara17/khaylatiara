@@ -3,129 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Mutiara's Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
         <div class="logo">
-            <a href="#">MyPortfolio</a>
+            <a href="#">Mutiara's Portfolio</a>
         </div>
         <div class="navbar-links">
-            <button onclick="showSection('home')">Home</button>
-            <button onclick="showSection('projects')">Projects</button>
-            <button onclick="showSection('about')">About</button>
-            <button onclick="showSection('contact')">Contact</button>
-            <button onclick="showSection('services')">Services</button>
-            <button onclick="showSection('testimonials')">Testimonials</button>
-            <button onclick="showSection('gallery')">Gallery</button>
-            <button onclick="showSection('blog')">Blog</button>
-            <button onclick="showSection('faq')">FAQ</button>
+            <button onclick="navigateTo('home')">Home</button>
+            <button onclick="navigateTo('about')">About Me</button>
+            <button onclick="navigateTo('projects')">Projects</button>
+            <button onclick="navigateTo('contact')">Contact</button>
         </div>
     </div>
 
-    <!-- Section: Home -->
+    <!-- Content Sections -->
     <div id="home" class="section active">
-        <div class="video-background">
-            <video autoplay muted loop>
-                <source src="assets/Video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Discover my projects, ideas, and passions through this platform.</p>
+        <h1>Welcome to Mutiara's Portfolio</h1>
+        <p>Explore my works and passions.</p>
     </div>
 
-    <!-- Section: Projects -->
+    <div id="about" class="section">
+        <h1>About Me</h1>
+        <p>Hi, I'm Mutiara, a web developer passionate about creating functional designs.</p>
+        <p>I specialize in front-end and back-end development, focusing on user-centric applications.</p>
+    </div>
+
     <div id="projects" class="section">
-        <h1>Our Projects</h1>
+        <h1>My Projects</h1>
         <div class="project-card">
             <h2>Project 1: E-Commerce Website</h2>
             <p>A fully functional e-commerce platform with payment integration.</p>
-            <div class="progress-bar" style="--progress: 80%;"></div>
         </div>
         <div class="project-card">
             <h2>Project 2: Mobile App Development</h2>
             <p>A cross-platform app focused on user productivity.</p>
-            <div class="progress-bar" style="--progress: 60%;"></div>
-        </div>
-        <div class="project-card">
-            <h2>Project 3: AI Chatbot</h2>
-            <p>An intelligent chatbot designed for customer support.</p>
-            <div class="progress-bar" style="--progress: 70%;"></div>
         </div>
     </div>
 
-    <!-- Section: Services -->
-    <div id="services" class="section">
-        <h1>Our Services</h1>
-        <p>Explore the wide range of services we offer:</p>
-        <ul>
-            <li>Custom Web Development</li>
-            <li>Mobile App Design and Development</li>
-            <li>AI-Powered Solutions</li>
-            <li>UI/UX Design</li>
-        </ul>
-    </div>
-
-    <!-- Section: Testimonials -->
-    <div id="testimonials" class="section">
-        <h1>What People Say About Us</h1>
-        <div class="testimonial-card">
-            <p>"The best service I've ever used! Highly recommend!"</p>
-            <h3>- Jane Doe</h3>
-        </div>
-        <div class="testimonial-card">
-            <p>"Fantastic support and excellent results. Will come back for more."</p>
-            <h3>- John Smith</h3>
-        </div>
-    </div>
-
-    <!-- Section: Gallery -->
-    <div id="gallery" class="section">
-        <h1>Our Gallery</h1>
-        <div class="gallery-grid">
-            <img src="assets/image1.jpg" alt="Gallery Image 1">
-            <img src="assets/image2.jpg" alt="Gallery Image 2">
-            <img src="assets/image3.jpg" alt="Gallery Image 3">
-        </div>
-    </div>
-
-    <!-- Section: Blog -->
-    <div id="blog" class="section">
-        <h1>Latest Blog Posts</h1>
-        <div class="blog-card">
-            <h2>Understanding Modern Web Design</h2>
-            <p>Learn about the latest trends and best practices in web design.</p>
-        </div>
-        <div class="blog-card">
-            <h2>AI in Everyday Life</h2>
-            <p>Discover how artificial intelligence is transforming industries.</p>
-        </div>
-    </div>
-
-    <!-- Section: FAQ -->
-    <div id="faq" class="section">
-        <h1>Frequently Asked Questions</h1>
-        <details>
-            <summary>What services do you offer?</summary>
-            <p>We provide web development, mobile app development, AI solutions, and more.</p>
-        </details>
-        <details>
-            <summary>How can I contact you?</summary>
-            <p>You can use the contact form on this website or email us directly.</p>
-        </details>
-    </div>
-
-    <!-- Section: About -->
-    <div id="about" class="section">
-        <h1>About Me</h1>
-        <p>I'm a web developer passionate about creating innovative and functional designs.</p>
-        <p>I have experience in front-end and back-end development, specializing in user-centric applications.</p>
-    </div>
-
-    <!-- Section: Contact -->
     <div id="contact" class="section">
         <h1>Contact Me</h1>
         <p>Feel free to reach out for collaboration or inquiries.</p>
@@ -139,16 +57,12 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 MyPortfolio. All Rights Reserved.</p>
-        <p>Follow me on: 
-            <a href="#">Instagram</a> | 
-            <a href="#">LinkedIn</a> | 
-            <a href="#">GitHub</a>
-        </p>
+        <p>© 2024 Mutiara's Portfolio. All Rights Reserved.</p>
     </footer>
 
     <script>
-        function showSection(sectionId) {
+        // Function to navigate between sections
+        function navigateTo(sectionId) {
             document.querySelectorAll('.section').forEach(section => {
                 section.classList.remove('active');
             });
