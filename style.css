@@ -4,10 +4,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
     color: #333;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -40,22 +40,46 @@ body {
     transition: background-color 0.3s;
 }
 
-.navbar-links button:hover, .navbar-links button.active {
+.navbar-links button:hover {
     background-color: #00aaff;
     border-radius: 5px;
 }
 
+/* Section Styling */
 .section {
-    display: none;
+    display: none; /* Default semua section disembunyikan */
     padding: 80px 20px;
     text-align: center;
     min-height: 100vh;
 }
 
 .section.active {
-    display: block;
+    display: block; /* Hanya section yang aktif yang tampil */
 }
 
+/* Background Styles */
+#home {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%, #fbc2eb 100%);
+    background-attachment: fixed;
+}
+
+#about {
+    background: url('https://www.transparenttextures.com/patterns/noisy-net.png') repeat;
+    background-color: #fff;
+    background-blend-mode: overlay;
+}
+
+#projects {
+    background: url('https://www.toptal.com/designers/subtlepatterns/patterns/geometric.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#contact {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+}
+
+/* Project Card Styling */
 .project-card {
     background-color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -64,79 +88,20 @@ body {
     border-radius: 8px;
     max-width: 500px;
     text-align: left;
-    cursor: pointer;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s;
+a {
+    color: #00aaff;
+    text-decoration: none;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar-links {
+        flex-direction: column;
+    }
 
-.modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
-    text-align: left;
-    position: relative;
+    .navbar-links button {
+        margin-bottom: 10px;
+    }
 }
-
-.modal-content .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-#scrollToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #00aaff;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-#scrollToTop:hover {
-    background: #005f99;
-    transform: scale(1.1);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 20px auto;
-}
-
-form input, form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background: #00aaff;
-    color: white;
-    border: none;
-    padding
