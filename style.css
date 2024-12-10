@@ -8,6 +8,7 @@ body {
     color: #333;
 }
 
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -23,6 +24,7 @@ body {
 .navbar .logo a {
     color: #fff;
     font-size: 24px;
+    text-decoration: none;
 }
 
 .navbar-links {
@@ -37,7 +39,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     padding: 10px 15px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .navbar-links button:hover {
@@ -45,6 +47,7 @@ body {
     border-radius: 5px;
 }
 
+/* Section Styling */
 .section {
     display: none;
     padding: 80px 20px;
@@ -74,12 +77,12 @@ body {
     opacity: 0.5;
 }
 
-/* Home Background - Gradasi */
+/* Home Background - Gradient */
 #home {
     background: linear-gradient(135deg, #FFB3BA, #FFDFBA);
 }
 
-/* Projects Background - Gradasi */
+/* Projects Background - Gradient */
 #projects {
     background: linear-gradient(135deg, #FFCCBC, #FFEBEE);
 }
