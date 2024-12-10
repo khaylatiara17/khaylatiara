@@ -5,6 +5,12 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    animation: fadeIn 1.5s ease-in-out; /* Efek animasi fade-in saat halaman pertama kali dimuat */
+}
+
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
 }
 
 header, section {
@@ -29,6 +35,17 @@ header, section {
 .hero p {
     font-size: 1.5rem;
     color: #fafafa;
+}
+
+/* Styling untuk gambar avatar */
+.avatar {
+    width: 150px;              /* Ukuran lebar gambar */
+    height: 150px;             /* Ukuran tinggi gambar */
+    border-radius: 50%;        /* Membuat gambar menjadi bulat */
+    margin-bottom: 20px;       /* Memberikan jarak di bawah gambar */
+    display: block;            /* Memastikan gambar adalah elemen blok */
+    margin-left: auto;         /* Membuat gambar rata tengah */
+    margin-right: auto;        /* Membuat gambar rata tengah */
 }
 
 /* Projects Section */
@@ -59,21 +76,6 @@ header, section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan saat hover */
 }
 
-/* Smooth Scroll Effect */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Animation on Load */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-body {
-    animation: fadeIn 1.5s ease-in-out; /* Efek animasi fade-in saat halaman pertama kali dimuat */
-}
-
 /* Footer */
 footer {
     text-align: center;
@@ -84,4 +86,10 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Animation on Load */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
