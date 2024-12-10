@@ -27,7 +27,7 @@ body {
 
 .navbar-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .navbar-links button {
@@ -46,20 +46,14 @@ body {
 }
 
 .section {
-    display: none;
+    display: none; /* Default semua section disembunyikan */
     padding: 80px 20px;
     text-align: center;
     min-height: 100vh;
 }
 
 .section.active {
-    display: block;
-}
-
-.avatar {
-    width: 150px;
-    border-radius: 50%;
-    margin-top: 20px;
+    display: block; /* Hanya section yang aktif yang tampil */
 }
 
 .project-card {
@@ -70,11 +64,6 @@ body {
     border-radius: 8px;
     max-width: 500px;
     text-align: left;
-}
-
-.project-card i {
-    font-size: 24px;
-    color: #00aaff;
 }
 
 a {
