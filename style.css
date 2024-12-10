@@ -31,24 +31,6 @@ header, section {
     color: #fafafa;
 }
 
-/* About Section */
-.about {
-    background-color: #ffebf2;
-    margin: 40px 0;
-    border-radius: 10px;
-}
-
-.about h2 {
-    color: #f8a5c2;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.about p {
-    color: #333;
-    font-size: 1.2rem;
-}
-
 /* Projects Section */
 .projects {
     background-color: #e6f7f9;
@@ -60,6 +42,7 @@ header, section {
     margin-bottom: 20px;
 }
 
+/* Styling Project Cards */
 .project-card {
     display: inline-block;
     background-color: #f6e3b4;
@@ -67,36 +50,28 @@ header, section {
     padding: 20px;
     margin: 10px;
     width: 250px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition untuk hover */
 }
 
+/* Hover Effect on Cards */
 .project-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(5deg); /* Efek transformasi saat hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan saat hover */
 }
 
-.project-card h3 {
-    color: #4a4a4a;
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
 }
 
-.project-card p {
-    color: #333;
+/* Animation on Load */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Contact Section */
-.contact {
-    background-color: #c8e2d9;
-    padding: 40px;
-    border-radius: 10px;
-}
-
-.contact h2 {
-    color: #f8a5c2;
-    font-size: 2rem;
-}
-
-.contact p {
-    color: #333;
-    font-size: 1.2rem;
+body {
+    animation: fadeIn 1.5s ease-in-out; /* Efek animasi fade-in saat halaman pertama kali dimuat */
 }
 
 /* Footer */
