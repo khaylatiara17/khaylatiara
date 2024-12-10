@@ -1,5 +1,5 @@
-# Hi, I'm Mutiara!
-Welcome to my portfolio.  
+# Journey Through Code
+This website is part of my journey as an informatics engineering student 
 
 ## Projects
 - [Proyek 1](#)
