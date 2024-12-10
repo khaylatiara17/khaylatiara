@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journey Through Code</title>
+
     <!-- Menambahkan Font Awesome untuk ikon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Menambahkan Google Fonts -->
@@ -14,21 +16,33 @@
 
 <body>
 
-    <!-- Header Section -->
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Mutiara's Portfolio</a>
+        </div>
+        <div class="navbar-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header Section (Hero) -->
     <header class="hero">
         <h1>Hi, I'm Mutiara!</h1>
         <p>Welcome to my portfolio website.</p>
     </header>
 
     <!-- About Section -->
-    <section class="about">
+    <section id="about" class="about">
         <h2>About Me</h2>
         <img src="images/photo.jpg" alt="Mutiara Avatar" class="avatar">
-        <p>This website is part of my journey as an informatics engineering student</p>
+        <p>This website is part of my journey as an informatics engineering student.</p>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects">
+    <section id="projects" class="projects">
         <h2>My Projects <i class="fas fa-laptop-code"></i></h2> <!-- Ikon laptop -->
         <div class="project-card">
             <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
@@ -43,7 +57,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact">
+    <section id="contact" class="contact">
         <h2>Contact Me</h2>
         <p>Email: 411231059@mahasiswa.undira.ac.id</p>
     </section>
@@ -53,5 +67,18 @@
         <p>&copy; December 2024 Mutiara. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript for Scroll Effect -->
+    <script>
+        // Menambahkan kelas 'scrolled' saat scroll
+        window.onscroll = function () {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+    </script>
 </body>
+
 </html>
