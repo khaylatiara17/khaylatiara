@@ -1,205 +1,97 @@
-/* General Styles */
+/* Global Styling */
 body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    font-family: 'Roboto', sans-serif; /* Font untuk body */
+    padding: 0;
+    box-sizing: border-box;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6;
-    animation: fadeIn 1.5s ease-in-out; /* Efek animasi fade-in saat halaman pertama kali dimuat */
 }
 
-/* Font Style for Headers */
 h1, h2, h3 {
-    font-family: 'Poppins', sans-serif; /* Font untuk heading */
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px); /* Efek geser dari bawah */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Smooth Scroll Effect */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Media Query untuk perangkat dengan lebar maksimal 768px (tablet dan mobile) */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;  /* Ukuran font lebih kecil */
-    }
-
-    .hero p {
-        font-size: 1.2rem; /* Ukuran font lebih kecil */
-    }
-
-    .project-card {
-        width: 100%; /* Membuat kartu proyek memenuhi lebar layar */
-        margin: 20px 0; /* Menambah jarak antar kartu proyek */
-    }
-
-    header, section {
-        padding: 20px; /* Menyesuaikan padding */
-    }
-
-    .avatar {
-        width: 100px;   /* Ukuran gambar avatar lebih kecil */
-        height: 100px;  /* Ukuran gambar avatar lebih kecil */
-    }
-}
-
-/* Navbar Styling */
-nav {
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.3); /* Transparan */
-    padding: 10px 20px;
-    transition: background 0.3s;
-    z-index: 1000; /* Agar navbar tetap di atas */
+    z-index: 1000;
 }
 
-nav.scrolled {
-    background: rgba(255, 255, 255, 0.9); /* Berubah menjadi solid saat scroll */
-}
-
-/* Navbar Links Styling */
-.navbar a {
-    color: #333;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-/* Hero Section (Header) */
-.hero {
-    background: linear-gradient(135deg, #ffafcc, #d4a5a5, #9bced6);
-    padding: 100px 20px;
+.navbar .logo a {
     color: #fff;
-    border-bottom: 2px solid #fff;
-    background-attachment: fixed; /* Efek Parallax */
+    font-size: 24px;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links a {
+    color: #fff;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.navbar-links a:hover {
+    color: #00aaff;
+}
+
+/* Tab Section Styling */
+.tab-content {
+    padding-top: 80px; /* Untuk menghindari navbar yang tumpang tindih */
+}
+
+.tab-section {
+    display: none; /* Menyembunyikan semua tab secara default */
+    padding: 40px;
     text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    color: #fafafa;
-}
-
-/* Section Styling */
-header, section {
-    padding: 50px 20px;
-    text-align: center;
-    opacity: 0; /* Mulai dengan tidak terlihat */
-    animation: fadeInUp 1s ease-out forwards; /* Animasi fade-in saat scroll */
-}
-
-/* Styling untuk gambar avatar */
-.avatar {
-    width: 150px;              /* Ukuran lebar gambar */
-    height: 150px;             /* Ukuran tinggi gambar */
-    border-radius: 50%;        /* Membuat gambar menjadi bulat */
-    margin-bottom: 20px;       /* Memberikan jarak di bawah gambar */
-    display: block;            /* Memastikan gambar adalah elemen blok */
-    margin-left: auto;         /* Membuat gambar rata tengah */
-    margin-right: auto;        /* Membuat gambar rata tengah */
-}
-
-/* Projects Section */
-.projects {
-    background-color: #e6f7f9;
-    padding: 50px 20px;
-}
-
-.projects h2 {
-    color: #6c5b7b;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-/* Styling Project Cards */
-.project-card {
-    display: inline-block;
-    background-color: #f6e3b4;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s; /* Transition untuk hover */
-    animation: fadeInUp 1s ease-out; /* Menambahkan animasi saat scroll */
-}
-
-/* Hover Effect on Cards */
-.project-card:hover {
-    transform: scale(1.1) rotate(5deg); /* Efek transformasi saat hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan saat hover */
-}
-
-/* Animasi untuk About, Projects, dan Contact */
-.about, .projects, .contact {
-    opacity: 0; /* Mulai dengan tidak terlihat */
-    animation: fadeInUp 1s ease-out;
-}
-
-/* Menambah kelas 'visible' untuk elemen yang terlihat */
-.about.visible, .projects.visible, .contact.visible {
+.tab-section.visible {
     opacity: 1;
-    animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Contact Section */
-.contact {
-    background-color: #ffffff;
-    padding: 50px 20px;
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
 }
 
-.contact h2 {
-    color: #6c5b7b;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.contact p {
-    font-size: 1.2rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
+.project-card {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
     padding: 20px;
-    background-color: #9bced6;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-footer p {
-    margin: 0;
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
 }
 
 footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+    color: #00aaff;
 }
