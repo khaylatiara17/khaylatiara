@@ -5,102 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Mutiara</title>
-
-    <!-- Menambahkan Font Awesome untuk ikon -->
+    <!-- Menambahkan Font Awesome dan Google Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Menambahkan Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <!-- Menambahkan file CSS eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navbar Section -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
             <a href="#">Portfolio Mutiara</a>
         </div>
         <div class="navbar-links">
-            <a href="#about">Tentang Saya</a>
-            <a href="#projects">Proyek</a>
-            <a href="#contact">Kontak</a>
-        </div>
-        <div class="hamburger" onclick="toggleNavbar()">
-            <i class="fas fa-bars"></i>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('about')">Tentang Saya</button>
+            <button onclick="showSection('projects')">Proyek</button>
+            <button onclick="showSection('contact')">Kontak</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Halo, Saya Mutiara!</h1>
-        <p>Selamat datang di portfolio saya. Saya bersemangat dalam belajar teknologi dan memecahkan masalah dunia nyata.</p>
-    </header>
+    <!-- Sections -->
+    <main>
+        <section id="home" class="section active">
+            <h1>Selamat Datang di Portfolio Mutiara</h1>
+            <p>Saya senang belajar teknologi dan memecahkan masalah dunia nyata.</p>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>Tentang Saya</h2>
-        <img src="images/photo.jpg" alt="Foto Mutiara" class="avatar">
-        <p>Saya adalah mahasiswa Teknik Informatika di Universitas Dian Nusantara. Saya terus belajar dan mengembangkan keterampilan untuk menjadi profesional di bidang teknologi.</p>
-        <p>Selain belajar, saya juga suka mendaki gunung, membaca buku, dan mengeksplorasi pengetahuan baru.</p>
-    </section>
+        <section id="about" class="section">
+            <h2>Tentang Saya</h2>
+            <img src="images/photo.jpg" alt="Foto Mutiara" class="avatar">
+            <p>Saya adalah mahasiswa Teknik Informatika di Universitas Dian Nusantara. Saya selalu bersemangat untuk belajar dan berkembang.</p>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Proyek Saya <i class="fas fa-laptop-code"></i></h2>
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Proyek 1: Web Development</h3>
-            <p>Membangun situs web responsif dengan desain modern dan fokus pada pengalaman pengguna.</p>
-        </div>
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Proyek 2: Mobile App Development</h3>
-            <p>Mengembangkan aplikasi mobile lintas platform untuk membantu pengguna melacak tujuan kebugaran mereka.</p>
-        </div>
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Proyek 3: Data Science Analysis</h3>
-            <p>Menganalisis data pelanggan menggunakan Python untuk memberikan wawasan tentang perilaku pengguna.</p>
-        </div>
-    </section>
+        <section id="projects" class="section">
+            <h2>Proyek Saya</h2>
+            <div class="project-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Proyek 1: Web Development</h3>
+                <p>Membangun situs web responsif dengan desain modern.</p>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Proyek 2: Mobile App Development</h3>
+                <p>Mengembangkan aplikasi lintas platform untuk kebugaran.</p>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Hubungi Saya</h2>
-        <p>Jika Anda memiliki pertanyaan atau ingin berdiskusi, hubungi saya melalui email atau media sosial.</p>
-        <p>Email: <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a></p>
-        <p>Ikuti saya di <a href="https://github.com/Mutiara" target="_blank">GitHub</a> dan <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
-    </section>
+        <section id="contact" class="section">
+            <h2>Kontak</h2>
+            <p>Hubungi saya di <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
+            <p>Ikuti saya di <a href="https://github.com/Mutiara" target="_blank">GitHub</a> dan <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
+        </section>
+    </main>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; Desember 2024. Dibangun dengan <a href="https://github.com/Mutiara" target="_blank">GitHub</a> & ChatGPT.</p>
-    </footer>
-
-    <!-- JavaScript untuk Scroll Effect -->
+    <!-- JavaScript -->
     <script>
-        function toggleNavbar() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active');
-        }
-
-        window.onscroll = function () {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-
-        window.addEventListener('scroll', function () {
-            const sections = document.querySelectorAll('section');
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
-                if (window.scrollY + window.innerHeight > section.offsetTop) {
-                    section.classList.add('visible');
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
                 }
             });
-        });
+        }
     </script>
 </body>
 
