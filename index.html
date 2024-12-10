@@ -1,84 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Styling untuk Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    z-index: 10;
+    transition: background 0.3s;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journey Through Code</title>
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 1);
+}
 
-    <!-- Menambahkan Font Awesome untuk ikon -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Menambahkan Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <!-- Menambahkan file CSS eksternal -->
-    <link rel="stylesheet" href="style.css">
-</head>
+.navbar .logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
 
-<body>
+.navbar-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
 
-    <!-- Navbar Section -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">Mutiara's Portfolio</a>
-        </div>
-        <div class="navbar-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+.navbar-links a:hover {
+    color: #ffafcc;
+}
 
-    <!-- Header Section (Hero) -->
-    <header class="hero">
-        <h1>Hi, I'm Mutiara!</h1>
-        <p>Welcome to my portfolio website.</p>
-    </header>
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #9bced6;
+    color: #fff;
+}
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <img src="images/photo.jpg" alt="Mutiara Avatar" class="avatar">
-        <p>This website is part of my journey as an informatics engineering student.</p>
-    </section>
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>My Projects <i class="fas fa-laptop-code"></i></h2> <!-- Ikon laptop -->
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-            <h3>Project 1</h3>
-            <p>Details about the project.</p>
-        </div>
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-            <h3>Project 2</h3>
-            <p>Details about the project.</p>
-        </div>
-    </section>
+.hero p {
+    font-size: 1.2em;
+}
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: 411231059@mahasiswa.undira.ac.id</p>
-    </section>
+/* About Section */
+.about {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; December 2024. Supported by: Github & Chatgpt.</p>
-    </footer>
+.about img.avatar {
+    width: 150px;
+    border-radius: 50%;
+    margin: 20px 0;
+}
 
-    <!-- JavaScript for Scroll Effect -->
-    <script>
-        // Menambahkan kelas 'scrolled' saat scroll
-        window.onscroll = function () {
-            var nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-    </script>
-</body>
+/* Projects Section */
+.projects {
+    padding: 50px 20px;
+    text-align: center;
+}
 
-</html>
+.project-card {
+    display: inline-block;
+    width: 45%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.project-card i {
+    font-size: 2em;
+    color: #ffafcc;
+}
+
+.project-card h3 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact p a {
+    color: #ffafcc;
+    text-decoration: none;
+}
+
+.contact p a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    color: #ffafcc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
