@@ -37,29 +37,29 @@
         <section id="home" class="section active">
             <h1>INTRODUCTION</h1>
             <p>
-                You can call me Tiara. I’m an Informatics Engineering student with a passion for learning about new technology and using it to solve real-life problems. With over 15 years of experience in Office Administration, I bring strong skills in managing details, organizing data and improving processes to this exciting journey in the technology world.
+                You can call me Tiara. I’m an Informatics Engineering student with a passion for learning about new technology and using it to solve real-life problems. With over 15 years of experience in administration, I bring strong skills in managing details, organizing data, and improving processes to this exciting journey in the tech world.
             </p>
             <p>
                 I believe technology is a powerful tool to create innovative and sustainable solutions for a better future. I am eager to keep learning and improving my skills in Data Science and developing local technologies that can make a positive impact, especially in Indonesia.
             </p>
             <p>
-                This mini-website is a small step that shows my dedication, curiosity and drive to create meaningful work. I see learning as a Lifelong Education and always open to opportunities for collaboration, discussions or feedback to grow and improve.
+                This mini-website is a small step that shows my dedication, curiosity, and drive to create meaningful work. I see learning as a lifelong journey and am always open to opportunities for collaboration, discussions, or feedback to grow and improve.
             </p>
 
             <h2>Life Goal</h2>
             <p>
-                My life goal is to keep growing as a person, contribute positively to society and create useful solutions through technology. I want to use my skills and experience to solve challenges, whether big or small and help build a better and more sustainable future.
+                My life goal is to keep growing as a person, contribute positively to society, and create useful solutions through technology. I want to use my skills and experience to solve challenges, whether big or small, and help build a better and more sustainable future.
             </p>
             <p>
-                I also aim to live a balanced life, staying true to myself, valuing connections with others and appreciating every step of the journey with purpose and meaning.
+                I also aim to live a balanced life, staying true to myself, valuing connections with others, and appreciating every step of the journey with purpose and meaning.
             </p>
 
             <h2>Support System</h2>
             <p>
-                A support system is very important to me, as it provides an environment that helps me grow both personally and professionally. This support comes from my family, close friends and people around me who offer feedback, advice and also confidence to keep me moving forward.
+                A support system is very important to me, as it provides an environment that helps me grow both personally and professionally. This support comes from my family, close friends, and people around me who offer feedback, advice, and confidence to keep me moving forward.
             </p>
             <p>
-                Technology also plays a key role in my support system, making it easier for me to learn and communicate by putting my thoughts into writing, which I sometimes find hard to express on my own. With this support, I feel more prepared to face challenges, continue learning and achieve the goals I dream of.
+                Technology also plays a key role in my support system, making it easier for me to learn and communicate by putting my thoughts into writing, which I sometimes find hard to express on my own. With this support, I feel more prepared to face challenges, continue learning, and achieve the goals I dream of.
             </p>
         </section>
 
@@ -67,7 +67,7 @@
         <section id="about" class="section">
             <h1>Profiling</h1>
             <p>
-                Tiara is an Informatics Engineering student at Universitas Dian Nusantara with a strong interest in new technologies. She is always eager to learn and improve. Born and raised in Jakarta, Tiara comes from a Sumatera Utara heritage with Batak ethnicity, having the last name "Tampubolon" from her father or "Panjaitan" from her mother.
+                Tiara is an Informatics Engineering student at Universitas Dian Nusantara with a strong interest in new technologies. She is always eager to learn and improve. Born and raised in Jakarta, Tiara comes from a Sumatera Utara heritage with Batak ethnicity, having the last name "Tampubolon" from her father and "Panjaitan" from her mother.
             </p>
             <p>
                 Tiara began her studies at Universitas Dian Nusantara in September 2023 and has big dreams of continuing her education to pursue a master's degree. Her ultimate goal is to become an educator in Indonesia's remote areas, contributing to the education sector. Despite the challenges in her higher education journey, Tiara remains determined to complete her studies and hopes for ease in overcoming any difficulties along the way.
@@ -104,7 +104,7 @@
                 <li>Databases: MySQL, Oracle, PHP MyAdmin</li>
                 <li>Data Science: Data analysis, machine learning basics, data visualization</li>
                 <li>Operating Systems: Windows</li>
-                <li>Version Control: GitHub</li>
+                <li>Version Control: Git, GitHub</li>
                 <li>Algorithms and Data Structures: Sorting algorithms, searching algorithms, linked lists, trees, graphs</li>
                 <li>Computer Architecture: CPU, memory hierarchy, I/O devices, system performance</li>
                 <li>Mobile Development: Flutter</li>
@@ -167,38 +167,36 @@
     <!-- Scroll to Top Button -->
     <button id="scroll-top" class="scroll-top">⬆</button>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>We are a creative tech agency passionate about building innovative digital experiences. Our team loves exploring new trends and pushing boundaries to deliver exceptional solutions.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Feel free to reach out to us for collaborations or inquiries.</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <p>&copy; December 2024. Supported by: Github & ChatGPT.</p>
-    </footer>
+    <!-- JavaScript -->
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
 
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+        // Navbar Navigation
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.textContent = document.body.classList.contains('dark-mode') ? ☀️' : '🌙';
+        });
+
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('show', window.scrollY > 100);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 
 </html>
