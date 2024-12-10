@@ -13,6 +13,10 @@ body {
     color: #333;
     transition: background-color 0.3s, color 0.3s;
     text-align: justify;
+    margin: 0;
+    padding: 0;
+    max-width: 100%; /* Membatasi lebar maksimal layar desktop */
+    overflow-x: hidden; /* Mencegah scroll horizontal */
 }
 
 /* Dark Mode */
@@ -217,4 +221,33 @@ body.loaded .loading-screen {
 
 .scroll-top:hover {
     background-color: #555;
+}
+
+/* Style untuk layar kecil (handphone) */
+@media screen and (max-width: 768px) {
+    body {
+        width: 100%; /* Menyesuaikan lebar perangkat */
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-links button {
+        margin: 5px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .project-card {
+        margin: 10px 0;
+    }
+
+    .Sweet Memories img {
+        width: 100%; /* Menyesuaikan dimensi perangkat */
+        height: auto;
+    }
 }
