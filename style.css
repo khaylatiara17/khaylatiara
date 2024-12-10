@@ -1,5 +1,7 @@
+/* style.css */
+
 /* General Reset */
-* {
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,6 +15,7 @@ body {
     text-align: justify;
 }
 
+/* Dark Mode */
 body.dark-mode {
     background-color: #121212;
     color: #f4f4f4;
@@ -21,11 +24,9 @@ body.dark-mode {
 a {
     color: #0066cc;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
 a:hover {
-    color: #004080;
     text-decoration: underline;
 }
 
@@ -40,7 +41,6 @@ a:hover {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo a {
@@ -57,7 +57,6 @@ a:hover {
     cursor: pointer;
     margin: 0 10px;
     font-family: 'Poppins', sans-serif;
-    transition: color 0.3s;
 }
 
 .navbar-links button:hover {
@@ -78,42 +77,61 @@ a:hover {
     min-height: 100vh;
     display: none;
     text-align: justify;
-    overflow-x: hidden;
 }
 
 .section.active {
     display: block;
 }
 
-/* Gradient Backgrounds */
-.section {
-    background: linear-gradient(135deg, #FFB6C1, #FFDAB9, #E6E6FA, #B0E0E6, #98FB98);
+/* Backgrounds for each section */
+#home {
+    background: linear-gradient(135deg, #FFB6C1, #FFDAB9, #E6E6FA, #B0E0E6, #98FB98); /* Pastel Pink, Peach, Lavender, Light Blue, Light Green */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+#about {
+    background: linear-gradient(135deg, #FFB6C1, #E6E6FA, #FFDAB9); /* Soft Pastel Pink, Lavender, Peach */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+#projects {
+    background: linear-gradient(135deg, #B0E0E6, #FFDAB9, #98FB98); /* Light Blue, Peach, Light Green */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+#contact {
+    background: linear-gradient(135deg, #E6E6FA, #98FB98, #FFB6C1); /* Lavender, Light Green, Pink */
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
 }
 
 @keyframes gradientAnimation {
-    0%, 100% {
+    0% {
         background-position: 0% 50%;
     }
     50% {
         background-position: 100% 50%;
     }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-/* Headings */
-h1, h2 {
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Header and text styling */
 h1 {
+    font-family: 'Poppins', sans-serif;
     font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 h2 {
     font-size: 1.8em;
+    margin: 15px 0;
+    text-align: center;
 }
 
 p, li {
@@ -121,73 +139,82 @@ p, li {
     margin-bottom: 10px;
 }
 
-/* Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin: 20px;
-    padding: 10px;
-}
-
-.gallery-img-container {
-    position: relative;
-    overflow: hidden;
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    aspect-ratio: 1;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #FFDAB9, #B0E0E6);
+    z-index: 2000;
 }
 
-.gallery-img-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f4f4f4;
+    border-top: 5px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
-.gallery-img {
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-.gallery-img-container:hover .gallery-img {
-    transform: scale(1.1);
+body.loaded .loading-screen {
+    display: none;
 }
 
-/* Caption */
-.gallery-caption {
-    position: absolute;
-    bottom: 10px;
-    background: rgba(0, 0, 0, 0.6);
+/* Project Cards */
+.project-card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Scroll to Top */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
     color: #fff;
-    width: 80%;
-    text-align: center;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9em;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    font-size: 1.2em;
 }
 
-.gallery-img-container:hover .gallery-caption {
-    opacity: 1;
+.scroll-top.show {
+    display: block;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    h1 {
-        font-size: 2em;
-    }
+.scroll-top:hover {
+    background-color: #555;
 }
