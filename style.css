@@ -18,11 +18,13 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo a {
     color: #fff;
     font-size: 24px;
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -38,7 +40,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     padding: 10px 15px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-links button:hover {
@@ -46,118 +48,100 @@ body {
     border-radius: 5px;
 }
 
+.navbar-links button.active {
+    background-color: #00aaff;
+    border-radius: 5px;
+    color: #fff;
+}
+
 .section {
-    display: none;
+    display: none; /* Default semua section disembunyikan */
     padding: 80px 20px;
     text-align: center;
     min-height: 100vh;
-    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .section.active {
-    display: block;
-}
-
-/* Parallax Video Background */
-#home {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #FFB3BA, #FFDFBA);
-}
-
-#home .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-#home .video-background video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-/* Progress Bar Styling */
-.progress-bar {
-    width: 100%;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 5px;
-    margin-top: 10px;
-    position: relative;
-}
-
-.progress-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: var(--progress);
-    background-color: #00aaff;
-    border-radius: 5px;
+    display: block; /* Hanya section yang aktif yang tampil */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card {
     background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
     padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Contact Form Styling */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
+a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.contact-form input,
-.contact-form textarea {
+a:hover {
+    color: #005f99;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
 }
 
-.contact-form button {
-    background-color: #00aaff;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: scaleUp 0.3s ease;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: color 0.3s;
 }
 
-.contact-form button:hover {
-    background-color: #0077cc;
+.modal .close:hover {
+    color: #ff0000;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
+/* Animations */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
     }
-    .navbar-links {
-        flex-direction: column;
-    }
-    .navbar-links button {
-        margin: 5px 0;
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }
