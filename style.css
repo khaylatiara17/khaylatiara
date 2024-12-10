@@ -1,107 +1,82 @@
-<!DOCTYPE html>
-<html lang="id">
+/* Global Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Mutiara</title>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
 
-    <!-- Menambahkan Font Awesome untuk ikon -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Menambahkan Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <!-- Menambahkan file CSS eksternal -->
-    <link rel="stylesheet" href="style.css">
-</head>
+.navbar .logo a {
+    color: #fff;
+    font-size: 24px;
+}
 
-<body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">Portfolio Mutiara</a>
-        </div>
-        <div class="navbar-links">
-            <a href="#about">Tentang Saya</a>
-            <a href="#projects">Proyek</a>
-            <a href="#contact">Kontak</a>
-        </div>
-        <div class="hamburger" onclick="toggleNavbar()">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Halo, Saya Mutiara!</h1>
-        <p>Selamat datang di portfolio saya. Saya bersemangat dalam belajar teknologi dan memecahkan masalah dunia nyata.</p>
-    </header>
+.navbar-links button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>Tentang Saya</h2>
-        <img src="images/photo.jpg" alt="Foto Mutiara" class="avatar">
-        <p>Saya adalah mahasiswa Teknik Informatika di Universitas Dian Nusantara. Saya terus belajar dan mengembangkan keterampilan untuk menjadi profesional di bidang teknologi.</p>
-        <p>Selain belajar, saya juga suka mendaki gunung, membaca buku, dan mengeksplorasi pengetahuan baru.</p>
-    </section>
+.navbar-links button:hover {
+    background-color: #00aaff;
+    border-radius: 5px;
+}
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Proyek Saya <i class="fas fa-laptop-code"></i></h2>
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Proyek 1: Web Development</h3>
-            <p>Membangun situs web responsif dengan desain modern dan fokus pada pengalaman pengguna.</p>
-        </div>
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Proyek 2: Mobile App Development</h3>
-            <p>Mengembangkan aplikasi mobile lintas platform untuk membantu pengguna melacak tujuan kebugaran mereka.</p>
-        </div>
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Proyek 3: Data Science Analysis</h3>
-            <p>Menganalisis data pelanggan menggunakan Python untuk memberikan wawasan tentang perilaku pengguna.</p>
-        </div>
-    </section>
+.section {
+    display: none;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 100vh;
+}
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Hubungi Saya</h2>
-        <p>Jika Anda memiliki pertanyaan atau ingin berdiskusi, hubungi saya melalui email atau media sosial.</p>
-        <p>Email: <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a></p>
-        <p>Ikuti saya di <a href="https://github.com/Mutiara" target="_blank">GitHub</a> dan <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
-    </section>
+.section.active {
+    display: block;
+}
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; Desember 2024. Dibangun dengan <a href="https://github.com/Mutiara" target="_blank">GitHub</a> & ChatGPT.</p>
-    </footer>
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
 
-    <!-- JavaScript untuk Scroll Effect -->
-    <script>
-        function toggleNavbar() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active');
-        }
+.project-card {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: left;
+}
 
-        window.onscroll = function () {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
+.project-card i {
+    font-size: 24px;
+    color: #00aaff;
+}
 
-        window.addEventListener('scroll', function () {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                if (window.scrollY + window.innerHeight > section.offsetTop) {
-                    section.classList.add('visible');
-                }
-            });
-        });
-    </script>
-</body>
-
-</html>
+a {
+    color: #00aaff;
+}
