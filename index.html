@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Parallax Video Background</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <div class="navbar">
         <div class="logo">
-            <a href="#">MyPortfolio</a>
+            <a href="#">MySite</a>
         </div>
         <div class="navbar-links">
             <button onclick="showSection('home')">Home</button>
             <button onclick="showSection('projects')">Projects</button>
             <button onclick="showSection('about')">About</button>
-            <button onclick="showSection('contact')">Contact</button>
         </div>
     </div>
 
@@ -24,51 +22,35 @@
     <div id="home" class="section active">
         <div class="video-background">
             <video autoplay muted loop>
-                <source src="assets/Video1.mp4" type="video/mp4">
+                <source src="background-video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Discover my projects, ideas, and passions through this platform.</p>
+        <h1>Welcome to My Site</h1>
+        <p>Explore our amazing projects and ideas.</p>
     </div>
 
     <!-- Section: Projects -->
     <div id="projects" class="section">
         <h1>Our Projects</h1>
         <div class="project-card">
-            <h2>Project 1: E-Commerce Website</h2>
-            <p>A fully functional e-commerce platform with payment integration.</p>
+            <h2>Project 1</h2>
             <div class="progress-bar" data-progress="80%"></div>
         </div>
         <div class="project-card">
-            <h2>Project 2: Mobile App Development</h2>
-            <p>A cross-platform app focused on user productivity.</p>
+            <h2>Project 2</h2>
             <div class="progress-bar" data-progress="60%"></div>
         </div>
         <div class="project-card">
-            <h2>Project 3: AI Chatbot</h2>
-            <p>An intelligent chatbot designed for customer support.</p>
+            <h2>Project 3</h2>
             <div class="progress-bar" data-progress="70%"></div>
         </div>
     </div>
 
     <!-- Section: About -->
     <div id="about" class="section">
-        <h1>About Me</h1>
-        <p>I'm a web developer passionate about creating innovative and functional designs.</p>
-        <p>I have experience in front-end and back-end development, specializing in user-centric applications.</p>
-    </div>
-
-    <!-- Section: Contact -->
-    <div id="contact" class="section">
-        <h1>Contact Me</h1>
-        <p>Feel free to reach out for collaboration or inquiries.</p>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <h1>About Us</h1>
+        <p>We are a team dedicated to creating awesome web designs.</p>
     </div>
 
     <script>
