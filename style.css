@@ -23,6 +23,7 @@ body {
 .navbar .logo a {
     color: #fff;
     font-size: 24px;
+    text-decoration: none;
 }
 
 .navbar-links {
@@ -37,7 +38,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     padding: 10px 15px;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 }
 
 .navbar-links button:hover {
@@ -46,91 +47,66 @@ body {
 }
 
 .section {
-    display: none; /* Default semua section disembunyikan */
+    display: none;
     padding: 80px 20px;
     text-align: center;
     min-height: 100vh;
 }
 
 .section.active {
-    display: block; /* Hanya section yang aktif yang tampil */
+    display: block;
 }
 
-/* Home Background - Gradasi */
+/* Gradient Backgrounds */
 #home {
     background: linear-gradient(135deg, #FFB3BA, #FFDFBA);
+    background-color: #FFB3BA;
 }
 
-/* About Background - Gradasi */
 #about {
     background: linear-gradient(135deg, #D4E157, #FFEB3B);
+    background-color: #D4E157;
 }
 
-/* Projects Background - Gradasi */
 #projects {
     background: linear-gradient(135deg, #FFCCBC, #FFEBEE);
+    background-color: #FFCCBC;
 }
 
-/* Contact Background - Gradasi */
 #contact {
     background: linear-gradient(135deg, #FFEB3B, #FF9800);
+    background-color: #FFEB3B;
 }
 
-/* Floating Animation for Text */
+/* Floating Animation */
 @keyframes float {
-    0% {
+    0%, 100% {
         transform: translateY(0);
     }
     50% {
         transform: translateY(-10px);
     }
-    100% {
-        transform: translateY(0);
-    }
 }
 
-h1, h2, p {
+h1.float, h2.float {
     animation: float 3s ease-in-out infinite;
 }
 
-/* Hover Effects for Project Cards */
+/* Project Card Hover */
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-/* Hover Effects for Buttons */
+/* Button Hover */
 button:hover {
     background-color: #0088cc;
     transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-/* Scroll Animations (on scroll into view) */
-.section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.5s ease;
-}
-
-.section.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Animated Social Media Icons */
-.navbar .navbar-links a {
-    color: #fff;
-    font-size: 20px;
-    transition: transform 0.3s ease;
-}
-
-.navbar .navbar-links a:hover {
-    transform: scale(1.2);
-}
-
-/* Smooth Scroll Effect */
+/* Smooth Scroll */
 html {
     scroll-behavior: smooth;
 }
@@ -149,4 +125,23 @@ html {
     align-items: center;
     z-index: 1000;
 }
-</style>
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+    }
+
+    .navbar-links button {
+        margin: 5px 0;
+    }
+
+    .section {
+        padding: 60px 10px;
+    }
+}
