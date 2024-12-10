@@ -1,73 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutiara's Portfolio</title>
+    <title>Journey Through Code</title>
+
+    <!-- Menambahkan Font Awesome untuk ikon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Menambahkan Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <!-- Menambahkan file CSS eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
+    <!-- Navbar Section -->
+    <nav class="navbar">
         <div class="logo">
             <a href="#">Mutiara's Portfolio</a>
         </div>
         <div class="navbar-links">
-            <button onclick="navigateTo('home')">Home</button>
-            <button onclick="navigateTo('about')">About Me</button>
-            <button onclick="navigateTo('projects')">Projects</button>
-            <button onclick="navigateTo('contact')">Contact</button>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
-    </div>
+    </nav>
 
-    <!-- Content Sections -->
-    <div id="home" class="section active">
-        <h1>Welcome to Mutiara's Portfolio</h1>
-        <p>Explore my works and passions.</p>
-    </div>
+    <!-- Header Section (Hero) -->
+    <header class="hero">
+        <h1>Hi, I'm Mutiara!</h1>
+        <p>Welcome to my portfolio website. I'm passionate about programming, learning new technologies, and solving real-world problems.</p>
+    </header>
 
-    <div id="about" class="section">
-        <h1>About Me</h1>
-        <p>Hi, I'm Mutiara, a web developer passionate about creating functional designs.</p>
-        <p>I specialize in front-end and back-end development, focusing on user-centric applications.</p>
-    </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <img src="images/photo.jpg" alt="Mutiara Avatar" class="avatar">
+        <p>I'm an Informatics Engineering student at Universitas Dian Nusantara. I am passionate about technology and its potential to solve problems. As a student, I am always eager to learn and improve my skills. This portfolio is a collection of my personal projects, ideas, and experiences as I embark on my journey in the tech industry.</p>
+        <p>When I'm not coding, I enjoy hiking, mountain climbing, and reading books that help expand my knowledge in various fields.</p>
+    </section>
 
-    <div id="projects" class="section">
-        <h1>My Projects</h1>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects <i class="fas fa-laptop-code"></i></h2>
         <div class="project-card">
-            <h2>Project 1: E-Commerce Website</h2>
-            <p>A fully functional e-commerce platform with payment integration.</p>
+            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
+            <h3>Project 1: Web Development</h3>
+            <p>This project involved creating a responsive website for a local business, with a focus on modern design principles and user experience (UX).</p>
         </div>
         <div class="project-card">
-            <h2>Project 2: Mobile App Development</h2>
-            <p>A cross-platform app focused on user productivity.</p>
+            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
+            <h3>Project 2: Mobile App Development</h3>
+            <p>Developed a cross-platform mobile app to help users track their fitness goals, with features such as activity logging and progress tracking.</p>
         </div>
-    </div>
+        <div class="project-card">
+            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
+            <h3>Project 3: Data Science Analysis</h3>
+            <p>Worked on a data analysis project using Python to analyze customer data for a business, providing insights into user behavior and trends.</p>
+        </div>
+    </section>
 
-    <div id="contact" class="section">
-        <h1>Contact Me</h1>
-        <p>Feel free to reach out for collaboration or inquiries.</p>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch with me or have any questions, feel free to reach out via email or through my social media links below.</p>
+        <p>Email: <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a></p>
+        <p>Follow me on <a href="https://github.com/Mutiara" target="_blank">GitHub</a> and <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
+    </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
-        <p>© 2024 Mutiara's Portfolio. All Rights Reserved.</p>
+        <p>&copy; December 2024. Supported by: <a href="https://github.com/Mutiara" target="_blank">Github</a> & ChatGPT.</p>
     </footer>
 
+    <!-- JavaScript untuk Scroll Effect -->
     <script>
-        // Function to navigate between sections
-        function navigateTo(sectionId) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
+        // Menambahkan kelas 'scrolled' saat scroll
+        window.onscroll = function () {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+
+        // Menambahkan kelas 'visible' pada section yang sudah muncul saat scroll
+        window.addEventListener('scroll', function () {
+            var about = document.querySelector('.about');
+            var projects = document.querySelector('.projects');
+            var contact = document.querySelector('.contact');
+
+            if (window.scrollY + window.innerHeight > about.offsetTop) {
+                about.classList.add('visible');
+            }
+            if (window.scrollY + window.innerHeight > projects.offsetTop) {
+                projects.classList.add('visible');
+            }
+            if (window.scrollY + window.innerHeight > contact.offsetTop) {
+                contact.classList.add('visible');
+            }
+        });
     </script>
 </body>
+
 </html>
