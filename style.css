@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
+    text-align: justify;
 }
 
 /* Dark Mode */
@@ -75,6 +76,7 @@ a:hover {
     padding: 100px 20px;
     min-height: 100vh;
     display: none;
+    text-align: justify;
 }
 
 .section.active {
@@ -123,11 +125,13 @@ h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5em;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 h2 {
     font-size: 1.8em;
     margin: 15px 0;
+    text-align: center;
 }
 
 p, li {
