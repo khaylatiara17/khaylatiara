@@ -1,126 +1,5 @@
 /* style.css */
 
-/* General Reset */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
-    text-align: justify;
-}
-
-/* Dark Mode */
-body.dark-mode {
-    background-color: #121212;
-    color: #f4f4f4;
-}
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-.navbar .logo a {
-    color: #fff;
-    font-size: 1.5em;
-    font-family: 'Poppins', sans-serif;
-}
-
-.navbar-links button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1em;
-    cursor: pointer;
-    margin: 0 10px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.navbar-links button:hover {
-    color: #f4f4f4;
-}
-
-#theme-toggle {
-    font-size: 1.2em;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #fff;
-}
-
-/* Sections */
-.section {
-    padding: 100px 20px;
-    min-height: 100vh;
-    display: none;
-    text-align: justify;
-}
-
-.section.active {
-    display: block;
-}
-
-/* Backgrounds for each section */
-#home {
-    background: linear-gradient(135deg, #FFB6C1, #FFDAB9, #E6E6FA, #B0E0E6, #98FB98);
-    background-size: 100% 100%;
-    animation: gradientAnimation 15s ease infinite;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Header and text styling */
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 1.8em;
-    margin: 15px 0;
-    text-align: center;
-}
-
-p, li {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
-
 /* Galeri */
 .gallery {
     display: grid;
@@ -133,9 +12,15 @@ p, li {
 .gallery-img-container {
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
+    width: 100%; /* Mengatur ukuran container */
+    aspect-ratio: 1; /* Membuat container berbentuk persegi */
+    border-radius: 50%; /* Membuat gambar berbentuk bulat */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFDAB9, #B0E0E6); /* Frame dengan warna gradasi */
 }
 
 .gallery-img-container:hover {
@@ -144,9 +29,10 @@ p, li {
 }
 
 .gallery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Membuat gambar tetap proporsional dan memenuhi container */
+    width: 90%; /* Mengatur ukuran gambar agar tidak penuh */
+    height: 90%; /* Mengatur tinggi gambar */
+    object-fit: cover; /* Membuat gambar tetap proporsional */
+    border-radius: 50%; /* Membuat gambar bulat */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -157,14 +43,15 @@ p, li {
 /* Caption di atas gambar */
 .gallery-caption {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
-    width: 100%;
+    width: 80%;
     text-align: center;
-    padding: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
     font-family: 'Poppins', sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
