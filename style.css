@@ -1,3 +1,5 @@
+/* style.css */
+
 /* General Reset */
 body, h1, h2, h3, p, ul, li {
     margin: 0;
@@ -223,44 +225,28 @@ body.loaded .loading-screen {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradien warna menarik */
+    background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     position: relative;
     bottom: 0;
     width: 100%;
     margin-top: 30px;
-    font-family: 'Merriweather', serif; /* Font yang unik dan tidak mainstream */
 }
 
 footer p {
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 5px 0;
-    letter-spacing: 1px; /* Memberikan efek ruang antar huruf */
 }
 
 footer a {
-    color: #ffeb3b; /* Warna kuning cerah untuk kontras */
+    color: #f4f4f4;
     text-decoration: none;
-    font-weight: bold;
 }
 
 footer a:hover {
     text-decoration: underline;
-    color: #ffeb3b;
-}
-
-/* Adjustments for a more modern look */
-footer p, footer a {
-    font-family: 'Lora', serif; /* Font serif elegan */
-    text-transform: capitalize; /* Memberikan efek kapitalisasi */
-}
-
-/* Additional style for footer content */
-footer p, footer a {
-    font-size: 1.1em; /* Ukuran font sedikit lebih besar */
-    line-height: 1.5; /* Jarak antar baris lebih lega */
 }
 
 /* Style untuk layar kecil (handphone) */
