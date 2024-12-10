@@ -195,6 +195,38 @@ body.loaded .loading-screen {
     margin-bottom: 10px;
 }
 
+/* Galeri */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px; /* Jarak antar gambar */
+    margin: 20px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Membuat sudut gambar membulat */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animasi pada hover */
+}
+
+.gallery-img:hover {
+    transform: scale(1.05); /* Memperbesar gambar saat hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Memberikan bayangan */
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        gap: 5px;
+    }
+}
+
 /* Scroll to Top */
 .scroll-top {
     position: fixed;
