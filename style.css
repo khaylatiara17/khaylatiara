@@ -1,26 +1,79 @@
-/* Parallax Effect for Backgrounds */
-#home, #about, #projects, #contact {
-    position: relative;
-    background-size: cover;
-    background-attachment: fixed;
+/* Global Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Home Parallax Background */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-links button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.navbar-links button:hover {
+    background-color: #00aaff;
+    border-radius: 5px;
+}
+
+.section {
+    display: none; /* Default semua section disembunyikan */
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.section.active {
+    display: block; /* Hanya section yang aktif yang tampil */
+}
+
+/* Home Background - Gradasi */
 #home {
     background: linear-gradient(135deg, #FFB3BA, #FFDFBA);
-    background-image: url('your-image-url.jpg'); /* Gambar parallax */
 }
 
-/* About Section Parallax Background */
+/* About Background - Gradasi */
 #about {
     background: linear-gradient(135deg, #D4E157, #FFEB3B);
-    background-image: url('your-image-url.jpg');
 }
 
-/* Projects Section Parallax Background */
+/* Projects Background - Gradasi */
 #projects {
     background: linear-gradient(135deg, #FFCCBC, #FFEBEE);
-    background-image: url('your-image-url.jpg');
+}
+
+/* Contact Background - Gradasi */
+#contact {
+    background: linear-gradient(135deg, #FFEB3B, #FF9800);
 }
 
 /* Floating Animation for Text */
@@ -96,14 +149,4 @@ html {
     align-items: center;
     z-index: 1000;
 }
-
-.loading-screen img {
-    width: 80px;
-    height: 80px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+</style>
