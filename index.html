@@ -1,108 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journey Through Code</title>
-
-    <!-- Menambahkan Font Awesome untuk ikon -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Menambahkan Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <!-- Menambahkan file CSS eksternal -->
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
+    <!-- Navigation Bar -->
+    <div class="navbar">
         <div class="logo">
-            <a href="#">Mutiara's Portfolio</a>
+            <a href="#">MyPortfolio</a>
         </div>
         <div class="navbar-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('projects')">Projects</button>
+            <button onclick="showSection('about')">About</button>
+            <button onclick="showSection('contact')">Contact</button>
         </div>
-    </nav>
+    </div>
 
-    <!-- Header Section (Hero) -->
-    <header class="hero">
-        <h1>Hi, I'm Mutiara!</h1>
-        <p>Welcome to my portfolio website. I'm passionate about programming, learning new technologies, and solving real-world problems.</p>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <img src="images/photo.jpg" alt="Mutiara Avatar" class="avatar">
-        <p>I'm an Informatics Engineering student at Universitas Dian Nusantara. I am passionate about technology and its potential to solve problems. As a student, I am always eager to learn and improve my skills. This portfolio is a collection of my personal projects, ideas, and experiences as I embark on my journey in the tech industry.</p>
-        <p>When I'm not coding, I enjoy hiking, mountain climbing, and reading books that help expand my knowledge in various fields.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>My Projects <i class="fas fa-laptop-code"></i></h2>
-        <div class="project-card">
-            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-            <h3>Project 1: Web Development</h3>
-            <p>This project involved creating a responsive website for a local business, with a focus on modern design principles and user experience (UX).</p>
+    <!-- Section: Home -->
+    <div id="home" class="section active">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="assets/Video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Discover my projects, ideas, and passions through this platform.</p>
+    </div>
+
+    <!-- Section: Projects -->
+    <div id="projects" class="section">
+        <h1>Our Projects</h1>
         <div class="project-card">
-            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-            <h3>Project 2: Mobile App Development</h3>
-            <p>Developed a cross-platform mobile app to help users track their fitness goals, with features such as activity logging and progress tracking.</p>
+            <h2>Project 1: E-Commerce Website</h2>
+            <p>A fully functional e-commerce platform with payment integration.</p>
+            <div class="progress-bar" data-progress="80%"></div>
         </div>
         <div class="project-card">
-            <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-            <h3>Project 3: Data Science Analysis</h3>
-            <p>Worked on a data analysis project using Python to analyze customer data for a business, providing insights into user behavior and trends.</p>
+            <h2>Project 2: Mobile App Development</h2>
+            <p>A cross-platform app focused on user productivity.</p>
+            <div class="progress-bar" data-progress="60%"></div>
         </div>
-    </section>
+        <div class="project-card">
+            <h2>Project 3: AI Chatbot</h2>
+            <p>An intelligent chatbot designed for customer support.</p>
+            <div class="progress-bar" data-progress="70%"></div>
+        </div>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch with me or have any questions, feel free to reach out via email or through my social media links below.</p>
-        <p>Email: <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a></p>
-        <p>Follow me on <a href="https://github.com/Mutiara" target="_blank">GitHub</a> and <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
-    </section>
+    <!-- Section: About -->
+    <div id="about" class="section">
+        <h1>About Me</h1>
+        <p>I'm a web developer passionate about creating innovative and functional designs.</p>
+        <p>I have experience in front-end and back-end development, specializing in user-centric applications.</p>
+    </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; December 2024. Supported by: <a href="https://github.com/Mutiara" target="_blank">Github</a> & ChatGPT.</p>
-    </footer>
+    <!-- Section: Contact -->
+    <div id="contact" class="section">
+        <h1>Contact Me</h1>
+        <p>Feel free to reach out for collaboration or inquiries.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 
-    <!-- JavaScript untuk Scroll Effect -->
     <script>
-        // Menambahkan kelas 'scrolled' saat scroll
-        window.onscroll = function () {
-            var nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-
-        // Menambahkan kelas 'visible' pada section yang sudah muncul saat scroll
-        window.addEventListener('scroll', function () {
-            var about = document.querySelector('.about');
-            var projects = document.querySelector('.projects');
-            var contact = document.querySelector('.contact');
-
-            if (window.scrollY + window.innerHeight > about.offsetTop) {
-                about.classList.add('visible');
-            }
-            if (window.scrollY + window.innerHeight > projects.offsetTop) {
-                projects.classList.add('visible');
-            }
-            if (window.scrollY + window.innerHeight > contact.offsetTop) {
-                contact.classList.add('visible');
-            }
-        });
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
     </script>
 </body>
-
 </html>
