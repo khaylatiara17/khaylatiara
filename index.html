@@ -27,43 +27,34 @@
         </div>
     </nav>
 
-    <!-- Tab Content -->
-    <div class="tab-content">
-        <!-- About Tab -->
-        <section id="about" class="tab-section">
-            <h2>About Me</h2>
-            <img src="images/photo.jpg" alt="Mutiara Avatar" class="avatar">
-            <p>I'm an Informatics Engineering student at Universitas Dian Nusantara. I am passionate about technology and its potential to solve problems. As a student, I am always eager to learn and improve my skills. This portfolio is a collection of my personal projects, ideas, and experiences as I embark on my journey in the tech industry.</p>
-            <p>When I'm not coding, I enjoy hiking, mountain climbing, and reading books that help expand my knowledge in various fields.</p>
-        </section>
-
-        <!-- Projects Tab -->
-        <section id="projects" class="tab-section">
-            <h2>My Projects <i class="fas fa-laptop-code"></i></h2>
-            <div class="project-card">
-                <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-                <h3>Project 1: Web Development</h3>
-                <p>This project involved creating a responsive website for a local business, with a focus on modern design principles and user experience (UX).</p>
-            </div>
-            <div class="project-card">
-                <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-                <h3>Project 2: Mobile App Development</h3>
-                <p>Developed a cross-platform mobile app to help users track their fitness goals, with features such as activity logging and progress tracking.</p>
-            </div>
-            <div class="project-card">
-                <i class="fas fa-project-diagram"></i> <!-- Ikon proyek -->
-                <h3>Project 3: Data Science Analysis</h3>
-                <p>Worked on a data analysis project using Python to analyze customer data for a business, providing insights into user behavior and trends.</p>
-            </div>
-        </section>
-
-        <!-- Contact Tab -->
-        <section id="contact" class="tab-section">
-            <h2>Contact Me</h2>
-            <p>If you'd like to get in touch with me or have any questions, feel free to reach out via email or through my social media links below.</p>
-            <p>Email: <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a></p>
-            <p>Follow me on <a href="https://github.com/Mutiara" target="_blank">GitHub</a> and <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
-        </section>
+    <!-- About Section -->
+    <div id="about" class="tab-section">
+        <h2>About Me</h2>
+        <img src="images/photo.jpg" alt="Mutiara Avatar" class="avatar">
+        <p>
+            <i class="fas fa-user"></i> I'm an Informatics Engineering student at Universitas Dian Nusantara. 
+            I am passionate about technology and its potential to solve problems.
+        </p>
+        <p>
+            <i class="fas fa-laptop-code"></i> When I'm not coding, I enjoy <b>hiking, mountain climbing,</b> and 
+            reading books that help expand my knowledge in various fields.
+        </p>
+        <p>
+            <i class="fas fa-lightbulb"></i> My goal is to continuously learn and apply my knowledge to build 
+            meaningful solutions in the tech industry.
+        </p>
+        <div class="about-icons">
+            <h3>Connect with me:</h3>
+            <a href="mailto:411231059@mahasiswa.undira.ac.id">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://github.com/Mutiara" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/mutiara" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </div>
     </div>
 
     <!-- Footer Section -->
@@ -71,23 +62,11 @@
         <p>&copy; December 2024. Supported by: <a href="https://github.com/Mutiara" target="_blank">Github</a> & ChatGPT.</p>
     </footer>
 
-    <!-- JavaScript untuk Tab Navigasi -->
     <script>
-        function showTab(tabName) {
-            // Menyembunyikan semua tab
-            const sections = document.querySelectorAll('.tab-section');
-            sections.forEach((section) => {
-                section.style.display = 'none';
-            });
-
-            // Menampilkan tab yang dipilih
-            const selectedTab = document.getElementById(tabName);
-            selectedTab.style.display = 'block';
-        }
-
-        // Menampilkan tab pertama secara default
+        // Default show About tab
         document.addEventListener('DOMContentLoaded', function () {
-            showTab('about');
+            const aboutTab = document.getElementById('about');
+            aboutTab.style.display = 'block';
         });
     </script>
 </body>
