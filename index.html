@@ -12,7 +12,7 @@
 
 <body>
     <!-- Loading Screen -->
-    <div class="loading-screen">
+    <div id="loading-screen" class="loading-screen">
         <div class="spinner"></div>
         <p>Memuat konten, harap tunggu...</p>
     </div>
@@ -146,21 +146,6 @@
             <p>Email <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
             <p>Follow me at <a href="https://www.instagram.com/khaylatiara" target="_blank">Instagram</a> or <a href="https://www.tiktok.com/@khaylatiaraa" target="_blank">Tiktok</a>.</p>
             <p>Sertificate and Support Document <a href="https://sites.google.com/mahasiswa.undira.ac.id/khaylatiara/profile" target="_blank">Google Site</a></p>
-
-            <!-- New Gallery Section -->
-            <h2>Galeri</h2>
-            <div class="Sweet Memories">
-                <img src="images/photo.jpg" alt="Pas Photo">
-                <img src="images/photo2.jpg" alt="Papua Barat">
-                <img src="image3.jpg" alt="Photo 3">
-                <img src="image4.jpg" alt="Photo 4">
-            </div>
-
-            <h2>READ ME</h2>
-            <p>Berlayar jauh ke Pulau Bintan,</p>
-            <p>Membawa bekal buah durian.</p>
-            <p>Semangat belajar janganlah padam,</p>
-            <p>Untuk masa depan penuh harapan! 😊</p>
         </section>
     </main>
 
@@ -177,8 +162,9 @@
 
     <!-- JavaScript -->
     <script>
-        // Loading Screen
+        // Hide loading screen once the page is fully loaded
         window.addEventListener('load', () => {
+            document.getElementById('loading-screen').style.display = 'none';
             document.body.classList.add('loaded');
         });
 
@@ -193,7 +179,7 @@
         const themeToggle = document.getElementById('theme-toggle');
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            themeToggle.textContent = document.body.classList.contains('dark-mode') ? ☀️' : '🌙';
+            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
 
         // Scroll to Top
