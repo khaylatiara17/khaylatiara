@@ -18,11 +18,14 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo a {
     color: #fff;
     font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .navbar-links {
@@ -37,7 +40,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     padding: 10px 15px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-links button:hover {
@@ -45,15 +48,26 @@ body {
     border-radius: 5px;
 }
 
+.navbar-links button.active {
+    background-color: #00aaff;
+    border-radius: 5px;
+    color: #fff;
+}
+
 .section {
     display: none; /* Default semua section disembunyikan */
     padding: 80px 20px;
     text-align: center;
     min-height: 100vh;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .section.active {
     display: block; /* Hanya section yang aktif yang tampil */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card {
@@ -64,8 +78,70 @@ body {
     border-radius: 8px;
     max-width: 500px;
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 a {
     color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #005f99;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: scaleUp 0.3s ease;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal .close:hover {
+    color: #ff0000;
+}
+
+/* Animations */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
