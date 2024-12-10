@@ -8,7 +8,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -18,10 +17,10 @@
             <a href="#">Portfolio Mutiara</a>
         </div>
         <div class="navbar-links">
-            <button id="nav-home" onclick="showSection('home')" aria-label="Navigasi ke Home">Home</button>
-            <button id="nav-about" onclick="showSection('about')" aria-label="Navigasi ke Tentang Saya">Tentang Saya</button>
-            <button id="nav-projects" onclick="showSection('projects')" aria-label="Navigasi ke Proyek">Proyek</button>
-            <button id="nav-contact" onclick="showSection('contact')" aria-label="Navigasi ke Kontak">Kontak</button>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('about')">Tentang Saya</button>
+            <button onclick="showSection('projects')">Proyek</button>
+            <button onclick="showSection('contact')">Kontak</button>
         </div>
     </nav>
 
@@ -40,11 +39,11 @@
 
         <section id="projects" class="section">
             <h1>Proyek Saya</h1>
-            <div class="project-card" onclick="openModal('modal1')" aria-label="Detail Proyek 1">
+            <div class="project-card" onclick="openModal('modal1')">
                 <h3>Proyek 1: Web Development</h3>
                 <p>Membuat situs web responsif dengan desain modern dan fokus pada UX.</p>
             </div>
-            <div class="project-card" onclick="openModal('modal2')" aria-label="Detail Proyek 2">
+            <div class="project-card" onclick="openModal('modal2')">
                 <h3>Proyek 2: Aplikasi Mobile</h3>
                 <p>Mengembangkan aplikasi lintas platform untuk melacak tujuan kebugaran pengguna.</p>
             </div>
@@ -52,51 +51,71 @@
 
         <section id="contact" class="section">
             <h1>Kontak</h1>
-            <p>Hubungi saya di <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
-            <p>Ikuti saya di <a href="https://github.com/Mutiara" target="_blank">GitHub</a> dan <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <input type="text" id="name" placeholder="Nama" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <textarea id="message" placeholder="Pesan" required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+            <p id="formMessage" style="color: green; display: none;">Pesan berhasil dikirim!</p>
         </section>
+
+        <!-- Modal Proyek -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h3>Proyek 1: Web Development</h3>
+                <p>Detail proyek: Situs web ini dikembangkan menggunakan HTML, CSS, dan JavaScript. Fitur utama meliputi desain responsif, optimasi SEO, dan pengalaman pengguna yang intuitif.</p>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h3>Proyek 2: Aplikasi Mobile</h3>
+                <p>Detail proyek: Aplikasi ini dibangun dengan framework Flutter, menyediakan pelacakan kebugaran harian, dan integrasi dengan perangkat wearable.</p>
+            </div>
+        </div>
     </main>
 
-    <!-- Modal -->
-    <div class="modal" id="modal1" role="dialog" aria-labelledby="modal1-title" aria-hidden="true">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <h2 id="modal1-title">Proyek 1: Web Development</h2>
-            <p>Detail tentang proyek ini...</p>
-        </div>
-    </div>
-
-    <div class="modal" id="modal2" role="dialog" aria-labelledby="modal2-title" aria-hidden="true">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <h2 id="modal2-title">Proyek 2: Aplikasi Mobile</h2>
-            <p>Detail tentang proyek ini...</p>
-        </div>
-    </div>
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" onclick="scrollToTop()">⬆️</button>
 
     <!-- JavaScript -->
     <script>
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
-            const navButtons = document.querySelectorAll('.navbar-links button');
-
             sections.forEach(section => {
                 section.classList.remove('active'); // Sembunyikan semua section
             });
-            navButtons.forEach(button => {
-                button.classList.remove('active'); // Hapus status aktif dari semua tombol
-            });
-
-            document.getElementById(sectionId).classList.add('active'); // Tampilkan section yang dipilih
-            document.getElementById(`nav-${sectionId}`).classList.add('active'); // Aktifkan tombol navigasi
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.add('active'); // Tampilkan section yang dipilih
+            
+            // Tambahkan efek scroll
+            targetSection.scrollIntoView({ behavior: 'smooth' });
         }
 
         function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
+            document.getElementById(modalId).style.display = "flex";
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onscroll = function () {
+            const scrollToTop = document.getElementById('scrollToTop');
+            scrollToTop.style.display = document.documentElement.scrollTop > 300 ? "block" : "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function validateForm() {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = "block";
+            return false; // Prevent form submission for demonstration
         }
     </script>
 </body>
