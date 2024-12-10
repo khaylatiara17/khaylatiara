@@ -7,7 +7,6 @@ body {
     color: #333;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -53,34 +52,39 @@ body {
     min-height: 100vh;
 }
 
+/* Show active section */
 .section.active {
     display: block; /* Hanya section yang aktif yang tampil */
 }
 
-/* Background Styles */
+/* Background untuk masing-masing halaman */
 #home {
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
-    background-size: 200% 200%;
-    animation: gradientAnimation 5s ease infinite;
+    background: linear-gradient(135deg, #ffafcc, #d4a5a5);
+    animation: moveBackground 5s ease-in-out infinite alternate;
 }
 
 #about {
-    background: url('https://www.transparenttextures.com/patterns/noisy-net.png') repeat;
-    background-color: #f0f0f0;
-    background-blend-mode: overlay;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    color: white;
 }
 
 #projects {
-    background: url('https://www.toptal.com/designers/subtlepatterns/patterns/geometric.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(135deg, #f4c3c9, #d1c4e9);
+    color: white;
 }
 
 #contact {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
 }
 
-/* Project Card Styling */
+/* Efek animasi untuk background home */
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Styling untuk project-card */
 .project-card {
     background-color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -96,26 +100,18 @@ a {
     text-decoration: none;
 }
 
-/* Animation for gradient */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Media Queries */
+/* Responsiveness */
 @media (max-width: 768px) {
     .navbar-links {
         flex-direction: column;
+        display: none;
     }
 
     .navbar-links button {
         margin-bottom: 10px;
+    }
+
+    .navbar.active .navbar-links {
+        display: flex;
     }
 }
