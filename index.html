@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Mutiara</title>
-    <!-- Menambahkan Font Awesome dan Google Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <!-- Menambahkan file CSS eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,32 +27,30 @@
     <!-- Sections -->
     <main>
         <section id="home" class="section active">
-            <h1>Selamat Datang di Portfolio Mutiara</h1>
-            <p>Saya senang belajar teknologi dan memecahkan masalah dunia nyata.</p>
+            <h1>Halo, Saya Mutiara!</h1>
+            <p>Selamat datang di portfolio saya. Saya bersemangat dalam belajar teknologi dan memecahkan masalah dunia nyata.</p>
         </section>
 
         <section id="about" class="section">
-            <h2>Tentang Saya</h2>
-            <img src="images/photo.jpg" alt="Foto Mutiara" class="avatar">
-            <p>Saya adalah mahasiswa Teknik Informatika di Universitas Dian Nusantara. Saya selalu bersemangat untuk belajar dan berkembang.</p>
+            <h1>Tentang Saya</h1>
+            <p>Saya adalah mahasiswa Teknik Informatika di Universitas Dian Nusantara. Saya memiliki minat besar pada teknologi dan terus berusaha untuk belajar serta berkembang.</p>
+            <p>Ketika tidak sedang coding, saya suka mendaki gunung, membaca buku, dan mengeksplorasi pengetahuan baru.</p>
         </section>
 
         <section id="projects" class="section">
-            <h2>Proyek Saya</h2>
+            <h1>Proyek Saya</h1>
             <div class="project-card">
-                <i class="fas fa-project-diagram"></i>
                 <h3>Proyek 1: Web Development</h3>
-                <p>Membangun situs web responsif dengan desain modern.</p>
+                <p>Membuat situs web responsif dengan desain modern dan fokus pada UX.</p>
             </div>
             <div class="project-card">
-                <i class="fas fa-project-diagram"></i>
-                <h3>Proyek 2: Mobile App Development</h3>
-                <p>Mengembangkan aplikasi lintas platform untuk kebugaran.</p>
+                <h3>Proyek 2: Aplikasi Mobile</h3>
+                <p>Mengembangkan aplikasi lintas platform untuk melacak tujuan kebugaran pengguna.</p>
             </div>
         </section>
 
         <section id="contact" class="section">
-            <h2>Kontak</h2>
+            <h1>Kontak</h1>
             <p>Hubungi saya di <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
             <p>Ikuti saya di <a href="https://github.com/Mutiara" target="_blank">GitHub</a> dan <a href="https://www.linkedin.com/in/mutiara" target="_blank">LinkedIn</a>.</p>
         </section>
@@ -65,12 +61,9 @@
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
+                section.classList.remove('active'); // Sembunyikan semua section
             });
+            document.getElementById(sectionId).classList.add('active'); // Tampilkan section yang dipilih
         }
     </script>
 </body>
