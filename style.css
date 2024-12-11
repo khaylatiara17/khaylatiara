@@ -37,10 +37,9 @@ a:hover {
     align-items: center;
     background: #333;
     color: #fff;
-    padding: 10px 30px;
-    margin: 0 15px; /* Menambah jarak antara navbar dan tepi layar */
+    padding: 10px 10px;
+    margin: 15 15px; /* Menambah jarak antara navbar dan tepi layar */
     position: sticky; /* Sticky positioning to keep it on top */
-    width: calc(100% - 30px); /* Agar navbar tidak menyentuh tepi layar */
     top: 0;  /* Keep navbar at the top */
     width: 100%;
     z-index: 1000;
