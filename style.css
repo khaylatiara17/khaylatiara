@@ -180,7 +180,7 @@ p, li {
     }
 }
 
-.loading-screen.loaded {
+body.loaded .loading-screen {
     display: none;
 }
 
