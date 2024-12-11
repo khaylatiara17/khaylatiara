@@ -1,7 +1,7 @@
 /* General Reset */
 body, h1, h2, h3, p, ul, li {
-    margin: 15px;
-    padding: 20px;
+    margin: 5px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
