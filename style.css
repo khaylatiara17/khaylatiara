@@ -19,6 +19,7 @@ body {
 body.dark-mode {
     background-color: #121212;
     color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Link Styling */
@@ -46,7 +47,7 @@ a:hover {
 
 .navbar .logo a {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -65,7 +66,8 @@ a:hover {
 }
 
 #theme-toggle {
-    font-size: 1.2em;
+    font-size: 1em; /* Menjaga agar ukuran tombol konsisten di layar kecil */
+    padding: 10px;
     cursor: pointer;
     background: none;
     border: none;
@@ -74,7 +76,7 @@ a:hover {
 
 /* Sections */
 .section {
-    padding: 100px 20px;
+    padding: 40px 20px;
     min-height: 100vh;
     display: none;
     text-align: justify;
@@ -119,6 +121,11 @@ a:hover {
     100% {
         background-position: 0% 50%;
     }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Header and text styling */
@@ -173,7 +180,7 @@ p, li {
     }
 }
 
-body.loaded .loading-screen {
+.loading-screen.loaded {
     display: none;
 }
 
@@ -193,9 +200,11 @@ body.loaded .loading-screen {
 .project-card {
     background: #fff;
     border-radius: 5px;
+    box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
+    padding: 15px;
+    margin: 10px 0;
+    max-width: 100%;
     transition: transform 0.3s;
 }
 
@@ -255,4 +264,111 @@ body.loaded .loading-screen {
 
 .scroll-top:hover {
     background-color: #555;
+}
+
+/* Responsivitas Mobile */
+
+/* Aturan umum untuk perangkat dengan lebar layar hingga 768px (tablet dan mobile) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 10px;
+    }
+    
+    .navbar .logo a {
+        font-size: 1.3em;
+    }
+    
+    .navbar-links button {
+        margin: 5px 0;
+        font-size: 1.2em;
+    }
+    
+    /* Theme toggle button */
+    #theme-toggle {
+        font-size: 1.5em;
+    }
+
+    /* Section padding */
+    .section {
+        padding: 60px 20px;
+    }
+
+    /* Header dan teks */
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p, li {
+        font-size: 0.9em;
+    }
+
+    /* Project Cards */
+    .project-card {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    /* Skills chart */
+    #skillsChart {
+        height: 300px;
+        padding: 15px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 15px 10px;
+    }
+
+    .footer-content p {
+        font-size: 0.8em;
+    }
+
+    /* Scroll to Top button */
+    .scroll-top {
+        font-size: 1.5em;
+        padding: 8px 12px;
+    }
+}
+
+/* Untuk perangkat dengan lebar layar hingga 480px (mobile kecil) */
+@media (max-width: 480px) {
+    /* Navbar */
+    .navbar .logo a {
+        font-size: 1.2em;
+    }
+    
+    .navbar-links button {
+        font-size: 1em;
+    }
+
+    /* Header */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    /* Project Cards */
+    .project-card {
+        padding: 12px;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 0.75em;
+    }
+
+    /* Scroll to Top button */
+    .scroll-top {
+        padding: 6px 10px;
+    }
 }
