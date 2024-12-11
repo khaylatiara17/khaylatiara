@@ -154,34 +154,30 @@ p, li {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.9);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    z-index: 2000;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; /* Hide by default, show when loading */
+}
+
+.loading-screen.loaded {
+    display: none;
 }
 
 .spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
-    border: 5px solid #f4f4f4;
-    border-top: 5px solid #333;
-    border-radius: 50%;
     animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-body.loaded .loading-screen {
-    display: none;
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Skills Chart Styling */
