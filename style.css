@@ -39,7 +39,7 @@ a:hover {
     align-items: center;
     background: #333;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 30px;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -57,8 +57,9 @@ a:hover {
     color: #fff;
     font-size: 1em;
     cursor: pointer;
-    margin: 0 10px;
+    margin: 0 15px; /* Menambah jarak antar tombol agar lebih terpisah */
     font-family: 'Poppins', sans-serif;
+    padding: 10px; /* Menambahkan padding agar tombol lebih mudah diklik */
 }
 
 .navbar-links button:hover {
@@ -67,7 +68,7 @@ a:hover {
 
 #theme-toggle {
     font-size: 1em; /* Menjaga agar ukuran tombol konsisten di layar kecil */
-    padding: 10px;
+    padding: 8px 12px; /* Menyesuaikan padding agar konsisten */
     cursor: pointer;
     background: none;
     border: none;
