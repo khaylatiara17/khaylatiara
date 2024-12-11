@@ -180,66 +180,9 @@
 
     
     <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top">⬆</button>
+    <button id="scroll-top" class="scroll-top">↑</button>
 
-    <!-- JavaScript -->
-    <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });
-
-        // Navbar Navigation
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-        }
-
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        });
-
-        // Scroll to Top
-        const scrollTopBtn = document.getElementById('scroll-top');
-        window.addEventListener('scroll', () => {
-            scrollTopBtn.classList.toggle('show', window.scrollY > 100);
-        });
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Google Charts - Skill Level Chart
-        google.charts.load('current', {
-            packages: ['corechart', 'gauge']
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Label', 'Value'],
-                ['Web Dev', 20],
-                ['Mobile Dev', 10],
-                ['Data Science', 30],
-                ['Algorithm', 30]
-            ]);
-
-            var options = {
-                width: 400, height: 400,
-                redFrom: 0, redTo: 40,
-                yellowFrom: 40, yellowTo: 70,
-                greenFrom: 70, greenTo: 100,
-                minorTicks: 5
-            };
-
-            var chart = new google.visualization.Gauge(document.getElementById('skillsChart'));
-            chart.draw(data, options);
-        }
-        
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
