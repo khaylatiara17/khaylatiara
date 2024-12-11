@@ -212,6 +212,21 @@
             document.body.classList.add('loaded');
         });
 
+// Menambahkan event listener untuk scroll
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+    let navbar = document.querySelector(".navbar");
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Jika pengguna menggulir ke bawah, tambahkan kelas 'small' untuk mengecilkan header
+    if (currentScroll > lastScrollTop) {
+        navbar.classList.add("small");
+    } else {
+        navbar.classList.remove("small");
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+     
         // Navbar Navigation
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
