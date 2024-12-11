@@ -6,7 +6,7 @@ body, h1, h2, h3, p, ul, li {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;    
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
     transition: background-color 0.3s, color 0.3s; /* Animasi saat scroll */
@@ -20,14 +20,6 @@ body.dark-mode {
     transition: background-color 0.3s, color 0.3s; /* Animasi saat scroll */
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #f4f4f4;
-    }
-}
-
-
 /* Link Styling */
 a {
     color: #0066cc;
@@ -39,23 +31,18 @@ a:hover {
 }
 
 /* Navbar */
-main {
-    margin-top: 100px; /* Sesuaikan dengan tinggi navbar default */
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #333;
     color: #fff;
-    padding: 20px;
-    position: fixed; /* Sticky positioning to keep it on top */
+    padding: 10px 10px;
+    position: sticky; /* Sticky positioning to keep it on top */
     top: 0;  /* Keep navbar at the top */
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hiding/showing */
-    will-change: transform, background-color;
+    transition: top 0.3s; /* Smooth transition for hiding/showing */
 }
 
 .navbar .logo a {
@@ -87,33 +74,6 @@ main {
     border: none;
     color: #fff;
 }
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .navbar.small {
-        transform: scale(0.8);
-        padding: 8px;
-    }
-
-    .navbar .logo a {
-        font-size: 1.3em;
-    }
-
-    .navbar-links button {
-        margin: 5px 0;
-        font-size: 1.2em;
-    }
-
-    #theme-toggle {
-        font-size: 1.5em;
-    }
-}
-
 
 /* Sections */
 .section {
