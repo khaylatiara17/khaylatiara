@@ -9,7 +9,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
-    transition: background-color 0.3s, color 0.3s; /* Animasi saat scroll */
+    transition: background-color 0.3s, color 0.3s;
     text-align: justify;
 }
 
@@ -17,7 +17,7 @@ body {
 body.dark-mode {
     background-color: #121212;
     color: #f4f4f4;
-    transition: background-color 0.3s, color 0.3s; /* Animasi saat scroll */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Link Styling */
