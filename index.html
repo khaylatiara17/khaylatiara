@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
@@ -161,9 +162,14 @@
             <p>Membawa bekal buah durian.</p>
             <p>Semangat belajar janganlah padam,</p>
             <p>Untuk masa depan penuh harapan! 😊</p>
+
+    <!-- Skill Chart Section -->
+    <h2>Skill Level</h2>
+    <div id="skillsChart" style="width: 400px; height: 400px;"></div>
+
         </section>
     </main>
-
+  
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -205,6 +211,34 @@
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Google Charts - Skill Level Chart
+        google.charts.load('current', {
+            packages: ['corechart', 'gauge']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['Web Dev', 20],
+                ['Mobile Dev', 10],
+                ['Data Science', 30],
+                ['Algorithm', 30]
+            ]);
+
+            var options = {
+                width: 400, height: 400,
+                redFrom: 0, redTo: 40,
+                yellowFrom: 40, yellowTo: 70,
+                greenFrom: 70, greenTo: 100,
+                minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('skillsChart'));
+            chart.draw(data, options);
+        }
+        
     </script>
 </body>
 
