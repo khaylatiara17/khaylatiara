@@ -1,7 +1,7 @@
 /* General Reset */
 body, h1, h2, h3, p, ul, li {
-    margin: 5px;
-    padding: 10px;
+    margin: 15px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -37,7 +37,7 @@ a:hover {
     align-items: center;
     background: #333;
     color: #fff;
-    padding: 10px 10px;
+    padding: 10px 30px;
     position: sticky; /* Sticky positioning to keep it on top */
     top: 0;  /* Keep navbar at the top */
     width: 100%;
