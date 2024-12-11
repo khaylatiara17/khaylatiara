@@ -38,7 +38,6 @@ a:hover {
     background: #333;
     color: #fff;
     padding: 10px 10px;
-    margin: 15 15px; /* Menambah jarak antara navbar dan tepi layar */
     position: sticky; /* Sticky positioning to keep it on top */
     top: 0;  /* Keep navbar at the top */
     width: 100%;
