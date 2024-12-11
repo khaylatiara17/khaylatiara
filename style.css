@@ -2,8 +2,8 @@
 
 /* General Reset */
 body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
+    margin: 15px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
