@@ -9,53 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <style>
-    /* Hujan Efek */
-        .raindrop {
-            position: absolute;
-            background-color: #010101; /* Warna Hujan */
-            width: 2px;
-            height: 10px;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100%);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        /* Latar belakang agar hujan terlihat lebih jelas */
-        body {
-            background-color: #1e1e1e; /* Latar belakang gelap untuk efek hujan */
-            overflow: hidden;
-        }
-
-        /* Styling untuk halaman lainnya */
-        .loading-screen {
-            display: none;
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-        }
-
-        .section {
-            display: none;
-        }
-
-        .section.active {
-            display: block;
-        }    
-    </style>
 </head>
 
 <body>
@@ -279,23 +232,7 @@ window.addEventListener("scroll", function() {
             sections.forEach(section => section.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
         }
-
-        // Hujan Efek
-        function createRaindrop() {
-            const raindrop = document.createElement('div');
-            raindrop.classList.add('raindrop');
-            raindrop.style.left = `${Math.random() * 100}%`;
-            raindrop.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            document.body.appendChild(raindrop);
-
-            setTimeout(() => {
-                raindrop.remove();
-            }, 5000);
-        }
-
-        // Menambahkan hujan setiap 100ms
-        setInterval(createRaindrop, 100);
-        
+      
         // JavaScript untuk Navbar Dinamis
         window.onscroll = function() {toggleNavbar()};
 
