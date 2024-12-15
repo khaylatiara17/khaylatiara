@@ -281,25 +281,20 @@ window.addEventListener("scroll", function() {
         }
 
         // Hujan Efek
-        function createRaindrops() {
-            const numberOfRaindrops = 100; 
-            const body = document.body;
+        function createRaindrop() {
+            const raindrop = document.createElement('div');
+            raindrop.classList.add('raindrop');
+            raindrop.style.left = `${Math.random() * 100}%`;
+            raindrop.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            document.body.appendChild(raindrop);
 
-            for (let i = 0; i < numberOfRaindrops; i++) {
-                const raindrop = document.createElement('div');
-                raindrop.classList.add('raindrop');
-                raindrop.style.left = Math.random() * 100 + 'vw';
-                raindrop.style.animationDuration = Math.random() * 2 + 2 + 's';
-                body.appendChild(raindrop);
-            }
+            setTimeout(() => {
+                raindrop.remove();
+            }, 5000);
         }
 
-        // Tampilkan layar pemuatan saat halaman dimuat
-        window.onload = function () {
-            const loadingScreen = document.querySelector('.loading-screen');
-            loadingScreen.style.display = 'none';
-            createRaindrops();
-        };
+        // Menambahkan hujan setiap 100ms
+        setInterval(createRaindrop, 100);
         
         // JavaScript untuk Navbar Dinamis
         window.onscroll = function() {toggleNavbar()};
