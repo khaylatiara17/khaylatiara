@@ -9,6 +9,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+    /* Hujan Efek */
+        .raindrop {
+            position: absolute;
+            background-color: #010101; /* Warna Hujan */
+            width: 2px;
+            height: 10px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Latar belakang agar hujan terlihat lebih jelas */
+        body {
+            background-color: #1e1e1e; /* Latar belakang gelap untuk efek hujan */
+            overflow: hidden;
+        }
+
+        /* Styling untuk halaman lainnya */
+        .loading-screen {
+            display: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }    
+    </style>
 </head>
 
 <body>
@@ -233,6 +280,21 @@ window.addEventListener("scroll", function() {
             document.getElementById(sectionId).classList.add('active');
         }
 
+        // Hujan Efek
+        function createRain() {
+            const numberOfRaindrops = 100; // jumlah tetesan hujan
+            for (let i = 0; i < numberOfRaindrops; i++) {
+                const raindrop = document.createElement('div');
+                raindrop.classList.add('raindrop');
+                raindrop.style.left = `${Math.random() * 100}vw`;
+                raindrop.style.animationDuration = `${Math.random() * 2 + 3}s`; // Durasi acak antara 3 hingga 5 detik
+                raindrop.style.animationDelay = `${Math.random() * 2}s`; // Penundaan animasi acak
+                document.body.appendChild(raindrop);
+            }
+        }
+
+        createRain(); // Memulai hujan pada saat halaman dimuat
+        
         // JavaScript untuk Navbar Dinamis
         window.onscroll = function() {toggleNavbar()};
 
