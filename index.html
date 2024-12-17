@@ -1,414 +1,313 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en"> <!-- Ubah lang="id" menjadi lang="en" -->
 
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
-    text-align: justify;
-    background-color: #fff; /* Pastikan background default */
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Through Code</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Hapus atribut type dari script tag berikut -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #121212;
-    color: #f4f4f4;
-    transition: background-color 0.3s, color 0.3s;
-}
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+        <p>Memuat konten, harap tunggu...</p>
+    </div>
 
-/* Link Styling */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Portfolio Journey Through Code</a>
+        </div>
+        <div class="navbar-links">
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('about')">About</button>
+            <button onclick="showSection('projects')">Update</button>
+            <button onclick="showSection('contact')">Others</button>
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </nav>
 
-a:hover {
-    text-decoration: underline;
-}
+    <!-- Sections -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h1>INTRODUCTION</h1>
+            <p>
+                You can call me Tiara, an Informatics Engineering student with a strong interest in learning new technologies and using them to solve real-world problems. With over 15 years of experience in Office Administration, I bring strong skills in managing data details, organizing information, and improving processes as I embark on this exciting journey in the tech world.
+            </p>
+            <p>
+                I believe that technology is a powerful tool to create innovative and sustainable solutions for a better future. I am eager to keep learning and developing my skills in Data Science, as well as working on local technologies that can make a positive impact, especially in remote areas of Indonesia.
+            </p>
+            <p>
+                This mini-site is a small step that reflects my dedication, curiosity, and drive to create meaningful work. I believe in lifelong learning and am always open to opportunities for collaboration, discussions, or feedback to grow and improve.
+            </p>
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #333;
-    color: #fff;
-    padding: 10px 30px;
-    position: sticky; /* Sticky positioning to keep it on top */
-    top: 0;  /* Keep navbar at the top */
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.3s, padding 0.3s;
-}
+            <h2>LIFE GOAL</h2>
+            <p>
+                My life goal is to keep growing as a person, contribute positively to society and create useful solutions through technology. I want to use my skills and experience to solve challenges, whether big or small and help build a better and more sustainable future.
+            </p>
+            <p>
+                I also aim to live a balanced life, staying true to myself, valuing connections with others and appreciating every step of the journey with purpose and meaning.
+            </p>
 
-.navbar.scrolled {
-    background: #222; /* Warna navbar saat digulir */
-    padding: 5px 30px;
-}
+            <h2>SUPPORT SYSTEM</h2>
+            <p>
+                A support system is very important to me, as it provides an environment that helps me grow both personally and professionally. This support comes from my family, close friends and people around me who offer feedback, advice and confidence to keep me moving forward.
+            </p>
+            <p>
+                Technology also plays a key role in my support system, making it easier for me to learn and communicate by putting my thoughts into writing, which I sometimes find hard to express on my own. With this support, I feel more prepared to face challenges, continue learning and achieve the goals I dream of.
+            </p>
+        </section>
 
-.navbar.small {
-    padding: 5px 30px;
-}
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h1>PROFILE</h1>
+            <p>
+                Tiara is an Informatics Engineering student with a strong interest in new technologies. She is always eager to learn and improve. Born and raised in Jakarta, Tiara comes from a Sumatera Utara heritage with Batak ethnicity.
+            </p>
+            <p>
+                Tiara began her studies at Universitas Dian Nusantara in September 2023 and has big dreams of continuing her education to pursue a master's degree. Her ultimate goal is to become an educator in Indonesia's remote areas, contributing to the education sector. Despite the challenges in her higher education journey, Tiara remains determined to complete her studies and hopes for ease in overcoming any difficulties along the way.
+            </p>
 
-.navbar .logo a {
-    color: #fff;
-    font-size: 1.2em;
-    font-family: 'Poppins', sans-serif;
-}
+            <h2>HOBBIES</h2>
+            <p>
+                Tiara enjoys outdoor activities, especially mountain hiking. It gives her the chance to explore nature, relieve stress and gain unforgettable experiences. Additionally, she enjoys reading books, articles, and watching videos on YouTube to broaden her knowledge from different perspectives. As a tech enthusiast, Tiara also loves exploring new things in the digital world and software development.
+            </p>
 
-.navbar-links button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1em;
-    cursor: pointer;
-    margin: 0 15px; /* Menambah jarak antar tombol agar lebih terpisah */
-    font-family: 'Poppins', sans-serif;
-    padding: 10px; /* Menambahkan padding agar tombol lebih mudah diklik */
-    transition: color 0.3s;
-}
+            <h2>STRENGTHS</h2>
+            <p>
+                Tiara is known for her empathy and strong ideals. She values honesty, has strong principles and is independent, which makes her unique but sometimes less compatible with others. She is disciplined, responsible, and detail-oriented, which stands out in both her work and daily life. Tiara is dedicated and always strives to do her best in everything she works on.
+            </p>
 
-.navbar-links button:hover {
-    color: #f4f4f4;
-}
+            <h2>WEAKNESS</h2>
+            <p>
+                Tiara sometimes faces challenges in verbal communication, especially when expressing her opinions. This means she occasionally needs support from people who understand her to solve problems. She is also highly dependent on the quality of leadership around her. When guided by a good leader, she can perform her tasks to the best of her ability; however, the opposite can also be true. Tiara tends to be more comfortable in solitude, as she feels happier being alone than in an environment that doesn't support her.
+            </p>
 
-#theme-toggle {
-    font-size: 1em; /* Menjaga agar ukuran tombol konsisten di layar kecil */
-    padding: 8px 12px; /* Menyesuaikan padding agar konsisten */
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #fff;
-    transition: transform 0.3s;
-}
+            <h2>EDUCATION BACKGROUND</h2>
+            <ul>
+                <li>Universitas Dian Nusantara, Teknik Informatika (September 2023 - NOW)</li>
+                <li>SMK Negeri 17 Jakarta, Administrasi Perkantoran (2006-2009)</li>
+                <li>SMP Negeri 264 Jakarta (2003-2006)</li>
+                <li>SD Negeri 15 Pagi Jakarta (1997-2003)</li>
+                <li>Taman Kanak-Kanak "KASIH SETIA" Jakarta (1996-1997)</li>
+            </ul>
 
-#theme-toggle:hover {
-    transform: scale(1.1);
-}
+            <h2>FOCUS ENLARGE HARD SKILLS</h2>
+            <ul>
+                <li>Programming Languages: C++, Python, R, JavaScript, HTML, CSS</li>
+                <li>Web Development: Laravel, React, Node.js</li>
+                <li>Databases: MySQL, Oracle, PHP MyAdmin</li>
+                <li>Data Science: Data analysis, machine learning basics, data visualization</li>
+                <li>Operating Systems: Windows</li>
+                <li>Version Control: GitHub</li>
+                <li>Algorithms and Data Structures: Sorting algorithms, searching algorithms, linked lists, trees, graphs</li>
+                <li>Computer Architecture: CPU, memory hierarchy, I/O devices, system performance</li>
+                <li>Mobile Development: Flutter</li>
+            </ul>
+        </section>
 
-/* Sections */
-.section {
-    padding: 40px 20px;
-    min-height: 100vh;
-    display: none;
-    text-align: justify;
-}
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h1>PROJECTS</h1>
+            <div class="project-card">
+                <h3>Proyek 1: Web Development</h3>
+                <p>Membuat situs web responsif dengan desain modern dan fokus pada UX. Situs web ini berfungsi untuk memberikan informasi kepada pengunjung mengenai berbagai produk dan layanan.</p>
+                <ul>
+                    <li>Teknologi yang Digunakan: HTML, CSS, JavaScript, React</li>
+                    <li>Fitur Utama: Responsif, Animasi, Antarmuka Pengguna Interaktif</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <h3>Proyek 2: Aplikasi Mobile</h3>
+                <p>Mengembangkan aplikasi lintas platform untuk melacak tujuan kebugaran pengguna. Aplikasi ini memberikan laporan kemajuan dan saran kebugaran yang dapat disesuaikan.</p>
+                <ul>
+                    <li>Teknologi yang Digunakan: React Native, Firebase</li>
+                    <li>Fitur Utama: Pemantauan Kebugaran, Notifikasi, Statistik Pengguna</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <h3>Proyek 3: Sistem Manajemen Inventaris</h3>
+                <p>Membangun sistem manajemen inventaris berbasis web untuk usaha kecil. Sistem ini memungkinkan pengguna untuk melacak barang, mengelola stok, dan melakukan pemesanan ulang secara otomatis.</p>
+                <ul>
+                    <li>Teknologi yang Digunakan: PHP, MySQL, jQuery</li>
+                    <li>Fitur Utama: Manajemen Barang, Pelaporan Stok, Pembaruan Otomatis</li>
+                </ul>
+            </div>
+        </section>
 
-.section.active {
-    display: block;
-}
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h1>CONTACT</h1>
+            <p>Email <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
+            <p>Certificate and Supporting Document <a href="https://sites.google.com/mahasiswa.undira.ac.id/khaylatiara/profile" target="_blank">Google Site</a></p>
+            <p>Social Media <a href="https://www.instagram.com/khaylatiara" target="_blank">Instagram</a> atau <a href="https://www.tiktok.com/@khaylatiaraa" target="_blank">Tiktok</a>.</p>
+            <p>Social Media <a href="https://www.facebook.com/khayLatiara1" target="_blank">Facebook</a> atau <a href="https://www.facebook.com/khayLatiara17" target="_blank">Facebook 2</a>.</p>
+            <p>Social Media <a href="https://www.linkedin.com/in/mutiarabutetlamria1912/" target="_blank">Linkedin</a></p>
 
-/* Backgrounds for each section */
-#home {
-    background: linear-gradient(135deg, #FFB6C1, #FFDAB9, #E6E6FA, #B0E0E6, #98FB98); /* Pastel Pink, Peach, Lavender, Light Blue, Light Green */
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
+            <!-- Gallery Section -->
+            <h2>GALLERY</h2>
+            <div class="sweet-memories">
+                <picture>
+                    <!-- For screen sizes up to 600px, use a smaller image -->
+                    <source media="(max-width: 600px)" srcset="images/photo-small.jpg">
 
-#about {
-    background: linear-gradient(135deg, #FFB6C1, #E6E6FA, #FFDAB9); /* Soft Pastel Pink, Lavender, Peach */
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
+                    <!-- For screen sizes up to 1200px, use a medium resolution image -->
+                    <source media="(max-width: 1200px)" srcset="images/photo-medium.jpg">
 
-#projects {
-    background: linear-gradient(135deg, #B0E0E6, #FFDAB9, #98FB98); /* Light Blue, Peach, Light Green */
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
+                    <!-- For larger screens, use the default large image -->
+                    <img src="images/photo-large.jpg" alt="Pas Photo" loading="lazy" width="600" height="400">
+                </picture>
 
-#contact {
-    background: linear-gradient(135deg, #E6E6FA, #98FB98, #FFB6C1); /* Lavender, Light Green, Pink */
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
+                <picture>
+                    <!-- For screen sizes up to 600px, use a smaller image -->
+                    <source media="(max-width: 600px)" srcset="images/photo2-small.jpg">
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+                    <!-- For screen sizes up to 1200px, use a medium resolution image -->
+                    <source media="(max-width: 1200px)" srcset="images/photo2-medium.jpg">
 
-img {
-    max-width: 100%;
-    height: auto;
-}
+                    <!-- For larger screens, use the default large image -->
+                    <img src="images/photo2-large.jpg" alt="Papua Barat" loading="lazy" width="600" height="400">
+                </picture>
 
-/* Header and text styling */
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-}
+                <!-- Additional images, if necessary -->
+                <picture>
+                    <source media="(max-width: 600px)" srcset="images/photo3-small.jpg">
+                    <source media="(max-width: 1200px)" srcset="images/photo3-medium.jpg">
+                    <img src="images/photo3-large.jpg" alt="Photo 3" loading="lazy" width="600" height="400">
+                </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="images/photo4-small.jpg">
+                    <source media="(max-width: 1200px)" srcset="images/photo4-medium.jpg">
+                    <img src="images/photo4-large.jpg" alt="Photo 4" loading="lazy" width="600" height="400">
+                </picture>
+            </div>
 
-h2 {
-    font-size: 1.8em;
-    margin: 15px 0;
-    text-align: center;
-}
+            <h2>READ ME</h2>
+            <p>Berlayar jauh ke Pulau Bintan,</p>
+            <p>Membawa bekal buah durian.</p>
+            <p>Semangat belajar janganlah padam,</p>
+            <p>Untuk masa depan penuh harapan! 😊</p>
 
-p, li {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
+            <!-- Skill Chart Section -->
+            <h2>SKILL LEVEL</h2>
+            <div id="skillsChart" style="width: 100%; height: 400px;"></div>
+        </section>
+    </main>
 
-/* Loading Screen */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex; /* Tampilkan loading screen secara default */
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 10000; /* Pastikan loading screen berada di atas semua elemen */
-    transition: opacity 0.5s ease, visibility 0.5s;
-}
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; December 2024 ®Every small step brings us closer to a big goal. Keep striving and growing!!!</p>
+            <p>◦Supported by Github & ChatGPT◦ ◦Designed by Tiara◦</p>
+        </div>
+    </footer>
 
-.loading-screen.loaded {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top">⬆</button>
 
-/* Spinner */
-.spinner {
-    border: 8px solid rgba(255, 255, 255, 0.3);
-    border-top: 8px solid #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-}
+    <!-- JavaScript -->
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loadingScreen = document.querySelector('.loading-screen');
+            loadingScreen.classList.add('loaded');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500); // Tambahkan delay agar transisi halus
+        });
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+        // Menambahkan event listener untuk scroll
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function () {
+            let navbar = document.querySelector(".navbar");
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-/* Skills Chart Styling */
-#skillsChart {
-    margin-top: 30px;
-    max-width: 100%;
-    height: 400px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
+            // Jika pengguna menggulir ke bawah, tambahkan kelas 'small' untuk mengecilkan header
+            if (currentScroll > lastScrollTop) {
+                navbar.classList.add("small");
+            } else {
+                navbar.classList.remove("small");
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
 
-/* Project Cards */
-.project-card {
-    background: #fff;
-    border-radius: 5px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin: 10px 0;
-    max-width: 100%;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+        // Navbar Navigation
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+        // JavaScript untuk Navbar Dinamis
+        function toggleNavbar() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled'); // Menambahkan efek saat digulir
+            } else {
+                navbar.classList.remove('scrolled'); // Menghilangkan efek saat di atas
+            }
+        }
 
-.project-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
+        window.addEventListener('scroll', toggleNavbar);
 
-/* Footer Styling */
-.footer {
-    background: linear-gradient(135deg, #333, #555);
-    color: #fff;
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 0.9em;
-    margin-top: 20px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
 
-.footer a {
-    color: #ffcc66;
-    text-decoration: none;
-    font-weight: bold;
-}
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('show', window.scrollY > 100);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-.footer a:hover {
-    text-decoration: underline;
-}
+        // Google Charts - Skill Level Chart
+        google.charts.load('current', {
+            packages: ['corechart', 'gauge']
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-.footer-content p {
-    margin: 5px 0;
-}
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['Web Dev', 80],
+                ['Mobile Dev', 70],
+                ['Data Science', 65],
+                ['Algorithm', 75]
+            ]);
 
-/* Scroll to Top */
-.scroll-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
-    font-size: 1.2em;
-    transition: background-color 0.3s, transform 0.3s;
-}
+            var options = {
+                width: '100%',
+                height: 400,
+                redFrom: 0, redTo: 50,
+                yellowFrom: 50, yellowTo: 75,
+                greenFrom: 75, greenTo: 100,
+                minorTicks: 5,
+                animation: {
+                    duration: 1000,
+                    easing: 'out',
+                }
+            };
 
-.scroll-top.show {
-    display: block;
-}
+            var chart = new google.visualization.Gauge(document.getElementById('skillsChart'));
+            chart.draw(data, options);
+        }
 
-.scroll-top:hover {
-    background-color: #555;
-    transform: scale(1.1);
-}
+        // Responsif saat jendela diubah ukurannya
+        window.addEventListener('resize', drawChart);
+    </script>
+</body>
 
-/* Sweet Memories Gallery */
-.sweet-memories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.sweet-memories picture,
-.sweet-memories img {
-    flex: 1 1 calc(50% - 30px);
-    max-width: 600px;
-}
-
-/* Responsivitas Mobile */
-
-/* Aturan umum untuk perangkat dengan lebar layar hingga 768px (tablet dan mobile) */
-@media (max-width: 768px) {
-    /* Navbar */
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px 10px;
-    }
-
-    .navbar .logo a {
-        font-size: 1.3em;
-    }
-
-    .navbar-links button {
-        margin: 5px 0;
-        font-size: 1.2em;
-    }
-
-    /* Theme toggle button */
-    #theme-toggle {
-        font-size: 1.5em;
-    }
-
-    /* Section padding */
-    .section {
-        padding: 60px 20px;
-    }
-
-    /* Header dan teks */
-    h1 {
-        font-size: 1.8em;
-    }
-
-    h2 {
-        font-size: 1.4em;
-    }
-
-    p, li {
-        font-size: 0.9em;
-    }
-
-    /* Project Cards */
-    .project-card {
-        padding: 15px;
-        margin: 10px 0;
-    }
-
-    /* Skills chart */
-    #skillsChart {
-        height: 300px;
-        padding: 15px;
-    }
-
-    /* Footer */
-    .footer {
-        padding: 15px 10px;
-    }
-
-    .footer-content p {
-        font-size: 0.8em;
-    }
-
-    /* Scroll to Top button */
-    .scroll-top {
-        font-size: 1.5em;
-        padding: 8px 12px;
-    }
-
-    /* Sweet Memories Gallery */
-    .sweet-memories picture,
-    .sweet-memories img {
-        flex: 1 1 100%;
-    }
-}
-
-/* Untuk perangkat dengan lebar layar hingga 480px (mobile kecil) */
-@media (max-width: 480px) {
-    /* Navbar */
-    .navbar .logo a {
-        font-size: 1.2em;
-    }
-
-    .navbar-links button {
-        font-size: 1em;
-    }
-
-    /* Header */
-    h1 {
-        font-size: 1.6em;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    /* Project Cards */
-    .project-card {
-        padding: 12px;
-    }
-
-    /* Footer */
-    .footer {
-        font-size: 0.75em;
-    }
-
-    /* Scroll to Top button */
-    .scroll-top {
-        padding: 6px 10px;
-    }
-}
+</html>
