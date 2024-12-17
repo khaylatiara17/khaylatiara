@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Meta Tags -->
@@ -15,7 +15,7 @@
     <meta property="og:description" content="Portfolio Tiara, mahasiswa Teknik Informatika dengan keahlian di Web Development, Mobile Development, Data Science, dan lainnya.">
     <meta property="og:image" content="images/photo.jpg">
     <meta property="og:url" content="https://khaylatiara17.github.io/khaylatiara/">
-    <meta property="og:type" content="mini website">
+    <meta property="og:type" content="website"> <!-- Ubah dari "mini website" ke "website" -->
 
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -29,12 +29,11 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="script.js" as="script">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" media="all">
-    <!-- Jika Anda ingin memuat stylesheet secara asinkron tanpa media="print", gunakan media="all" -->
-    <!-- <link rel="stylesheet" href="style.css" media="all"> -->
+    <!-- Hapus preload jika sudah menggunakan defer di tag script di body -->
+    <!-- <link rel="preload" href="script.js" as="script"> -->
 
     <!-- Google Charts -->
     <script defer src="https://www.gstatic.com/charts/loader.js"></script>
@@ -236,7 +235,7 @@
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
-      "@context": "https://khaylatiara17.github.io/khaylatiara/",
+      "@context": "https://schema.org",
       "@type": "Person",
       "name": "Tiara",
       "jobTitle": "Mahasiswa Teknik Informatika",
