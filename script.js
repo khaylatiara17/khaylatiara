@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
+
     // Loading Screen
     const loadingScreen = document.getElementById('loading-screen');
     window.addEventListener('load', () => {
+        console.log('Window fully loaded');
         loadingScreen.classList.add('loaded');
     });
 
@@ -74,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
+        console.log('Drawing chart');
         const data = google.visualization.arrayToDataTable([
             ['Label', 'Value'],
             ['Web Dev', 80],
