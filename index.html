@@ -1,24 +1,138 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animasi Hujan Bintang</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <title>IBF - Home</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="sky">
-        <!-- Bintang-bintang jatuh -->
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="https://via.placeholder.com/100x50?text=ibf" alt="IBF Logo" />
+            </div>
+            <div class="foundation-logo">
+                <a href="#">
+                    <img src="https://via.placeholder.com/150x50?text=IBF+Foundation" alt="IBF Foundation" />
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About IBF</a></li>
+                <li><a href="#">Expert Center</a></li>
+                <li><a href="#">References</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="slider-container">
+        <div class="slider">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('https://via.placeholder.com/1200x500?text=Slide+1');">
+                <div class="slide-content">
+                    <div class="slide-left-text">
+                        <h2>Your expertise is key to our success</h2>
+                        <p>We are always looking for talented professionals. Check out our <a href="#">vacancies</a> or <a href="#">register</a> with us for future opportunities</p>
+                    </div>
+                    <div class="slide-right-box">
+                        <ul>
+                            <li><a href="#">Project Vacancies (2)</a></li>
+                            <li><a href="#">Internal Vacancies (1)</a></li>
+                            <li><a href="#">Register / Update CV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x500?text=Slide+2');">
+                <div class="slide-content">
+                    <div class="slide-left-text">
+                        <h2>Join our global team</h2>
+                        <p>Collaborate with leading experts and help shape the future. <a href="#">Learn more</a>.</p>
+                    </div>
+                    <div class="slide-right-box">
+                        <ul>
+                            <li><a href="#">Project Vacancies (3)</a></li>
+                            <li><a href="#">Internal Vacancies (2)</a></li>
+                            <li><a href="#">Register / Update CV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x500?text=Slide+3');">
+                <div class="slide-content">
+                    <div class="slide-left-text">
+                        <h2>Make an Impact</h2>
+                        <p>Your skills matter. Help us deliver top-tier consulting services worldwide. <a href="#">Contact us</a> for more information.</p>
+                    </div>
+                    <div class="slide-right-box">
+                        <ul>
+                            <li><a href="#">Project Vacancies (1)</a></li>
+                            <li><a href="#">Internal Vacancies (0)</a></li>
+                            <li><a href="#">Register / Update CV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navigasi Slider -->
+        <div class="slider-controls">
+            <span class="prev-btn">&#10094;</span>
+            <span class="next-btn">&#10095;</span>
+        </div>
+        <!-- Indikator -->
+        <div class="slider-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3>About IBF</h3>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Poles of Expertise</a></li>
+                    <li><a href="#">Mission, Vision & Values</a></li>
+                    <li><a href="#">Code of Ethics and Professional Conduct</a></li>
+                    <li><a href="#">Internal Vacancies (1)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Experts Centre</h3>
+                <ul>
+                    <li><a href="#">ADB experts needed</a></li>
+                    <li><a href="#">Project vacancies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>References</h3>
+                <ul>
+                    <li><a href="#">Search by sector/region</a></li>
+                    <li><a href="#">View all</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Contact our team</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Privacy Policy | Impress<br>
+            IBF International Consulting – Avenue Louise 209A – 1050 Brussels – Belgium – Tel: +32 2 237 09 00</p>
+            <p>Founding Member of <a href="#">...</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
