@@ -1,7 +1,9 @@
 /* General Reset */
-body, h1, h2, h3, p, ul, li {
-    margin: 15px;
-    padding: 20px;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -9,6 +11,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #fff;
     transition: background-color 0.3s, color 0.3s;
     text-align: justify;
 }
@@ -17,17 +20,18 @@ body {
 body.dark-mode {
     background-color: #121212;
     color: #f4f4f4;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Link Styling */
 a {
     color: #0066cc;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #004999;
 }
 
 /* Navbar */
@@ -38,17 +42,28 @@ a:hover {
     background: #333;
     color: #fff;
     padding: 10px 30px;
-    position: sticky; /* Sticky positioning to keep it on top */
-    top: 0;  /* Keep navbar at the top */
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 1000;
-    transition: top 0.3s; /* Smooth transition for hiding/showing */
+    transition: padding 0.3s, background 0.3s;
+}
+
+.navbar.scrolled {
+    padding: 5px 30px;
+    background: #222;
 }
 
 .navbar .logo a {
     color: #fff;
     font-size: 1.2em;
     font-family: 'Poppins', sans-serif;
+    transition: font-size 0.3s;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
 }
 
 .navbar-links button {
@@ -57,22 +72,29 @@ a:hover {
     color: #fff;
     font-size: 1em;
     cursor: pointer;
-    margin: 0 15px; /* Menambah jarak antar tombol agar lebih terpisah */
+    margin: 0 10px;
     font-family: 'Poppins', sans-serif;
-    padding: 10px; /* Menambahkan padding agar tombol lebih mudah diklik */
+    padding: 10px;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .navbar-links button:hover {
     color: #f4f4f4;
+    transform: scale(1.05);
 }
 
 #theme-toggle {
-    font-size: 1em; /* Menjaga agar ukuran tombol konsisten di layar kecil */
-    padding: 8px 12px; /* Menyesuaikan padding agar konsisten */
+    font-size: 1em;
+    padding: 8px 12px;
     cursor: pointer;
     background: none;
     border: none;
     color: #fff;
+    transition: transform 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
 }
 
 /* Sections */
@@ -81,71 +103,73 @@ a:hover {
     min-height: 100vh;
     display: none;
     text-align: justify;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .section.active {
     display: block;
 }
 
-/* Backgrounds for each section */
-#home {
-    background: linear-gradient(135deg, #FFB6C1, #FFDAB9, #E6E6FA, #B0E0E6, #98FB98); /* Pastel Pink, Peach, Lavender, Light Blue, Light Green */
+/* Backgrounds for each section with optimized gradients */
+.section {
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
+}
+
+#home {
+    background: linear-gradient(135deg, #FFB6C1, #FFDAB9, #E6E6FA, #B0E0E6, #98FB98);
 }
 
 #about {
-    background: linear-gradient(135deg, #FFB6C1, #E6E6FA, #FFDAB9); /* Soft Pastel Pink, Lavender, Peach */
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    background: linear-gradient(135deg, #FFB6C1, #E6E6FA, #FFDAB9);
 }
 
 #projects {
-    background: linear-gradient(135deg, #B0E0E6, #FFDAB9, #98FB98); /* Light Blue, Peach, Light Green */
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    background: linear-gradient(135deg, #B0E0E6, #FFDAB9, #98FB98);
 }
 
 #contact {
-    background: linear-gradient(135deg, #E6E6FA, #98FB98, #FFB6C1); /* Lavender, Light Green, Pink */
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    background: linear-gradient(135deg, #E6E6FA, #98FB98, #FFB6C1);
 }
 
 @keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-/* Header and text styling */
-h1 {
+/* Header and Text Styling */
+h1, h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5em;
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
 }
 
 h2 {
     font-size: 1.8em;
-    margin: 15px 0;
-    text-align: center;
+    margin: 20px 0;
 }
 
 p, li {
     font-size: 1em;
     margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 /* Loading Screen */
@@ -156,15 +180,19 @@ p, li {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
-    display: none; /* Hide by default, show when loading */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
 }
 
 .loading-screen.loaded {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .spinner {
@@ -174,6 +202,7 @@ p, li {
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
+    margin-bottom: 15px;
 }
 
 @keyframes spin {
@@ -183,12 +212,12 @@ p, li {
 
 /* Skills Chart Styling */
 #skillsChart {
-    margin-top: 30px;
+    margin: 30px auto;
     max-width: 100%;
     height: 400px;
     border: 2px solid #ddd;
     border-radius: 10px;
-    background-color: white;
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
@@ -197,21 +226,25 @@ p, li {
 .project-card {
     background: #fff;
     border-radius: 5px;
-    box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin: 10px 0;
-    max-width: 100%;
-    transition: transform 0.3s;
+    padding: 20px;
+    margin: 15px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
+}
+
+.project-card ul {
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
 /* Footer Styling */
@@ -229,9 +262,11 @@ p, li {
     color: #ffcc66;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .footer a:hover {
+    color: #ffdb85;
     text-decoration: underline;
 }
 
@@ -253,6 +288,7 @@ p, li {
     display: none;
     z-index: 1000;
     font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .scroll-top.show {
@@ -261,91 +297,41 @@ p, li {
 
 .scroll-top:hover {
     background-color: #555;
+    transform: scale(1.1);
 }
 
-/* Responsivitas Mobile */
+/* Responsive Design */
 
-/* Aturan umum untuk perangkat dengan lebar layar hingga 768px (tablet dan mobile) */
+/* Tablet and Mobile */
 @media (max-width: 768px) {
-    /* Navbar */
     .navbar {
         flex-direction: column;
-        text-align: center;
         padding: 15px 10px;
     }
-    
+
     .navbar .logo a {
         font-size: 1.3em;
     }
-    
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
     .navbar-links button {
         margin: 5px 0;
         font-size: 1.2em;
+        width: 100%;
     }
-    
-    /* Theme toggle button */
+
     #theme-toggle {
         font-size: 1.5em;
     }
 
-    /* Section padding */
     .section {
         padding: 60px 20px;
     }
 
-    /* Header dan teks */
-    h1 {
-        font-size: 1.6em;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    p, li {
-        font-size: 0.9em;
-    }
-
-    /* Project Cards */
-    .project-card {
-        padding: 15px;
-        margin: 10px 0;
-    }
-
-    /* Skills chart */
-    #skillsChart {
-        height: 300px;
-        padding: 15px;
-    }
-
-    /* Footer */
-    .footer {
-        padding: 15px 10px;
-    }
-
-    .footer-content p {
-        font-size: 0.8em;
-    }
-
-    /* Scroll to Top button */
-    .scroll-top {
-        font-size: 1.5em;
-        padding: 8px 12px;
-    }
-}
-
-/* Untuk perangkat dengan lebar layar hingga 480px (mobile kecil) */
-@media (max-width: 480px) {
-    /* Navbar */
-    .navbar .logo a {
-        font-size: 1.2em;
-    }
-    
-    .navbar-links button {
-        font-size: 1em;
-    }
-
-    /* Header */
     h1 {
         font-size: 1.8em;
     }
@@ -354,17 +340,60 @@ p, li {
         font-size: 1.4em;
     }
 
-    /* Project Cards */
+    p, li {
+        font-size: 0.9em;
+    }
+
+    #skillsChart {
+        height: 300px;
+        padding: 15px;
+    }
+
+    .project-card {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .footer {
+        padding: 15px 10px;
+    }
+
+    .footer-content p {
+        font-size: 0.8em;
+    }
+
+    .scroll-top {
+        font-size: 1.5em;
+        padding: 8px 12px;
+    }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+    .navbar .logo a {
+        font-size: 1.2em;
+    }
+
+    .navbar-links button {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
     .project-card {
         padding: 12px;
     }
 
-    /* Footer */
     .footer {
         font-size: 0.75em;
     }
 
-    /* Scroll to Top button */
     .scroll-top {
         padding: 6px 10px;
     }
