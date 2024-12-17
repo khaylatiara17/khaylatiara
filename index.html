@@ -2,15 +2,41 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journey Through Code</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dNm1C8PwqAPiCmkPSakZ3VZXxg6qNmCk9IwxLkH2T9a3tP4VJdLUbhc5xxP4/nXRCJEUo3dBM9r+RTZK9Gsycw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Journey Through Code - Portfolio Tiara</title>
+    <meta name="description" content="Portfolio Tiara, mahasiswa Teknik Informatika dengan keahlian di Web Development, Mobile Development, Data Science, dan lainnya.">
+    <meta name="keywords" content="Portfolio, Tiara, Teknik Informatika, Web Development, Mobile Development, Data Science">
+    <meta name="author" content="Tiara">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Journey Through Code - Portfolio Tiara">
+    <meta property="og:description" content="Portfolio Tiara, mahasiswa Teknik Informatika dengan keahlian di Web Development, Mobile Development, Data Science, dan lainnya.">
+    <meta property="og:image" content="images/og-image.webp">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Journey Through Code - Portfolio Tiara">
+    <meta name="twitter:description" content="Portfolio Tiara, mahasiswa Teknik Informatika dengan keahlian di Web Development, Mobile Development, Data Science, dan lainnya.">
+    <meta name="twitter:image" content="images/twitter-image.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Preconnect and Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="script.js" as="script">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+    <!-- Google Charts -->
     <script defer src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- Jika Anda memiliki script eksternal, tambahkan di sini -->
-    <!-- <script defer src="script.js"></script> -->
 </head>
 
 <body>
@@ -156,20 +182,28 @@
             <h2>GALLERY</h2>
             <div class="sweet-memories">
                 <picture>
-                    <source media="(max-width: 600px)" srcset="images/photo-small.jpg">
-                    <source media="(max-width: 1200px)" srcset="images/photo-medium.jpg">
-                    <img src="images/photo-large.jpg" alt="Pas Photo" loading="lazy" width="600" height="400">
+                    <source type="image/webp" media="(max-width: 600px)" srcset="images/photo-small.webp">
+                    <source type="image/webp" media="(max-width: 1200px)" srcset="images/photo-medium.webp">
+                    <img src="images/photo-large.webp" alt="Pas Foto Tiara" loading="lazy" width="600" height="400">
                 </picture>
 
                 <picture>
-                    <source media="(max-width: 600px)" srcset="images/photo2-small.jpg">
-                    <source media="(max-width: 1200px)" srcset="images/photo2-medium.jpg">
-                    <img src="images/photo2-large.jpg" alt="Papua Barat" loading="lazy" width="600" height="400">
+                    <source type="image/webp" media="(max-width: 600px)" srcset="images/photo2-small.webp">
+                    <source type="image/webp" media="(max-width: 1200px)" srcset="images/photo2-medium.webp">
+                    <img src="images/photo2-large.webp" alt="Papua Barat" loading="lazy" width="600" height="400">
                 </picture>
 
                 <!-- Additional images with optimized loading -->
-                <img src="images/image3-large.jpg" alt="Photo 3" loading="lazy" width="600" height="400">
-                <img src="images/image4-large.jpg" alt="Photo 4" loading="lazy" width="600" height="400">
+                <picture>
+                    <source type="image/webp" srcset="images/image3-small.webp" media="(max-width: 600px)">
+                    <source type="image/webp" srcset="images/image3-medium.webp" media="(max-width: 1200px)">
+                    <img src="images/image3-large.webp" alt="Photo 3" loading="lazy" width="600" height="400">
+                </picture>
+                <picture>
+                    <source type="image/webp" srcset="images/image4-small.webp" media="(max-width: 600px)">
+                    <source type="image/webp" srcset="images/image4-medium.webp" media="(max-width: 1200px)">
+                    <img src="images/image4-large.webp" alt="Photo 4" loading="lazy" width="600" height="400">
+                </picture>
             </div>
 
             <h2>READ ME</h2>
@@ -195,8 +229,28 @@
     <!-- Scroll to Top Button -->
     <button id="scroll-top" class="scroll-top" aria-label="Scroll to Top">⬆</button>
 
+    <!-- Script -->
     <script defer src="script.js"></script>
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tiara",
+      "jobTitle": "Mahasiswa Teknik Informatika",
+      "url": "https://yourwebsite.com",
+      "sameAs": [
+        "https://www.instagram.com/khaylatiara",
+        "https://www.tiktok.com/@khaylatiaraa",
+        "https://www.facebook.com/khayLatiara1",
+        "https://www.facebook.com/khayLatiara17",
+        "https://www.linkedin.com/in/mutiarabutetlamria1912/"
+      ],
+      "email": "mailto:411231059@mahasiswa.undira.ac.id",
+      "alumniOf": "Universitas Dian Nusantara"
+    }
+    </script>
 </body>
 
 </html>
