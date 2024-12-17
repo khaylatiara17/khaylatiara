@@ -338,23 +338,34 @@ p, li {
 @media (max-width: 480px) {
     /* Navbar */
     .navbar .logo a {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
     
     .navbar-links button {
-        font-size: 1.1em;
-    }
-    
-    /* Header */
-    h1 {
-        font-size: 1.4em;
-    }
-
-    h2 {
         font-size: 1em;
     }
 
-    p, li {
-        font-size: 0.8em;
+    /* Header */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    /* Project Cards */
+    .project-card {
+        padding: 12px;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 0.75em;
+    }
+
+    /* Scroll to Top button */
+    .scroll-top {
+        padding: 6px 10px;
     }
 }
