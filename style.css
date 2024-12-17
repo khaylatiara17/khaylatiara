@@ -314,7 +314,7 @@ p, li {
 /* Responsive Design */
 
 /* Tablet and Mobile */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
         padding: 15px 10px;
@@ -380,7 +380,7 @@ p, li {
 }
 
 /* Mobile Small */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .navbar .logo a {
         font-size: 1.2em;
     }
@@ -407,5 +407,72 @@ p, li {
 
     .scroll-top {
         padding: 6px 10px;
+    }
+}
+
+/* Membatasi Properti Transition, Animation, dan Cursor untuk Media Screen */
+@media screen {
+    /* Link Hover Transition */
+    a {
+        transition: color var(--transition-speed);
+    }
+
+    /* Navbar Transition */
+    .navbar {
+        transition: padding var(--transition-speed), background var(--transition-speed);
+    }
+
+    /* Navbar Links Transition */
+    .navbar-links button {
+        transition: color var(--transition-speed), transform var(--transition-speed);
+    }
+
+    .navbar-links button:hover {
+        color: #f4f4f4;
+        transform: scale(1.05);
+    }
+
+    /* Theme Toggle Transition */
+    #theme-toggle {
+        transition: transform var(--transition-speed);
+    }
+
+    #theme-toggle:hover {
+        transform: scale(1.1);
+    }
+
+    /* Project Cards Transition */
+    .project-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Scroll to Top Transition */
+    .scroll-top {
+        transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+
+    .scroll-top:hover {
+        background-color: #555;
+        transform: scale(1.1);
+    }
+
+    /* Animations */
+    .section {
+        animation: fadeIn 0.5s ease-in-out;
+        animation: gradientAnimation 15s ease infinite;
+    }
+
+    .spinner {
+        animation: spin 1s linear infinite;
+    }
+
+    /* Skills Chart Animation */
+    #skillsChart {
+        animation: fadeIn 0.5s ease-in-out;
     }
 }
