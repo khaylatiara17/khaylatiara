@@ -1,7 +1,7 @@
 /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
+body, h1, h2, h3, p, ul, li {
+    margin: 15px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -11,7 +11,6 @@ body {
     color: #333;
     transition: background-color 0.3s, color 0.3s;
     text-align: justify;
-    background-color: #fff; /* Pastikan background default */
 }
 
 /* Dark Mode */
@@ -43,16 +42,7 @@ a:hover {
     top: 0;  /* Keep navbar at the top */
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s, padding 0.3s;
-}
-
-.navbar.scrolled {
-    background: #222; /* Warna navbar saat digulir */
-    padding: 5px 30px;
-}
-
-.navbar.small {
-    padding: 5px 30px;
+    transition: top 0.3s; /* Smooth transition for hiding/showing */
 }
 
 .navbar .logo a {
@@ -70,7 +60,6 @@ a:hover {
     margin: 0 15px; /* Menambah jarak antar tombol agar lebih terpisah */
     font-family: 'Poppins', sans-serif;
     padding: 10px; /* Menambahkan padding agar tombol lebih mudah diklik */
-    transition: color 0.3s;
 }
 
 .navbar-links button:hover {
@@ -84,11 +73,6 @@ a:hover {
     background: none;
     border: none;
     color: #fff;
-    transition: transform 0.3s;
-}
-
-#theme-toggle:hover {
-    transform: scale(1.1);
 }
 
 /* Sections */
@@ -171,27 +155,24 @@ p, li {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex; /* Tampilkan loading screen secara default */
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 10000; /* Pastikan loading screen berada di atas semua elemen */
-    transition: opacity 0.5s ease, visibility 0.5s;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; /* Hide by default, show when loading */
 }
 
 .loading-screen.loaded {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    display: none;
 }
 
-/* Spinner */
 .spinner {
-    border: 8px solid rgba(255, 255, 255, 0.3);
-    border-top: 8px solid #fff;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     animation: spin 1s linear infinite;
 }
 
@@ -221,12 +202,11 @@ p, li {
     padding: 15px;
     margin: 10px 0;
     max-width: 100%;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h3 {
@@ -273,7 +253,6 @@ p, li {
     display: none;
     z-index: 1000;
     font-size: 1.2em;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
 .scroll-top.show {
@@ -282,22 +261,6 @@ p, li {
 
 .scroll-top:hover {
     background-color: #555;
-    transform: scale(1.1);
-}
-
-/* Sweet Memories Gallery */
-.sweet-memories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.sweet-memories picture,
-.sweet-memories img {
-    flex: 1 1 calc(50% - 30px);
-    max-width: 600px;
 }
 
 /* Responsivitas Mobile */
@@ -310,16 +273,16 @@ p, li {
         text-align: center;
         padding: 15px 10px;
     }
-
+    
     .navbar .logo a {
         font-size: 1.3em;
     }
-
+    
     .navbar-links button {
         margin: 5px 0;
         font-size: 1.2em;
     }
-
+    
     /* Theme toggle button */
     #theme-toggle {
         font-size: 1.5em;
@@ -332,11 +295,11 @@ p, li {
 
     /* Header dan teks */
     h1 {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     h2 {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     p, li {
@@ -369,12 +332,6 @@ p, li {
         font-size: 1.5em;
         padding: 8px 12px;
     }
-
-    /* Sweet Memories Gallery */
-    .sweet-memories picture,
-    .sweet-memories img {
-        flex: 1 1 100%;
-    }
 }
 
 /* Untuk perangkat dengan lebar layar hingga 480px (mobile kecil) */
@@ -383,18 +340,18 @@ p, li {
     .navbar .logo a {
         font-size: 1.2em;
     }
-
+    
     .navbar-links button {
         font-size: 1em;
     }
 
     /* Header */
     h1 {
-        font-size: 1.6em;
+        font-size: 1.8em;
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     /* Project Cards */
