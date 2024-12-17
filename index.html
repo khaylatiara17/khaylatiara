@@ -1,187 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Ubah lang="id" menjadi lang="en" -->
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>IBF International Consulting - Global Experts & Opportunities</title>
-    <meta name="description" content="IBF International Consulting - Delivering top-tier consulting services worldwide. Explore global vacancies, register as an expert, and join our mission to make a lasting impact.">
-    <meta name="keywords" content="IBF, International Consulting, global experts, vacancies, consulting services, register expert">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="IBF International Consulting" />
-    <meta property="og:description" content="Join our global team of experts and make a difference worldwide." />
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=IBF+Preview" />
-    <meta property="og:url" content="https://www.ibf-example.com" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="IBF International Consulting"/>
-    <meta name="twitter:description" content="Join our global team of experts and make a difference worldwide."/>
-    <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=IBF+Preview"/>
-
-    <link rel="canonical" href="https://www.ibf-example.com" />
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Data Terstruktur (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "IBF International Consulting",
-      "url": "https://www.ibf-example.com",
-      "logo": "https://via.placeholder.com/100x50?text=ibf",
-      "sameAs": [
-        "https://www.linkedin.com/company/ibf-international-consulting/",
-        "https://twitter.com/IBF_Consulting"
-      ]
-    }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Through Code</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Hapus atribut type dari script tag berikut -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
-<body>
-    <header>
-        <div class="header-top">
-            <div class="logo">
-                <img src="https://via.placeholder.com/100x50?text=ibf" alt="IBF International Consulting Logo" />
-            </div>
-            <div class="foundation-logo">
-                <a href="https://www.ibf-example.com/foundation" rel="noopener">
-                    <img src="https://via.placeholder.com/150x50?text=IBF+Foundation" alt="IBF Foundation Logo" />
-                </a>
-            </div>
-            <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">
-                &#9790;
-            </button>
-            <button class="hamburger" aria-label="Open Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <nav class="main-nav" aria-label="Primary Navigation">
-            <ul>
-                <li><a href="https://www.ibf-example.com" aria-label="Go to Home Page">Home</a></li>
-                <li><a href="https://www.ibf-example.com/about" rel="noopener" aria-label="Learn About IBF">About IBF</a></li>
-                <li><a href="https://www.ibf-example.com/expert-center" rel="noopener" aria-label="Visit Expert Center">Expert Center</a></li>
-                <li><a href="https://www.ibf-example.com/references" rel="noopener" aria-label="View References">References</a></li>
-                <li><a href="https://www.ibf-example.com/contact" rel="noopener" aria-label="Contact IBF">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+        <p>Memuat konten, harap tunggu...</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Portfolio Journey Through Code</a>
+        </div>
+        <div class="navbar-links">
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('about')">About</button>
+            <button onclick="showSection('projects')">Update</button>
+            <button onclick="showSection('contact')">Others</button>
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Sections -->
     <main>
-        <section class="slider-container" aria-label="Hero Slider">
-            <!-- Video Background -->
-            <video class="bg-video" autoplay muted loop aria-hidden="true">
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
-            <div class="slider">
-                <!-- Slide 1 -->
-                <div class="slide active">
-                    <div class="slide-content">
-                        <div class="slide-left-text">
-                            <h1>Your Expertise is Key to Our Success</h1>
-                            <p>We are always looking for talented professionals. Explore our <a href="https://www.ibf-example.com/vacancies" rel="noopener">vacancies</a> or <a href="https://www.ibf-example.com/register" rel="noopener">register</a> for future opportunities.</p>
-                        </div>
-                        <div class="slide-right-box">
-                            <ul>
-                                <li><a href="https://www.ibf-example.com/vacancies/projects" rel="noopener">Project Vacancies (2)</a></li>
-                                <li><a href="https://www.ibf-example.com/vacancies/internal" rel="noopener">Internal Vacancies (1)</a></li>
-                                <li><a href="https://www.ibf-example.com/register" rel="noopener">Register / Update CV</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-left-text">
-                            <h2>Join Our Global Team</h2>
-                            <p>Collaborate with leading experts and help shape the future. <a href="https://www.ibf-example.com/learn-more" rel="noopener">Learn more</a>.</p>
-                        </div>
-                        <div class="slide-right-box">
-                            <ul>
-                                <li><a href="https://www.ibf-example.com/vacancies/projects" rel="noopener">Project Vacancies (3)</a></li>
-                                <li><a href="https://www.ibf-example.com/vacancies/internal" rel="noopener">Internal Vacancies (2)</a></li>
-                                <li><a href="https://www.ibf-example.com/register" rel="noopener">Register / Update CV</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-left-text">
-                            <h2>Make an Impact</h2>
-                            <p>Your skills matter. Help us deliver top-tier consulting services worldwide. <a href="https://www.ibf-example.com/contact" rel="noopener">Contact us</a> for more information.</p>
-                        </div>
-                        <div class="slide-right-box">
-                            <ul>
-                                <li><a href="https://www.ibf-example.com/vacancies/projects" rel="noopener">Project Vacancies (1)</a></li>
-                                <li><a href="https://www.ibf-example.com/vacancies/internal" rel="noopener">Internal Vacancies (0)</a></li>
-                                <li><a href="https://www.ibf-example.com/register" rel="noopener">Register / Update CV</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h1>INTRODUCTION</h1>
+            <p>
+                You can call me Tiara, an Informatics Engineering student with a strong interest in learning new technologies and using them to solve real-world problems. With over 15 years of experience in Office Administration, I bring strong skills in managing data details, organizing information, and improving processes as I embark on this exciting journey in the tech world.
+            </p>
+            <p>
+                I believe that technology is a powerful tool to create innovative and sustainable solutions for a better future. I am eager to keep learning and developing my skills in Data Science, as well as working on local technologies that can make a positive impact, especially in remote areas of Indonesia.
+            </p>
+            <p>
+                This mini-site is a small step that reflects my dedication, curiosity, and drive to create meaningful work. I believe in lifelong learning and am always open to opportunities for collaboration, discussions, or feedback to grow and improve.
+            </p>
+
+            <h2>LIFE GOAL</h2>
+            <p>
+                My life goal is to keep growing as a person, contribute positively to society and create useful solutions through technology. I want to use my skills and experience to solve challenges, whether big or small and help build a better and more sustainable future.
+            </p>
+            <p>
+                I also aim to live a balanced life, staying true to myself, valuing connections with others and appreciating every step of the journey with purpose and meaning.
+            </p>
+
+            <h2>SUPPORT SYSTEM</h2>
+            <p>
+                A support system is very important to me, as it provides an environment that helps me grow both personally and professionally. This support comes from my family, close friends and people around me who offer feedback, advice and confidence to keep me moving forward.
+            </p>
+            <p>
+                Technology also plays a key role in my support system, making it easier for me to learn and communicate by putting my thoughts into writing, which I sometimes find hard to express on my own. With this support, I feel more prepared to face challenges, continue learning and achieve the goals I dream of.
+            </p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h1>PROFILE</h1>
+            <p>
+                Tiara is an Informatics Engineering student with a strong interest in new technologies. She is always eager to learn and improve. Born and raised in Jakarta, Tiara comes from a Sumatera Utara heritage with Batak ethnicity.
+            <p>
+                Tiara began her studies at Universitas Dian Nusantara in September 2023 and has big dreams of continuing her education to pursue a master's degree. Her ultimate goal is to become an educator in Indonesia's remote areas, contributing to the education sector. Despite the challenges in her higher education journey, Tiara remains determined to complete her studies and hopes for ease in overcoming any difficulties along the way.
+            </p>
+
+            <h2>HOBBIES</h2>
+            <p>
+                Tiara enjoys outdoor activities, especially mountain hiking. It gives her the chance to explore nature, relieve stress and gain unforgettable experiences. Additionally, she enjoys reading books, articles, and watching videos on YouTube to broaden her knowledge from different perspectives. As a tech enthusiast, Tiara also loves exploring new things in the digital world and software development.
+            </p>
+
+            <h2>STRENGTHS</h2>
+            <p>
+                Tiara is known for her empathy and strong ideals. She values honesty, has strong principles and is independent, which makes her unique but sometimes less compatible with others. She is disciplined, responsible, and detail-oriented, which stands out in both her work and daily life. Tiara is dedicated and always strives to do her best in everything she works on.
+            </p>
+
+            <h2>WEAKNESS</h2>
+            <p>
+                Tiara sometimes faces challenges in verbal communication, especially when expressing her opinions. This means she occasionally needs support from people who understand her to solve problems. She is also highly dependent on the quality of leadership around her. When guided by a good leader, she can perform her tasks to the best of her ability; however, the opposite can also be true. Tiara tends to be more comfortable in solitude, as she feels happier being alone than in an environment that doesn't support her.
+            </p>
+
+            <h2>EDUCATION BACKGROUND</h2>
+            <ul>
+                <li>Universitas Dian Nusantara, Teknik Informatika (September 2023 - NOW)</li>
+                <li>SMK Negeri 17 Jakarta, Administrasi Perkantoran (2006-2009)</li>
+                <li>SMP Negeri 264 Jakarta (2003-2006)</li>
+                <li>SD Negeri 15 Pagi Jakarta (1997-2003)</li>
+                <li>Taman Kanak-Kanak "KASIH SETIA" Jakarta (1996-1997)</li>
+            </ul>
+
+            <h2>FOCUS ENLARGE HARD SKILLS</h2>
+            <ul>
+                <li>Programming Languages: C++, Python, R, JavaScript, HTML, CSS</li>
+                <li>Web Development: Laravel, React, Node.js</li>
+                <li>Databases: MySQL, Oracle, PHP MyAdmin</li>
+                <li>Data Science: Data analysis, machine learning basics, data visualization</li>
+                <li>Operating Systems: Windows</li>
+                <li>Version Control: GitHub</li>
+                <li>Algorithms and Data Structures: Sorting algorithms, searching algorithms, linked lists, trees, graphs</li>
+                <li>Computer Architecture: CPU, memory hierarchy, I/O devices, system performance</li>
+                <li>Mobile Development: Flutter</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h1>PROJECTS</h1>
+            <div class="project-card">
+                <h3>Proyek 1: Web Development</h3>
+                <p>Membuat situs web responsif dengan desain modern dan fokus pada UX. Situs web ini berfungsi untuk memberikan informasi kepada pengunjung mengenai berbagai produk dan layanan.</p>
+                <ul>
+                    <li>Teknologi yang Digunakan: HTML, CSS, JavaScript, React</li>
+                    <li>Fitur Utama: Responsif, Animasi, Antarmuka Pengguna Interaktif</li>
+                </ul>
             </div>
-            <!-- Navigasi Slider -->
-            <div class="slider-controls">
-                <button class="prev-btn" aria-label="Previous Slide">&#10094;</button>
-                <button class="next-btn" aria-label="Next Slide">&#10095;</button>
+            <div class="project-card">
+                <h3>Proyek 2: Aplikasi Mobile</h3>
+                <p>Mengembangkan aplikasi lintas platform untuk melacak tujuan kebugaran pengguna. Aplikasi ini memberikan laporan kemajuan dan saran kebugaran yang dapat disesuaikan.</p>
+                <ul>
+                    <li>Teknologi yang Digunakan: React Native, Firebase</li>
+                    <li>Fitur Utama: Pemantauan Kebugaran, Notifikasi, Statistik Pengguna</li>
+                </ul>
             </div>
-            <!-- Indikator -->
-            <div class="slider-indicators">
-                <span class="indicator active" data-slide="0" aria-label="Go to slide 1"></span>
-                <span class="indicator" data-slide="1" aria-label="Go to slide 2"></span>
-                <span class="indicator" data-slide="2" aria-label="Go to slide 3"></span>
+            <div class="project-card">
+                <h3>Proyek 3: Sistem Manajemen Inventaris</h3>
+                <p>Membangun sistem manajemen inventaris berbasis web untuk usaha kecil. Sistem ini memungkinkan pengguna untuk melacak barang, mengelola stok, dan melakukan pemesanan ulang secara otomatis.</p>
+                <ul>
+                    <li>Teknologi yang Digunakan: PHP, MySQL, jQuery</li>
+                    <li>Fitur Utama: Manajemen Barang, Pelaporan Stok, Pembaruan Otomatis</li>
+                </ul>
             </div>
         </section>
-    </main>
 
-    <footer aria-label="Footer">
-        <div class="footer-top">
-            <div class="footer-col">
-                <h3>About IBF</h3>
-                <ul>
-                    <li><a href="https://www.ibf-example.com/company" rel="noopener">Company</a></li>
-                    <li><a href="https://www.ibf-example.com/expertise" rel="noopener">Poles of Expertise</a></li>
-                    <li><a href="https://www.ibf-example.com/mission-vision" rel="noopener">Mission, Vision &amp; Values</a></li>
-                    <li><a href="https://www.ibf-example.com/ethics" rel="noopener">Code of Ethics and Professional Conduct</a></li>
-                    <li><a href="https://www.ibf-example.com/vacancies/internal" rel="noopener">Internal Vacancies (1)</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Experts Centre</h3>
-                <ul>
-                    <li><a href="https://www.ibf-example.com/experts/adb" rel="noopener">ADB experts needed</a></li>
-                    <li><a href="https://www.ibf-example.com/vacancies/projects" rel="noopener">Project vacancies</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>References</h3>
-                <ul>
-                    <li><a href="https://www.ibf-example.com/references/search" rel="noopener">Search by sector/region</a></li>
-                    <li><a href="https://www.ibf-example.com/references/all" rel="noopener">View all</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="https://www.ibf-example.com/contact-team" rel="noopener">Contact our team</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Privacy Policy | Impress<br>
-            IBF International Consulting – Avenue Louise 209A – 1050 Brussels – Belgium – Tel: +32 2 237 09 00</p>
-            <p>Founding Member of <a href="https://www.ibf-example.com/affiliations" rel="noopener">...</a></p>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h1>CONTACT</h1>
+            <p>Email <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
+            <p>Sertificate and Supporting Document <a href="https://sites.google.com/mahasiswa.undira.ac.id/khaylatiara/profile" target="_blank">Google Site</a></p>
+            <p>Social Media <a href="https://www.instagram.com/khaylatiara" target="_blank">Instagram</a> or <a href="https://www.tiktok.com/@khaylatiaraa" target="_blank">Tiktok</a>.</p>
+            <p>Social Media <a href="https://www.facebook.com/khayLatiara1" target="_blank">Facebook</a> or <a href="https://www.facebook.com/khayLatiara17" target="_blank">Facebook 2</a>.</p>
+            <p>Social Media <a href="https://www.linkedin.com/in/mutiarabutetlamria1912/" target="_blank">Linkedin</a></p>
+
+            <!-- New Gallery Section -->
+<h2>GALLERY</h2>
+<div class="Sweet Memories">
+    <picture>
+        <!-- For screen sizes up to 600px, use a smaller image -->
+        <source media="(max-width: 600px)" srcset="images/photo-small.jpg">
+        
+        <!-- For screen sizes up to 1200px, use a medium resolution image -->
+        <source media="(max-width: 1200px)" srcset="images/photo-medium.jpg">
+        
+        <!-- For larger screens, use the default large image -->
+        <img src="images/photo-large.jpg" alt="Pas Photo" loading="lazy" width="600" height="400">
+    </picture>
+
+    <picture>
+        <!-- For screen sizes up to 600px, use a smaller image -->
+        <source media="(max-width: 600px)" srcset="images/photo2-small.jpg">
+        
+        <!-- For screen sizes up to 1200px, use a medium resolution image -->
+        <source media="(max-width: 1200px)" srcset="images/photo2-medium.jpg">
+        
+        <!-- For larger screens, use the default large image -->
+        <img src="images/photo2-large.jpg" alt="Papua Barat" loading="lazy" width="600" height="400">
+    </picture>
+
+    <!-- Additional images, if necessary -->
+    <img src="image3.jpg" alt="Photo 3" width="600" height="400">
+    <img src="image4.jpg" alt="Photo 4" width="600" height="400">
+</div>
+
+            <h2>READ ME</h2>
+            <p>Berlayar jauh ke Pulau Bintan,</p>
+            <p>Membawa bekal buah durian.</p>
+            <p>Semangat belajar janganlah padam,</p>
+            <p>Untuk masa depan penuh harapan! 😊</p>
+
+    <!-- Skill Chart Section -->
+    <h2>SKILL LEVEL</h2>
+    <div id="skillsChart" style="width: 400px; height: 400px;"></div>
+
+        </section>
+    </main>
+  
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; December 2024   ®Every small step brings us closer to a big goal. Keep striving and growing!!!</p> 
+            <p>◦Supported by Github & ChatGPT◦   ◦Designed by Tiara◦</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top">⬆</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+// Menambahkan event listener untuk scroll
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+    let navbar = document.querySelector(".navbar");
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Jika pengguna menggulir ke bawah, tambahkan kelas 'small' untuk mengecilkan header
+    if (currentScroll > lastScrollTop) {
+        navbar.classList.add("small");
+    } else {
+        navbar.classList.remove("small");
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+     
+        // Navbar Navigation
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+      
+        // JavaScript untuk Navbar Dinamis
+        window.onscroll = function() {toggleNavbar()};
+
+        function toggleNavbar() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+        navbar.classList.add('scrolled'); // Menambahkan efek saat digulir
+        } else {
+        navbar.classList.remove('scrolled'); // Menghilangkan efek saat di atas
+            }
+        }
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('show', window.scrollY > 100);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Google Charts - Skill Level Chart
+        google.charts.load('current', {
+            packages: ['corechart', 'gauge']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['Web Dev', 20],
+                ['Mobile Dev', 10],
+                ['Data Science', 30],
+                ['Algorithm', 30]
+            ]);
+
+            var options = {
+                width: 400, height: 400,
+                redFrom: 0, redTo: 40,
+                yellowFrom: 40, yellowTo: 70,
+                greenFrom: 70, greenTo: 100,
+                minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('skillsChart'));
+            chart.draw(data, options);
+        }
+        
+    </script>
 </body>
+
 </html>
