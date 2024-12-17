@@ -2,11 +2,24 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
+    background: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background: #333;
+    color: #eee;
+}
+
+.dark-mode a {
+    color: #cce;
 }
 
 header {
     background: #fff;
     border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 100;
 }
 
 .header-top {
@@ -14,6 +27,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    position: relative;
 }
 
 .header-top .logo img {
@@ -22,6 +36,45 @@ header {
 
 .foundation-logo img {
     max-height: 50px;
+}
+
+.dark-mode-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    transition: transform 0.3s;
+    margin-left: 20px;
+}
+.dark-mode-toggle:hover {
+    transform: scale(1.2);
+    color: #005b92;
+}
+
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    margin-left: 20px;
+}
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    transition: all 0.3s;
+}
+.dark-mode .hamburger span {
+    background: #eee;
+}
+.hamburger:hover span {
+    background: #005b92;
 }
 
 .main-nav {
@@ -40,10 +93,12 @@ header {
     text-decoration: none;
     padding: 15px 20px;
     display: block;
+    transition: background 0.3s;
 }
 
 .main-nav ul li a:hover {
     background: #004a78;
+    text-decoration: underline;
 }
 
 .slider-container {
@@ -51,22 +106,39 @@ header {
     overflow: hidden;
     max-width: 100%;
     height: auto;
+    color: #333;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    position: relative;
+    height: 500px;
 }
 
 .slide {
-    min-width: 100%;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    position: absolute;
+    top:0; left:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
 }
 
 .slide-content {
@@ -74,9 +146,15 @@ header {
     background: rgba(255,255,255,0.8);
     padding: 20px;
     max-width: 1000px;
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
     gap: 20px;
+    border-radius: 5px;
+}
+
+.dark-mode .slide-content {
+    background: rgba(50,50,50,0.7);
+    color: #eee;
 }
 
 .slide-left-text {
@@ -90,6 +168,13 @@ header {
 .slide-left-text a {
     color: #005b92;
     text-decoration: none;
+    transition: color 0.3s;
+}
+.dark-mode .slide-left-text a {
+    color: #cce;
+}
+.slide-left-text a:hover {
+    text-decoration: underline;
 }
 
 .slide-right-box {
@@ -97,6 +182,10 @@ header {
     background: rgba(0,0,0,0.1);
     padding: 10px;
     border-radius: 4px;
+    transition: background 0.3s;
+}
+.dark-mode .slide-right-box {
+    background: rgba(255,255,255,0.1);
 }
 
 .slide-right-box ul {
@@ -110,6 +199,14 @@ header {
     text-decoration: none;
     display: block;
     margin-bottom: 5px;
+    transition: color 0.3s;
+}
+.dark-mode .slide-right-box ul li a {
+    color: #cce;
+}
+.slide-right-box ul li a:hover {
+    color: #333;
+    text-decoration: underline;
 }
 
 .slider-controls {
@@ -120,6 +217,7 @@ header {
     justify-content: space-between;
     transform: translateY(-50%);
     pointer-events: none;
+    padding: 0 20px;
 }
 
 .slider-controls .prev-btn,
@@ -131,6 +229,11 @@ header {
     cursor: pointer;
     pointer-events: all;
     border-radius: 50%;
+    transition: background 0.3s;
+}
+.slider-controls .prev-btn:hover,
+.slider-controls .next-btn:hover {
+    background: rgba(0,0,0,0.6);
 }
 
 .slider-indicators {
@@ -140,6 +243,7 @@ header {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    pointer-events: all;
 }
 
 .indicator {
@@ -148,10 +252,16 @@ header {
     background: #ccc;
     border-radius: 50%;
     cursor: pointer;
+    transition: background 0.3s;
 }
-
+.indicator:hover {
+    background: #999;
+}
 .indicator.active {
     background: #005b92;
+}
+.dark-mode .indicator.active {
+    background: #cce;
 }
 
 footer {
@@ -159,6 +269,11 @@ footer {
     border-top: 1px solid #ddd;
     padding: 20px;
     font-size: 14px;
+}
+.dark-mode footer {
+    background: #444;
+    color: #eee;
+    border-top: 1px solid #555;
 }
 
 .footer-top {
@@ -191,8 +306,11 @@ footer {
 .footer-col ul li a {
     text-decoration: none;
     color: #333;
+    transition: color 0.3s;
 }
-
+.dark-mode .footer-col ul li a {
+    color: #ddd;
+}
 .footer-col ul li a:hover {
     text-decoration: underline;
 }
@@ -203,8 +321,53 @@ footer {
     border-top: 1px solid #ddd;
     padding-top: 10px;
 }
+.dark-mode .footer-bottom {
+    color: #ccc;
+    border-top: 1px solid #555;
+}
 
 .footer-bottom a {
     color: #005b92;
     text-decoration: none;
+    transition: color 0.3s;
+}
+.dark-mode .footer-bottom a {
+    color: #cce;
+}
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .slide-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .slide-right-box {
+        margin-top: 20px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .main-nav.active ul {
+        display: block;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .foundation-logo,
+    .dark-mode-toggle {
+        order: -1;
+        margin: 0 10px 0 0;
+    }
+
+    .header-top {
+        flex-wrap: wrap;
+    }
 }
