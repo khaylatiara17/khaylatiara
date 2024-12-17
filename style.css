@@ -171,25 +171,27 @@ p, li {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: flex; /* Tampilkan loading screen secara default */
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000; /* Pastikan loading screen berada di atas semua elemen */
     transition: opacity 0.5s ease, visibility 0.5s;
 }
 
 .loading-screen.loaded {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 }
 
+/* Spinner */
 .spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #fff;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid #fff;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     animation: spin 1s linear infinite;
 }
 
