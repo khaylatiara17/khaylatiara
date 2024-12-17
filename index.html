@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Ubah lang="id" menjadi lang="en" -->
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journey Through Code</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dNm1C8PwqAPiCmkPSakZ3VZXxg6qNmCk9IwxLkH2T9a3tP4VJdLUbhc5xxP4/nXRCJEUo3dBM9r+RTZK9Gsycw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Hapus atribut type dari script tag berikut -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script defer src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Jika Anda memiliki script eksternal, tambahkan di sini -->
+    <!-- <script defer src="script.js"></script> -->
 </head>
 
 <body>
     <!-- Loading Screen -->
-    <div class="loading-screen">
+    <div class="loading-screen" id="loading-screen">
         <div class="spinner"></div>
         <p>Memuat konten, harap tunggu...</p>
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="logo">
             <a href="#">Portfolio Journey Through Code</a>
         </div>
@@ -29,15 +30,15 @@
             <button onclick="showSection('about')">About</button>
             <button onclick="showSection('projects')">Update</button>
             <button onclick="showSection('contact')">Others</button>
-            <button id="theme-toggle">🌙</button>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         </div>
     </nav>
 
     <!-- Sections -->
     <main>
         <!-- Home Section -->
-        <section id="home" class="section active">
-            <h1>INTRODUCTION</h1>
+        <section id="home" class="section active" aria-labelledby="home-heading">
+            <h1 id="home-heading">INTRODUCTION</h1>
             <p>
                 You can call me Tiara, an Informatics Engineering student with a strong interest in learning new technologies and using them to solve real-world problems. With over 15 years of experience in Office Administration, I bring strong skills in managing data details, organizing information, and improving processes as I embark on this exciting journey in the tech world.
             </p>
@@ -66,10 +67,11 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section">
-            <h1>PROFILE</h1>
+        <section id="about" class="section" aria-labelledby="about-heading">
+            <h1 id="about-heading">PROFILE</h1>
             <p>
                 Tiara is an Informatics Engineering student with a strong interest in new technologies. She is always eager to learn and improve. Born and raised in Jakarta, Tiara comes from a Sumatera Utara heritage with Batak ethnicity.
+            </p>
             <p>
                 Tiara began her studies at Universitas Dian Nusantara in September 2023 and has big dreams of continuing her education to pursue a master's degree. Her ultimate goal is to become an educator in Indonesia's remote areas, contributing to the education sector. Despite the challenges in her higher education journey, Tiara remains determined to complete her studies and hopes for ease in overcoming any difficulties along the way.
             </p>
@@ -91,18 +93,18 @@
 
             <h2>EDUCATION BACKGROUND</h2>
             <ul>
-                <li>Universitas Dian Nusantara, Teknik Informatika (September 2023 - NOW)</li>
+                <li>Universitas Dian Nusantara, Teknik Informatika (September 2023 - Present)</li>
                 <li>SMK Negeri 17 Jakarta, Administrasi Perkantoran (2006-2009)</li>
                 <li>SMP Negeri 264 Jakarta (2003-2006)</li>
                 <li>SD Negeri 15 Pagi Jakarta (1997-2003)</li>
                 <li>Taman Kanak-Kanak "KASIH SETIA" Jakarta (1996-1997)</li>
             </ul>
 
-            <h2>FOCUS ENLARGE HARD SKILLS</h2>
+            <h2>FOCUS ON HARD SKILLS</h2>
             <ul>
                 <li>Programming Languages: C++, Python, R, JavaScript, HTML, CSS</li>
                 <li>Web Development: Laravel, React, Node.js</li>
-                <li>Databases: MySQL, Oracle, PHP MyAdmin</li>
+                <li>Databases: MySQL, Oracle, PHPMyAdmin</li>
                 <li>Data Science: Data analysis, machine learning basics, data visualization</li>
                 <li>Operating Systems: Windows</li>
                 <li>Version Control: GitHub</li>
@@ -113,8 +115,8 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h1>PROJECTS</h1>
+        <section id="projects" class="section" aria-labelledby="projects-heading">
+            <h1 id="projects-heading">PROJECTS</h1>
             <div class="project-card">
                 <h3>Proyek 1: Web Development</h3>
                 <p>Membuat situs web responsif dengan desain modern dan fokus pada UX. Situs web ini berfungsi untuk memberikan informasi kepada pengunjung mengenai berbagai produk dan layanan.</p>
@@ -142,43 +144,33 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h1>CONTACT</h1>
-            <p>Email <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a>.</p>
-            <p>Sertificate and Supporting Document <a href="https://sites.google.com/mahasiswa.undira.ac.id/khaylatiara/profile" target="_blank">Google Site</a></p>
-            <p>Social Media <a href="https://www.instagram.com/khaylatiara" target="_blank">Instagram</a> or <a href="https://www.tiktok.com/@khaylatiaraa" target="_blank">Tiktok</a>.</p>
-            <p>Social Media <a href="https://www.facebook.com/khayLatiara1" target="_blank">Facebook</a> or <a href="https://www.facebook.com/khayLatiara17" target="_blank">Facebook 2</a>.</p>
-            <p>Social Media <a href="https://www.linkedin.com/in/mutiarabutetlamria1912/" target="_blank">Linkedin</a></p>
+        <section id="contact" class="section" aria-labelledby="contact-heading">
+            <h1 id="contact-heading">CONTACT</h1>
+            <p>Email: <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a></p>
+            <p>Sertifikat dan Dokumen Pendukung: <a href="https://sites.google.com/mahasiswa.undira.ac.id/khaylatiara/profile" target="_blank" rel="noopener">Google Site</a></p>
+            <p>Media Sosial: <a href="https://www.instagram.com/khaylatiara" target="_blank" rel="noopener">Instagram</a> atau <a href="https://www.tiktok.com/@khaylatiaraa" target="_blank" rel="noopener">TikTok</a></p>
+            <p>Media Sosial: <a href="https://www.facebook.com/khayLatiara1" target="_blank" rel="noopener">Facebook</a> atau <a href="https://www.facebook.com/khayLatiara17" target="_blank" rel="noopener">Facebook 2</a></p>
+            <p>Media Sosial: <a href="https://www.linkedin.com/in/mutiarabutetlamria1912/" target="_blank" rel="noopener">LinkedIn</a></p>
 
-            <!-- New Gallery Section -->
-<h2>GALLERY</h2>
-<div class="Sweet Memories">
-    <picture>
-        <!-- For screen sizes up to 600px, use a smaller image -->
-        <source media="(max-width: 600px)" srcset="images/photo-small.jpg">
-        
-        <!-- For screen sizes up to 1200px, use a medium resolution image -->
-        <source media="(max-width: 1200px)" srcset="images/photo-medium.jpg">
-        
-        <!-- For larger screens, use the default large image -->
-        <img src="images/photo-large.jpg" alt="Pas Photo" loading="lazy" width="600" height="400">
-    </picture>
+            <!-- Gallery Section -->
+            <h2>GALLERY</h2>
+            <div class="sweet-memories">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="images/photo-small.jpg">
+                    <source media="(max-width: 1200px)" srcset="images/photo-medium.jpg">
+                    <img src="images/photo-large.jpg" alt="Pas Photo" loading="lazy" width="600" height="400">
+                </picture>
 
-    <picture>
-        <!-- For screen sizes up to 600px, use a smaller image -->
-        <source media="(max-width: 600px)" srcset="images/photo2-small.jpg">
-        
-        <!-- For screen sizes up to 1200px, use a medium resolution image -->
-        <source media="(max-width: 1200px)" srcset="images/photo2-medium.jpg">
-        
-        <!-- For larger screens, use the default large image -->
-        <img src="images/photo2-large.jpg" alt="Papua Barat" loading="lazy" width="600" height="400">
-    </picture>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="images/photo2-small.jpg">
+                    <source media="(max-width: 1200px)" srcset="images/photo2-medium.jpg">
+                    <img src="images/photo2-large.jpg" alt="Papua Barat" loading="lazy" width="600" height="400">
+                </picture>
 
-    <!-- Additional images, if necessary -->
-    <img src="image3.jpg" alt="Photo 3" width="600" height="400">
-    <img src="image4.jpg" alt="Photo 4" width="600" height="400">
-</div>
+                <!-- Additional images with optimized loading -->
+                <img src="images/image3-large.jpg" alt="Photo 3" loading="lazy" width="600" height="400">
+                <img src="images/image4-large.jpg" alt="Photo 4" loading="lazy" width="600" height="400">
+            </div>
 
             <h2>READ ME</h2>
             <p>Berlayar jauh ke Pulau Bintan,</p>
@@ -186,109 +178,104 @@
             <p>Semangat belajar janganlah padam,</p>
             <p>Untuk masa depan penuh harapan! 😊</p>
 
-    <!-- Skill Chart Section -->
-    <h2>SKILL LEVEL</h2>
-    <div id="skillsChart" style="width: 400px; height: 400px;"></div>
-
+            <!-- Skill Chart Section -->
+            <h2>SKILL LEVEL</h2>
+            <div id="skillsChart"></div>
         </section>
     </main>
-  
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; December 2024   ®Every small step brings us closer to a big goal. Keep striving and growing!!!</p> 
-            <p>◦Supported by Github & ChatGPT◦   ◦Designed by Tiara◦</p>
+            <p>&copy; December 2024 ® Every small step brings us closer to a big goal. Keep striving and growing!!!</p>
+            <p>◦ Supported by GitHub & ChatGPT ◦ ◦ Designed by Tiara ◦</p>
         </div>
     </footer>
 
-    
     <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top">⬆</button>
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to Top">⬆</button>
 
     <!-- JavaScript -->
     <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });
+        // script.js
 
-// Menambahkan event listener untuk scroll
-let lastScrollTop = 0;
-window.addEventListener("scroll", function() {
-    let navbar = document.querySelector(".navbar");
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        document.addEventListener('DOMContentLoaded', () => {
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            window.addEventListener('load', () => {
+                loadingScreen.classList.add('loaded');
+            });
 
-    // Jika pengguna menggulir ke bawah, tambahkan kelas 'small' untuk mengecilkan header
-    if (currentScroll > lastScrollTop) {
-        navbar.classList.add("small");
-    } else {
-        navbar.classList.remove("small");
-    }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
-     
-        // Navbar Navigation
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-        }
-      
-        // JavaScript untuk Navbar Dinamis
-        window.onscroll = function() {toggleNavbar()};
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                if (currentScroll > lastScrollTop && currentScroll > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            });
 
-        function toggleNavbar() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-        navbar.classList.add('scrolled'); // Menambahkan efek saat digulir
-        } else {
-        navbar.classList.remove('scrolled'); // Menghilangkan efek saat di atas
-            }
-        }
-
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        });
-
-        // Scroll to Top
-        const scrollTopBtn = document.getElementById('scroll-top');
-        window.addEventListener('scroll', () => {
-            scrollTopBtn.classList.toggle('show', window.scrollY > 100);
-        });
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Google Charts - Skill Level Chart
-        google.charts.load('current', {
-            packages: ['corechart', 'gauge']
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Label', 'Value'],
-                ['Web Dev', 20],
-                ['Mobile Dev', 10],
-                ['Data Science', 30],
-                ['Algorithm', 30]
-            ]);
-
-            var options = {
-                width: 400, height: 400,
-                redFrom: 0, redTo: 40,
-                yellowFrom: 40, yellowTo: 70,
-                greenFrom: 70, greenTo: 100,
-                minorTicks: 5
+            // Navbar Navigation
+            window.showSection = function(sectionId) {
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => section.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
             };
 
-            var chart = new google.visualization.Gauge(document.getElementById('skillsChart'));
-            chart.draw(data, options);
-        }
-        
+            // Dark Mode Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+            });
+
+            // Scroll to Top
+            const scrollTopBtn = document.getElementById('scroll-top');
+            window.addEventListener('scroll', () => {
+                scrollTopBtn.classList.toggle('show', window.scrollY > 100);
+            });
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Google Charts - Skill Level Chart
+            google.charts.load('current', { packages: ['corechart', 'gauge'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                const data = google.visualization.arrayToDataTable([
+                    ['Label', 'Value'],
+                    ['Web Dev', 80],
+                    ['Mobile Dev', 60],
+                    ['Data Science', 70],
+                    ['Algorithm', 75]
+                ]);
+
+                const options = {
+                    width: '100%',
+                    height: 400,
+                    redFrom: 0,
+                    redTo: 40,
+                    yellowFrom: 40,
+                    yellowTo: 70,
+                    greenFrom: 70,
+                    greenTo: 100,
+                    minorTicks: 5
+                };
+
+                const chart = new google.visualization.Gauge(document.getElementById('skillsChart'));
+                chart.draw(data, options);
+
+                // Responsiveness
+                window.addEventListener('resize', () => {
+                    chart.draw(data, options);
+                });
+            }
+        });
     </script>
 </body>
 
