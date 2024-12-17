@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Website dengan Transisi & Gradient Pastel</title>
-    <meta name="description" content="Contoh website dengan navigasi smooth scroll dan background linear gradient pastel yang berubah secara otomatis.">
-    <meta name="keywords" content="website, gradient, pastel, smooth scroll, transitions">
-    <meta name="robots" content="index, follow">
+    <title>IBF - Home</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
         <div class="header-top">
-            <h1>My Website</h1>
-            <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">🌓</button>
+            <div class="logo">
+                <img src="https://via.placeholder.com/100x50?text=ibf" alt="IBF Logo" />
+            </div>
+            <div class="foundation-logo">
+                <a href="#">
+                    <img src="https://via.placeholder.com/150x50?text=IBF+Foundation" alt="IBF Foundation" />
+                </a>
+            </div>
+            <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+                &#9790;
+            </button>
             <button class="hamburger" aria-label="Open Menu">
                 <span></span>
                 <span></span>
@@ -22,38 +28,123 @@
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="#home" aria-label="Go to Home Section">Home</a></li>
-                <li><a href="#about" aria-label="Go to About Section">About</a></li>
-                <li><a href="#services" aria-label="Go to Services Section">Services</a></li>
-                <li><a href="#contact" aria-label="Go to Contact Section">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About IBF</a></li>
+                <li><a href="#">Expert Center</a></li>
+                <li><a href="#">References</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="section">
-            <h2>Welcome to My Website</h2>
-            <p>Halaman ini memiliki background linear gradient pastel yang berubah secara otomatis.</p>
-        </section>
-
-        <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>Kami adalah tim kreatif yang berfokus pada inovasi desain dan pengalaman pengguna.</p>
-        </section>
-
-        <section id="services" class="section">
-            <h2>Our Services</h2>
-            <p>Kami menawarkan layanan desain web, pengembangan aplikasi, dan konsultasi UX/UI.</p>
-        </section>
-
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Hubungi kami di <a href="mailto:info@example.com">info@example.com</a> untuk informasi lebih lanjut.</p>
-        </section>
-    </main>
+    <section class="slider-container">
+        <!-- Video Background -->
+        <video class="bg-video" autoplay muted loop>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="slider">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-content">
+                    <div class="slide-left-text">
+                        <h2>Your expertise is key to our success</h2>
+                        <p>We are always looking for talented professionals. Check out our <a href="#">vacancies</a> or <a href="#">register</a> with us for future opportunities</p>
+                    </div>
+                    <div class="slide-right-box">
+                        <ul>
+                            <li><a href="#">Project Vacancies (2)</a></li>
+                            <li><a href="#">Internal Vacancies (1)</a></li>
+                            <li><a href="#">Register / Update CV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-left-text">
+                        <h2>Join our global team</h2>
+                        <p>Collaborate with leading experts and help shape the future. <a href="#">Learn more</a>.</p>
+                    </div>
+                    <div class="slide-right-box">
+                        <ul>
+                            <li><a href="#">Project Vacancies (3)</a></li>
+                            <li><a href="#">Internal Vacancies (2)</a></li>
+                            <li><a href="#">Register / Update CV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-left-text">
+                        <h2>Make an Impact</h2>
+                        <p>Your skills matter. Help us deliver top-tier consulting services worldwide. <a href="#">Contact us</a> for more information.</p>
+                    </div>
+                    <div class="slide-right-box">
+                        <ul>
+                            <li><a href="#">Project Vacancies (1)</a></li>
+                            <li><a href="#">Internal Vacancies (0)</a></li>
+                            <li><a href="#">Register / Update CV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navigasi Slider -->
+        <div class="slider-controls">
+            <span class="prev-btn" aria-label="Previous Slide">&#10094;</span>
+            <span class="next-btn" aria-label="Next Slide">&#10095;</span>
+        </div>
+        <!-- Indikator -->
+        <div class="slider-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3>About IBF</h3>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Poles of Expertise</a></li>
+                    <li><a href="#">Mission, Vision & Values</a></li>
+                    <li><a href="#">Code of Ethics and Professional Conduct</a></li>
+                    <li><a href="#">Internal Vacancies (1)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Experts Centre</h3>
+                <ul>
+                    <li><a href="#">ADB experts needed</a></li>
+                    <li><a href="#">Project vacancies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>References</h3>
+                <ul>
+                    <li><a href="#">Search by sector/region</a></li>
+                    <li><a href="#">View all</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Contact our team</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Privacy Policy | Impress<br>
+            IBF International Consulting – Avenue Louise 209A – 1050 Brussels – Belgium – Tel: +32 2 237 09 00</p>
+            <p>Founding Member of <a href="#">...</a></p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
