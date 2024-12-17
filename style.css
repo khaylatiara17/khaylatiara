@@ -179,127 +179,37 @@ h2 {
 p, li {
     font-size: 1em;
     margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-/* Loading Screen */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    transition: opacity 0.5s ease, visibility 0.5s ease, display 0s 0.5s;
-    opacity: 1;
-    visibility: visible;
-}
-
-.loading-screen.loaded {
-    opacity: 0;
-    visibility: hidden;
-    display: none; /* Menambahkan ini untuk memastikan loading screen tersembunyi */
-}
-
-.spinner {
-    border: 4px solid var(--spinner-border, rgba(255, 255, 255, 0.3));
-    border-top: 4px solid var(--spinner-border-top, #fff);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 15px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Skills Chart Styling */
-#skillsChart {
-    margin: 30px auto;
-    max-width: 100%;
-    height: 400px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-/* Project Cards */
-.project-card {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 15px 0;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.project-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.project-card ul {
-    list-style-type: disc;
-    margin-left: 20px;
+    line-height: 1.8;
 }
 
 /* Footer Styling */
 .footer {
-    background: var(--footer-bg, linear-gradient(135deg, #333, #555));
+    background: var(--footer-bg);
     color: var(--secondary-color, #fff);
+    padding: 20px;
     text-align: center;
-    padding: 20px 10px;
-    font-size: 0.9em;
-    margin-top: 20px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .footer a {
-    color: #ffcc66;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color var(--transition-speed);
-}
-
-.footer a:hover {
-    color: #ffdb85;
+    color: var(--secondary-color, #fff);
     text-decoration: underline;
 }
 
-.footer-content p {
-    margin: 5px 0;
-}
-
-/* Scroll to Top */
+/* Scroll to Top Button */
 .scroll-top {
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--primary-color, #333);
+    padding: 15px;
+    background-color: var(--accent-color);
     color: var(--secondary-color, #fff);
     border: none;
-    padding: 10px 15px;
     border-radius: 50%;
+    font-size: 1.5em;
     cursor: pointer;
-    display: none;
-    z-index: 1000;
-    font-size: 1.2em;
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed);
 }
 
 .scroll-top.show {
@@ -307,171 +217,41 @@ p, li {
 }
 
 .scroll-top:hover {
-    background-color: #555;
     transform: scale(1.1);
 }
 
-/* Responsive Design */
-
-/* Tablet and Mobile */
-@media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 15px 10px;
-    }
-
-    .navbar .logo a {
-        font-size: 1.3em;
-    }
-
-    .navbar-links {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar-links button {
-        margin: 5px 0;
-        font-size: 1.2em;
-        width: 100%;
-    }
-
-    #theme-toggle {
-        font-size: 1.5em;
-    }
-
-    .section {
-        padding: 60px 20px;
-    }
-
-    h1 {
-        font-size: 1.8em;
-    }
-
-    h2 {
-        font-size: 1.4em;
-    }
-
-    p, li {
-        font-size: 0.9em;
-    }
-
-    #skillsChart {
-        height: 300px;
-        padding: 15px;
-    }
-
-    .project-card {
-        padding: 15px;
-        margin: 10px 0;
-    }
-
-    .footer {
-        padding: 15px 10px;
-    }
-
-    .footer-content p {
-        font-size: 0.8em;
-    }
-
-    .scroll-top {
-        font-size: 1.5em;
-        padding: 8px 12px;
-    }
+/* Loading Screen */
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    transition: opacity 0.5s ease;
 }
 
-/* Mobile Small */
-@media screen and (max-width: 480px) {
-    .navbar .logo a {
-        font-size: 1.2em;
-    }
-
-    .navbar-links button {
-        font-size: 1em;
-    }
-
-    h1 {
-        font-size: 1.6em;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    .project-card {
-        padding: 12px;
-    }
-
-    .footer {
-        font-size: 0.75em;
-    }
-
-    .scroll-top {
-        padding: 6px 10px;
-    }
+.spinner {
+    border: 4px solid var(--spinner-border);
+    border-top: 4px solid var(--spinner-border-top);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
 }
 
-/* Membatasi Properti Transition, Animation, dan Cursor untuk Media Screen */
-@media screen {
-    /* Link Hover Transition */
-    a {
-        transition: color var(--transition-speed);
-    }
+.spinner, .loading-screen p {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+}
 
-    /* Navbar Transition */
-    .navbar {
-        transition: padding var(--transition-speed), background var(--transition-speed);
-    }
-
-    /* Navbar Links Transition */
-    .navbar-links button {
-        transition: color var(--transition-speed), transform var(--transition-speed);
-    }
-
-    .navbar-links button:hover {
-        color: #f4f4f4;
-        transform: scale(1.05);
-    }
-
-    /* Theme Toggle Transition */
-    #theme-toggle {
-        transition: transform var(--transition-speed);
-    }
-
-    #theme-toggle:hover {
-        transform: scale(1.1);
-    }
-
-    /* Project Cards Transition */
-    .project-card {
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Scroll to Top Transition */
-    .scroll-top {
-        transition: background-color var(--transition-speed), transform var(--transition-speed);
-    }
-
-    .scroll-top:hover {
-        background-color: #555;
-        transform: scale(1.1);
-    }
-
-    /* Animations */
-    .section {
-        animation: fadeIn 0.5s ease-in-out, gradientAnimation 15s ease infinite;
-    }
-
-    .spinner {
-        animation: spin 1s linear infinite;
-    }
-
-    /* Skills Chart Animation */
-    #skillsChart {
-        animation: fadeIn 0.5s ease-in-out;
-    }
+/* Animation for Spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
