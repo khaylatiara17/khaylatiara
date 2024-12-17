@@ -1,37 +1,51 @@
+/* Menggunakan CSS Variables untuk Konsistensi dan Mudah Pemeliharaan */
+:root {
+    --primary-color: #333;
+    --secondary-color: #fff;
+    --accent-color: #0066cc;
+    --hover-color: #004999;
+    --dark-background: #121212;
+    --dark-text: #f4f4f4;
+    --spinner-border: rgba(255, 255, 255, 0.3);
+    --spinner-border-top: #fff;
+    --footer-bg: linear-gradient(135deg, #333, #555);
+    --transition-speed: 0.3s;
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-family-secondary: 'Poppins', sans-serif;
+}
+
 /* General Reset */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family-primary);
     line-height: 1.6;
     color: #333;
     background-color: #fff;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
     text-align: justify;
 }
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #121212;
-    color: #f4f4f4;
+    background-color: var(--dark-background, #121212);
+    color: var(--dark-text, #f4f4f4);
 }
 
 /* Link Styling */
 a {
-    color: #0066cc;
+    color: var(--accent-color, #0066cc);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color var(--transition-speed);
 }
 
 a:hover {
     text-decoration: underline;
-    color: #004999;
+    color: var(--hover-color, #004999);
 }
 
 /* Navbar */
@@ -39,14 +53,14 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #333;
-    color: #fff;
+    background: var(--primary-color, #333);
+    color: var(--secondary-color, #fff);
     padding: 10px 30px;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-    transition: padding 0.3s, background 0.3s;
+    transition: padding var(--transition-speed), background var(--transition-speed);
 }
 
 .navbar.scrolled {
@@ -55,10 +69,10 @@ a:hover {
 }
 
 .navbar .logo a {
-    color: #fff;
+    color: var(--secondary-color, #fff);
     font-size: 1.2em;
-    font-family: 'Poppins', sans-serif;
-    transition: font-size 0.3s;
+    font-family: var(--font-family-secondary, 'Poppins', sans-serif);
+    transition: font-size var(--transition-speed);
 }
 
 .navbar-links {
@@ -69,13 +83,13 @@ a:hover {
 .navbar-links button {
     background: none;
     border: none;
-    color: #fff;
+    color: var(--secondary-color, #fff);
     font-size: 1em;
     cursor: pointer;
     margin: 0 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family-secondary, 'Poppins', sans-serif);
     padding: 10px;
-    transition: color 0.3s, transform 0.3s;
+    transition: color var(--transition-speed), transform var(--transition-speed);
 }
 
 .navbar-links button:hover {
@@ -89,8 +103,8 @@ a:hover {
     cursor: pointer;
     background: none;
     border: none;
-    color: #fff;
-    transition: transform 0.3s;
+    color: var(--secondary-color, #fff);
+    transition: transform var(--transition-speed);
 }
 
 #theme-toggle:hover {
@@ -104,18 +118,15 @@ a:hover {
     display: none;
     text-align: justify;
     animation: fadeIn 0.5s ease-in-out;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
 
 .section.active {
     display: block;
 }
 
-/* Backgrounds for each section with optimized gradients */
-.section {
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
-
+/* Backgrounds untuk setiap section */
 #home {
     background: linear-gradient(135deg, #FFB6C1, #FFDAB9, #E6E6FA, #B0E0E6, #98FB98);
 }
@@ -150,9 +161,9 @@ img {
     margin: 0 auto;
 }
 
-/* Header and Text Styling */
+/* Header dan Text Styling */
 h1, h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family-secondary, 'Poppins', sans-serif);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -196,8 +207,8 @@ p, li {
 }
 
 .spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #fff;
+    border: 4px solid var(--spinner-border, rgba(255, 255, 255, 0.3));
+    border-top: 4px solid var(--spinner-border-top, #fff);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -249,8 +260,8 @@ p, li {
 
 /* Footer Styling */
 .footer {
-    background: linear-gradient(135deg, #333, #555);
-    color: #fff;
+    background: var(--footer-bg, linear-gradient(135deg, #333, #555));
+    color: var(--secondary-color, #fff);
     text-align: center;
     padding: 20px 10px;
     font-size: 0.9em;
@@ -262,7 +273,7 @@ p, li {
     color: #ffcc66;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color var(--transition-speed);
 }
 
 .footer a:hover {
@@ -279,8 +290,8 @@ p, li {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--primary-color, #333);
+    color: var(--secondary-color, #fff);
     border: none;
     padding: 10px 15px;
     border-radius: 50%;
@@ -288,7 +299,7 @@ p, li {
     display: none;
     z-index: 1000;
     font-size: 1.2em;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
 .scroll-top.show {
