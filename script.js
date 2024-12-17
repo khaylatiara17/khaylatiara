@@ -2,9 +2,14 @@ const slides = document.querySelectorAll('.slide');
 const indicators = document.querySelectorAll('.indicator');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
+const darkModeToggle = document.querySelector('.dark-mode-toggle');
+const body = document.body;
+const hamburger = document.querySelector('.hamburger');
+const mainNav = document.querySelector('.main-nav');
 
 let currentSlide = 0;
 
+// Fungsi menampilkan slide
 function showSlide(index) {
     slides.forEach((slide, i) => {
         slide.classList.remove('active');
@@ -12,10 +17,6 @@ function showSlide(index) {
     });
     slides[index].classList.add('active');
     indicators[index].classList.add('active');
-
-    // Geser slider
-    const slider = document.querySelector('.slider');
-    slider.style.transform = `translateX(-${index * 100}%)`;
 }
 
 prevBtn.addEventListener('click', () => {
@@ -38,3 +39,13 @@ indicators.forEach(indicator => {
 
 // Inisialisasi slide pertama
 showSlide(currentSlide);
+
+// Dark Mode Toggle
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+});
+
+// Hamburger menu
+hamburger.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+});
