@@ -1,256 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journey Through Code - Portfolio Tiara</title>
-    <meta name="description" content="Portfolio Mutiara Butet Lamria, mahasiswa Teknik Informatika dengan keahlian di Web Development, Mobile Development, Data Science, Universitas Dian Nusantara.">
-    <meta name="keywords" content="Portfolio, Mutiara Butet Lamria, Teknik Informatika, Web Development, Mobile Development, Data Science, Universitas Dian Nusantara">
-    <meta name="author" content="Tiara">
-
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Journey Through Code - Portfolio Tiara">
-    <meta property="og:description" content="Portfolio Tiara, mahasiswa Teknik Informatika dengan keahlian di Web Development, Mobile Development, Data Science, dan lainnya.">
-    <meta property="og:image" content="images/photo.jpg">
-    <meta property="og:url" content="https://khaylatiara17.github.io/khaylatiara/">
-    <meta property="og:type" content="website"> <!-- Ubah dari "mini website" ke "website" -->
-
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Journey Through Code - Portfolio Tiara">
-    <meta name="twitter:description" content="Portfolio Mutiara Butet Lamria, mahasiswa Teknik Informatika dengan keahlian di Web Development, Mobile Development, Data Science, dan lainnya.">
-    <meta name="twitter:image" content="images/photo.jpg">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" media="all">
-    <!-- Hapus preload jika sudah menggunakan defer di tag script di body -->
-    <!-- <link rel="preload" href="script.js" as="script"> -->
-
-    <!-- Google Charts -->
-    <script defer src="https://www.gstatic.com/charts/loader.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loading-screen">
+    <div class="loading-screen">
         <div class="spinner"></div>
-        <p>Memuat konten, harap tunggu...</p>
+        <p>Memuat...</p>
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="logo">
-            <a href="#">Portfolio Journey Through Code</a>
+            <a href="#">Logo</a>
         </div>
         <div class="navbar-links">
-            <button onclick="showSection('home')">Home</button>
-            <button onclick="showSection('about')">About</button>
-            <button onclick="showSection('projects')">Update</button>
-            <button onclick="showSection('contact')">Others</button>
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <button onclick="changeSection('home')">Home</button>
+            <button onclick="changeSection('about')">About</button>
+            <button onclick="changeSection('projects')">Projects</button>
+            <button onclick="changeSection('contact')">Contact</button>
+            <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
         </div>
     </nav>
 
     <!-- Sections -->
-    <main>
-        <!-- Home Section -->
-        <section id="home" class="section active" aria-labelledby="home-heading">
-            <h1 id="home-heading">INTRODUCTION</h1>
-            <p>
-                You can call me Tiara, an Informatics Engineering student with a strong interest in learning new technologies and using them to solve real-world problems. With over 15 years of experience in Office Administration, I bring strong skills in managing data details, organizing information, and improving processes as I embark on this exciting journey in the tech world.
-            </p>
-            <p>
-                I believe that technology is a powerful tool to create innovative and sustainable solutions for a better future. I am eager to keep learning and developing my skills in Data Science, as well as working on local technologies that can make a positive impact, especially in remote areas of Indonesia.
-            </p>
-            <p>
-                This mini-site is a small step that reflects my dedication, curiosity, and drive to create meaningful work. I believe in lifelong learning and am always open to opportunities for collaboration, discussions, or feedback to grow and improve.
-            </p>
+    <div class="section" id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is the home section.</p>
+    </div>
 
-            <h2>LIFE GOAL</h2>
-            <p>
-                My life goal is to keep growing as a person, contribute positively to society and create useful solutions through technology. I want to use my skills and experience to solve challenges, whether big or small and help build a better and more sustainable future.
-            </p>
-            <p>
-                I also aim to live a balanced life, staying true to myself, valuing connections with others and appreciating every step of the journey with purpose and meaning.
-            </p>
+    <div class="section" id="about">
+        <h2>About Me</h2>
+        <p>This is the about section.</p>
+    </div>
 
-            <h2>SUPPORT SYSTEM</h2>
-            <p>
-                A support system is very important to me, as it provides an environment that helps me grow both personally and professionally. This support comes from my family, close friends and people around me who offer feedback, advice and confidence to keep me moving forward.
-            </p>
-            <p>
-                Technology also plays a key role in my support system, making it easier for me to learn and communicate by putting my thoughts into writing, which I sometimes find hard to express on my own. With this support, I feel more prepared to face challenges, continue learning and achieve the goals I dream of.
-            </p>
-        </section>
+    <div class="section" id="projects">
+        <h2>Projects</h2>
+        <p>This is the projects section.</p>
+    </div>
 
-        <!-- About Section -->
-        <section id="about" class="section" aria-labelledby="about-heading">
-            <h1 id="about-heading">PROFILE</h1>
-            <p>
-                Tiara is an Informatics Engineering student with a strong interest in new technologies. She is always eager to learn and improve. Born and raised in Jakarta, Tiara comes from a Sumatera Utara heritage with Batak ethnicity.
-            </p>
-            <p>
-                Tiara began her studies at Universitas Dian Nusantara in September 2023 and has big dreams of continuing her education to pursue a master's degree. Her ultimate goal is to become an educator in Indonesia's remote areas, contributing to the education sector. Despite the challenges in her higher education journey, Tiara remains determined to complete her studies and hopes for ease in overcoming any difficulties along the way.
-            </p>
-
-            <h2>HOBBIES</h2>
-            <p>
-                Tiara enjoys outdoor activities, especially mountain hiking. It gives her the chance to explore nature, relieve stress and gain unforgettable experiences. Additionally, she enjoys reading books, articles, and watching videos on YouTube to broaden her knowledge from different perspectives. As a tech enthusiast, Tiara also loves exploring new things in the digital world and software development.
-            </p>
-
-            <h2>STRENGTHS</h2>
-            <p>
-                Tiara is known for her empathy and strong ideals. She values honesty, has strong principles and is independent, which makes her unique but sometimes less compatible with others. She is disciplined, responsible, and detail-oriented, which stands out in both her work and daily life. Tiara is dedicated and always strives to do her best in everything she works on.
-            </p>
-
-            <h2>WEAKNESS</h2>
-            <p>
-                Tiara sometimes faces challenges in verbal communication, especially when expressing her opinions. This means she occasionally needs support from people who understand her to solve problems. She is also highly dependent on the quality of leadership around her. When guided by a good leader, she can perform her tasks to the best of her ability; however, the opposite can also be true. Tiara tends to be more comfortable in solitude, as she feels happier being alone than in an environment that doesn't support her.
-            </p>
-
-            <h2>EDUCATION BACKGROUND</h2>
-            <ul>
-                <li>Universitas Dian Nusantara, Teknik Informatika (September 2023 - Present)</li>
-                <li>SMK Negeri 17 Jakarta, Administrasi Perkantoran (2006-2009)</li>
-                <li>SMP Negeri 264 Jakarta (2003-2006)</li>
-                <li>SD Negeri 15 Pagi Jakarta (1997-2003)</li>
-                <li>Taman Kanak-Kanak "KASIH SETIA" Jakarta (1996-1997)</li>
-            </ul>
-
-            <h2>FOCUS ON HARD SKILLS</h2>
-            <ul>
-                <li>Programming Languages: C++, Python, R, JavaScript, HTML, CSS</li>
-                <li>Web Development: Laravel, React, Node.js</li>
-                <li>Databases: MySQL, Oracle, PHPMyAdmin</li>
-                <li>Data Science: Data analysis, machine learning basics, data visualization</li>
-                <li>Operating Systems: Windows</li>
-                <li>Version Control: GitHub</li>
-                <li>Algorithms and Data Structures: Sorting algorithms, searching algorithms, linked lists, trees, graphs</li>
-                <li>Computer Architecture: CPU, memory hierarchy, I/O devices, system performance</li>
-                <li>Mobile Development: Flutter</li>
-            </ul>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section" aria-labelledby="projects-heading">
-            <h1 id="projects-heading">PROJECTS</h1>
-            <div class="project-card">
-                <h3>Proyek 1: Web Development</h3>
-                <p>Membuat situs web responsif dengan desain modern dan fokus pada UX. Situs web ini berfungsi untuk memberikan informasi kepada pengunjung mengenai berbagai produk dan layanan.</p>
-                <ul>
-                    <li>Teknologi yang Digunakan: HTML, CSS, JavaScript, React</li>
-                    <li>Fitur Utama: Responsif, Animasi, Antarmuka Pengguna Interaktif</li>
-                </ul>
-            </div>
-            <div class="project-card">
-                <h3>Proyek 2: Aplikasi Mobile</h3>
-                <p>Mengembangkan aplikasi lintas platform untuk melacak tujuan kebugaran pengguna. Aplikasi ini memberikan laporan kemajuan dan saran kebugaran yang dapat disesuaikan.</p>
-                <ul>
-                    <li>Teknologi yang Digunakan: React Native, Firebase</li>
-                    <li>Fitur Utama: Pemantauan Kebugaran, Notifikasi, Statistik Pengguna</li>
-                </ul>
-            </div>
-            <div class="project-card">
-                <h3>Proyek 3: Sistem Manajemen Inventaris</h3>
-                <p>Membangun sistem manajemen inventaris berbasis web untuk usaha kecil. Sistem ini memungkinkan pengguna untuk melacak barang, mengelola stok, dan melakukan pemesanan ulang secara otomatis.</p>
-                <ul>
-                    <li>Teknologi yang Digunakan: PHP, MySQL, jQuery</li>
-                    <li>Fitur Utama: Manajemen Barang, Pelaporan Stok, Pembaruan Otomatis</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section" aria-labelledby="contact-heading">
-            <h1 id="contact-heading">CONTACT</h1>
-            <p>Email: <a href="mailto:411231059@mahasiswa.undira.ac.id">411231059@mahasiswa.undira.ac.id</a></p>
-            <p>Sertifikat dan Dokumen Pendukung: <a href="https://sites.google.com/mahasiswa.undira.ac.id/khaylatiara/profile" target="_blank" rel="noopener">Google Site</a></p>
-            <p>Media Sosial: <a href="https://www.instagram.com/khaylatiara" target="_blank" rel="noopener">Instagram</a> atau <a href="https://www.tiktok.com/@khaylatiaraa" target="_blank" rel="noopener">TikTok</a></p>
-            <p>Media Sosial: <a href="https://www.facebook.com/khayLatiara1" target="_blank" rel="noopener">Facebook</a> atau <a href="https://www.facebook.com/khayLatiara17" target="_blank" rel="noopener">Facebook 2</a></p>
-            <p>Media Sosial: <a href="https://www.linkedin.com/in/mutiarabutetlamria1912/" target="_blank" rel="noopener">LinkedIn</a></p>
-
-            <!-- Gallery Section -->
-            <h2>GALLERY</h2>
-            <div class="sweet-memories">
-                <picture>
-                    <source type="image/webp" media="(max-width: 600px)" srcset="images/photo-small.webp">
-                    <source type="image/webp" media="(max-width: 1200px)" srcset="images/photo-medium.webp">
-                    <img src="images/photo-large.webp" alt="Pas Foto Tiara" loading="lazy" width="600" height="400">
-                </picture>
-
-                <picture>
-                    <source type="image/webp" media="(max-width: 600px)" srcset="images/photo2-small.webp">
-                    <source type="image/webp" media="(max-width: 1200px)" srcset="images/photo2-medium.webp">
-                    <img src="images/photo2-large.webp" alt="Papua Barat" loading="lazy" width="600" height="400">
-                </picture>
-
-                <!-- Additional images with optimized loading -->
-                <picture>
-                    <source type="image/webp" srcset="images/image3-small.webp" media="(max-width: 600px)">
-                    <source type="image/webp" srcset="images/image3-medium.webp" media="(max-width: 1200px)">
-                    <img src="images/image3-large.webp" alt="Photo 3" loading="lazy" width="600" height="400">
-                </picture>
-                <picture>
-                    <source type="image/webp" srcset="images/image4-small.webp" media="(max-width: 600px)">
-                    <source type="image/webp" srcset="images/image4-medium.webp" media="(max-width: 1200px)">
-                    <img src="images/image4-large.webp" alt="Photo 4" loading="lazy" width="600" height="400">
-                </picture>
-            </div>
-
-            <h2>READ ME</h2>
-            <p>Berlayar jauh ke Pulau Bintan,</p>
-            <p>Membawa bekal buah durian.</p>
-            <p>Semangat belajar janganlah padam,</p>
-            <p>Untuk masa depan penuh harapan! 😊</p>
-
-            <!-- Skill Chart Section -->
-            <h2>SKILL LEVEL</h2>
-            <div id="skillsChart"></div>
-        </section>
-    </main>
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <p>This is the contact section.</p>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; December 2024 ® Every small step brings us closer to a big goal. Keep striving and growing!!!</p>
-            <p>◦ Supported by GitHub & ChatGPT ◦ ◦ Designed by Tiara ◦</p>
+            <p>Created by <a href="#">Your Name</a></p>
         </div>
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top" aria-label="Scroll to Top">⬆</button>
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
 
-    <!-- Script -->
-    <script defer src="script.js"></script>
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Tiara",
-      "jobTitle": "Mahasiswa Teknik Informatika",
-      "url": "https://khaylatiara17.github.io/khaylatiara/",
-      "sameAs": [
-        "https://www.instagram.com/khaylatiara",
-        "https://www.tiktok.com/@khaylatiaraa",
-        "https://www.facebook.com/khayLatiara1",
-        "https://www.facebook.com/khayLatiara17",
-        "https://www.linkedin.com/in/mutiarabutetlamria1912/"
-      ],
-      "email": "mailto:411231059@mahasiswa.undira.ac.id",
-      "studentOf": "Universitas Dian Nusantara"
-    }
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
