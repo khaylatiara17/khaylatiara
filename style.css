@@ -117,9 +117,8 @@ a:hover {
     min-height: 100vh;
     display: none;
     text-align: justify;
-    animation: fadeIn 0.5s ease-in-out;
     background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    animation: fadeIn 0.5s ease-in-out, gradientAnimation 15s ease infinite;
 }
 
 .section.active {
@@ -196,7 +195,7 @@ p, li {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease, display 0s 0.5s;
     opacity: 1;
     visibility: visible;
 }
@@ -204,6 +203,7 @@ p, li {
 .loading-screen.loaded {
     opacity: 0;
     visibility: hidden;
+    display: none; /* Menambahkan ini untuk memastikan loading screen tersembunyi */
 }
 
 .spinner {
@@ -463,8 +463,7 @@ p, li {
 
     /* Animations */
     .section {
-        animation: fadeIn 0.5s ease-in-out;
-        animation: gradientAnimation 15s ease infinite;
+        animation: fadeIn 0.5s ease-in-out, gradientAnimation 15s ease infinite;
     }
 
     .spinner {
